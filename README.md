@@ -1,4 +1,4 @@
-# SANH_SEAsia_BGCsetup
+# SANH_SAsia_BGCsetup
 
 This repository details the configuration of the Biogeochemistry component of the SANH (South Asian Nitrogen Hub) project, funded by UKRI (UK Research and Innovation) under a Global Challenges Research Fund.
 
