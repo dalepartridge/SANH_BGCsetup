@@ -4,7 +4,7 @@ This repository details the configuration of the Biogeochemistry component of th
 
 The set up expands on the physical configuration provided here: *****PATH TO PHYS SETUP*****
 
-The configuration requires the execution of three scripts to create the initial conditions (IC), lateral boundaries (OBC) and surface boundaries (SBC). All three require the paths defined in *set_paths.sh*
+The configuration requires the execution of four scripts to create the initial conditions (IC), lateral boundaries (OBC), surface boundaries (SBC) and to add addition river nutrients to the existing files from the physical setup. All scripts require the paths defined in *set_paths.sh*
 
 ## Initial Conditions
 *create_IC.sh*  
