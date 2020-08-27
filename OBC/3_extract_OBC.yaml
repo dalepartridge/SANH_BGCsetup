@@ -1,0 +1,115 @@
+meshfile: bdy_gdept.nc
+coordsfile: coordinates.bdy.nc
+y0: 1993
+y1: 2010
+njobs: 8
+grid: T
+variables:
+   NO3:
+       input_file: cmems/NO3_cmems-SANH_OBC.nc
+       output_file: bdyfiles/sanh_bdytrc
+   PO4:
+       input_file: cmems/PO4_cmems-SANH_OBC.nc 
+       output_file: bdyfiles/sanh_bdytrc
+   O2:
+       input_file: cmems/OXY_cmems-SANH_OBC.nc 
+       output_file: bdyfiles/sanh_bdytrc
+   Si:
+       input_file: cmems/SIL_cmems-SANH_OBC.nc
+       output_file: bdyfiles/sanh_bdytrc
+   DIC:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 2000.
+   TA: 
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 2400.
+   R2_c:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 60.
+   R3_c:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 60.
+   small_poc:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0033
+   small_pon:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 4.158e-5
+   small_pop:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 2.5938e-6
+   medium_poc:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0033
+   medium_pon:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 4.158e-5
+   medium_pop:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 2.5938e-6
+   medium_pos:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 3.8879e-5
+   large_poc:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0033
+   large_pon:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 4.158e-5
+   large_pop:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 2.5938e-6
+   large_pos:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 3.8879e-5
+   microphytoplankton_n:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 1.26e-6
+   microphytoplankton_p:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 7.86e-8
+   microphytoplankton_c:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0001
+   microphytoplankton_Chl:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0001
+   diatoms_n:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 1.26e-6
+   diatoms_p:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 7.86e-8
+   diatoms_c:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0001
+   diatoms_Chl:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0001
+   diatoms_s:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 1.18e-6
+   nanophytoplankton_n:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 1.26e-6
+   nanophytoplankton_p:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 7.86e-8
+   nanophytoplankton_c:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0001
+   nanophytoplankton_Chl:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0001
+   picophytoplankton_n:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 1.26e-6
+   picophytoplankton_p:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: 7.86e-8
+   picophytoplankton_c:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0001
+   picophytoplankton_Chl:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0001

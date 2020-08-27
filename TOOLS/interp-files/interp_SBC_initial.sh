@@ -11,13 +11,14 @@ sfile=$2     #Source file
 sourceid=$3  #Source ID Tag
 stime=$4     #Source time variable
 
+#Fnd mask with zeros
+ncatted -a _FillValue,$var,m,f,0 $sfile
+
 #Create mask file
 ncks -d ${stime},0,0,1 -v $var ${sfile} ${sourceid}_mask.nc
 ncrename -v $var,mask ${sourceid}_mask.nc
+ncatted -a _FillValue,,d,, ${sourceid}_mask.nc
 ncap2 -O -s 'where(mask>0) mask=1' ${sourceid}_mask.nc ${sourceid}_mask.nc
-ncatted -a _FillValue,mask,m,d,0 ${sourceid}_mask.nc
-
-python fill_mask.py $sfile $var ${sourceid}_mask.nc
 
 #Fill land values
 $SOSIEDIR/sosie3.x -f 1_${sourceid}_to_${sourceid}_${var}.namelist 
@@ -41,7 +42,5 @@ ncrename -v $var,mask sosie_initcd_mask.nc
 ncap2 -O -s 'where(mask>=0) mask=1' sosie_initcd_mask.nc sosie_initcd_mask.nc
 
 # Fill values
-sed -i "88 ccf_z_src   = \'initcd_${var}.nc\'" 3_${sourceid}_to_nemo_${var}.namelist 
-sed -i "89 ccv_z_src   = \'gdept\'" 3_${sourceid}_to_nemo_${var}.namelist 
 $SOSIEDIR/sosie3.x -f 3_${sourceid}_to_nemo_${var}.namelist 
 

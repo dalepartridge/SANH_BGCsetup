@@ -33,7 +33,7 @@ for p in ben_dict:
         nco.variables[pf+p+'_'+q][:] = ben_dict[p][q]*np.ones(dat)
 
 print('Calculating horizons')
-ncbath = netCDF4.Dataset('/work/n01/n01/annkat/SEAsia_ERSEM_R12/DOMAIN/bathy_meter_ORCA12_adj.nc')
+ncbath = netCDF4.Dataset('/work/n01/n01/jenjar93/SANH_HINDCAST_CMEMS/START_FILES/DOMAIN/bathy_meter.nc')
 h = ncbath.variables['Bathymetry'][:]
 ncbath.close()
 

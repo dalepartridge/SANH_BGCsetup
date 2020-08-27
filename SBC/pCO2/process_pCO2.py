@@ -25,7 +25,7 @@ ny=324
 nx=454
 ys=1990
 ye=2100
-domname='SANH'
+domnam='SANH'
 f_in='RCP85_MIDYR_CONC.DAT'
 f_out='pCO2a.nc'
 #######################################
