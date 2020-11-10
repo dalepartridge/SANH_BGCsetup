@@ -1,0 +1,31 @@
+#!/bin/bash
+#PBS -l select=1
+#PBS -l walltime=00:30:00
+#PBS -r y
+#PBS -N gotm-benthic
+#PBS -A n01-SANH
+
+module load anaconda/python3
+
+export PBS_O_WORKDIR=$(readlink -f $PBS_O_WORKDIR)
+nn=$(printf "%03d" $PBS_ARRAY_INDEX)
+
+# Change to the direcotry that the job was submitted from
+RUNDIR=$PBS_O_WORKDIR/RUN_$nn
+cd $RUNDIR
+cp $PBS_O_WORKDIR/gotm-base-files/gotm $RUNDIR/
+
+mkdir output
+
+Ncycle=5
+for i in $(seq 1 $Ncycle); do
+    if [ $i -eq $Ncycle ]; then
+        cp $PBS_O_WORKDIR/gotm-base-files/output.yaml $RUNDIR/
+    fi
+    aprun -n 1 ./gotm > $RUNDIR/run${i}.o 2> $RUNDIR/run${i}.o
+    wait
+    cp $RUNDIR/fabm.yaml $RUNDIR/output/fabm${i}.yaml
+    python $PBS_O_WORKDIR/reset_benthic.py $RUNDIR
+    mv $RUNDIR/restart.nc $RUNDIR/output/restart${i}.nc
+done
+mv $RUNDIR/SANH_7d_mean.nc $RUNDIR/output/

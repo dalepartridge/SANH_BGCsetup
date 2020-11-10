@@ -1,10 +1,10 @@
 import numpy as np
+GY_cfg = f90nml.read('./gotmrun.nml')
 import os
 import coast
 import pandas as pd
 import datetime as dt
 import yaml
-import f90nml
 import netCDF4
 
 #Load indexes for runs
@@ -21,7 +21,7 @@ z = coast.NEMO('ssh/*.nc','domain_cfg.nc', multiple=True)
 #Load met data
 met = coast.NEMO('sbc/ERA5_MSDWSWRF*.nc',multiple=True)
 met.dataset['time'] = met.dataset['time'].dt.round('T')
-for v in ['MTPR','SPH','T2M','U10','V10']:
+for v in ['SPH','T2M','U10','V10']:
     a = coast.NEMO('sbc/ERA5_'+v+'*.nc',multiple=True)
     a.dataset['time'] = a.dataset['time'].dt.round('T')
     met.dataset = met.dataset.assign(a.dataset)
@@ -49,8 +49,8 @@ fabm_blist = {
     'Q7':{'c','n','p', 'pen_depth_c','pen_depth_n','pen_depth_p'}, \
     'Q17':{'c','n','p'}, 'ben_col':{'D1m','D2m'}, 'bL2':'c'}
 FY_cfg = yaml.load(open('./fabm.yaml','r'),Loader=yaml.FullLoader)
-GR_cfg = f90nml.read('./gotmrun.nml')
 
+GY_cfg = f90nml.read('./gotmrun.nml')
 
 for ix in range(len(idx)):
     i = int(idx[ix,0])
@@ -66,7 +66,7 @@ for ix in range(len(idx)):
     #Create ssh file
     zd = z.dataset.zos.isel(y_dim=j,x_dim=i)
     zd = zd.reset_coords(['longitude','latitude'],drop=True).to_dataframe()
-    zd['time'] = zd['time'].dt.strftime('%Y/%m/%d %H:%M:%S')
+    zd['time'] = zd['time'].dt.strftime('%Y-%m-%d %H:%M:%S')
     zd.to_csv(odir+'/zeta.dat',sep='\t',index=False,header=False)
 
     #Create temp/salt profiles
@@ -74,12 +74,12 @@ for ix in range(len(idx)):
     tf = open(odir+'/temp_profile','w')
     sf = open(odir+'/salt_profile','w')
     for k,time in enumerate(pd.to_datetime(td.time.values)):
-        tf.write('%s %i 1\n' %(time, len(td.z_dim)))
-        sf.write('%s %i 1\n' %(time, len(td.z_dim)))
+        tf.write('%s %i 2\n' %(time, len(td.z_dim)))
+        sf.write('%s %i 2\n' %(time, len(td.z_dim)))
         td_k = td.isel(t_dim=k)
         for n,dep in enumerate(td.depth_0.values):
-            tf.write('%f %f\n' %(dep,td_k.toce.isel(z_dim=n).values)) 
-            sf.write('%f %f\n' %(dep,td_k.soce.isel(z_dim=n).values))
+            tf.write('%f %f\n' %(-dep,td_k.toce.isel(z_dim=n).values)) 
+            sf.write('%f %f\n' %(-dep,td_k.soce.isel(z_dim=n).values))
     tf.close()
     sf.close()
 
@@ -88,15 +88,11 @@ for ix in range(len(idx)):
     md = met.dataset.isel(y_dim=m_idx[0],x_dim=m_idx[1])
     md = md.assign(cloud=np.abs(0*md.U10),pres=0*md.U10+1013.25)
     md_m = md[['time','U10','V10','pres','T2M','SPH','cloud']].to_dataframe()
-    md_m['time'] = md_m['time'].dt.strftime('%Y/%m/%d %H:%M:%S')
+    md_m['time'] = md_m['time'].dt.strftime('%Y-%m-%d %H:%M:%S')
     md_m.to_csv(odir+'/meteo.dat',sep='\t',index=False,header=False)
 
-    md_p = md.MTPR.to_dataframe()
-    md_p['time'] = md_p['time'].dt.strftime('%Y/%m/%d %H:%M:%S')
-    md_p.to_csv(odir+'/precip.dat',sep='\t',index=False,header=False)
-
     md_s = md.MSDWSWRF.to_dataframe()
-    md_s['time'] = md_s['time'].dt.strftime('%Y/%m/%d %H:%M:%S')
+    md_s['time'] = md_s['time'].dt.strftime('%Y-%m-%d %H:%M:%S')
     md_s.to_csv(odir+'/radsw.dat',sep='\t',index=False,header=False)
     
     #Create BGC profiles
@@ -106,22 +102,22 @@ for ix in range(len(idx)):
         # Target profile
         target=open('%s/profiles/%s_profile' %(odir,v),'w')
         for time in [sdate, sdate.replace(sdate.year+10)]:
-            target.write('%s %i 1\n' %(time.strftime('%Y-%m-%d %H:%M:%S'), len(bd.z_dim)))
+            target.write('%s %i 2\n' %(time.strftime('%Y-%m-%d %H:%M:%S'), len(bd.z_dim)))
             for n,dep in enumerate(bd.nav_lev.values):
-                target.write(f'%f %f\n' %(dep,bd[plist[v]].isel(z=n).values))
+                target.write(f'%f %f\n' %(-dep,bd[plist[v]].isel(z=n).values))
         target.close()
 
         # Relaxation File
         relax=open('%s/profiles/%s_relax' %(odir,v),'w')
         for y in range(11):
             for time in [sdate.replace(sdate.year+y),sdate.replace(sdate.year+y,sdate.month,31)]:
-                relax.write(time.strftime('%Y-%m-%d %H:%M:%S ')+'2 1\n')
+                relax.write(time.strftime('%Y-%m-%d %H:%M:%S ')+'2 2\n')
                 relax.write(f'0 %f\n' %relax_rate)
-                relax.write(f'%f %f\n' %(bd.nav_lev[-1].values,relax_rate))
+                relax.write(f'%f %f\n' %(-bd.nav_lev[-1].values,relax_rate))
             for time in [sdate.replace(sdate.year+y,2,1),sdate.replace(sdate.year+y,12,31)]:
-                relax.write(time.strftime('%Y-%m-%d %H:%M:%S ')+'2 1\n')
+                relax.write(time.strftime('%Y-%m-%d %H:%M:%S ')+'2 2\n')
                 relax.write(f'0 0.0\n')
-                relax.write(f'%f 0.0\n' %(bd.nav_lev[-1].values))
+                relax.write(f'%f 0.0\n' %(-bd.nav_lev[-1].values))
         relax.close()
 
     #Update fabm.yaml
@@ -135,12 +131,13 @@ for ix in range(len(idx)):
     fyaml.write(yaml.dump(FY_cfg))
     fyaml.close()
 
-    # Update gotmrun.nml
-    GR_cfg['model_setup']['title'] = f'GOTM-ERSEM at lon_idx %i, lat_idx %i' %(i,j) 
-    GR_cfg['model_setup']['nlev'] = len(td.z_dim) 
-    GR_cfg['station']['name'] = f'Point i=%i,j=%i' %(i,j)
-    GR_cfg['station']['latitude'] = float(td.latitude.values)
-    GR_cfg['station']['longitude'] = float(td.longitude.values)
-    GR_cfg['station']['depth'] = float(td.depth_0[h[j,i]].values)
-    GR_cfg.write(odir+'/gotmrun.nml') 
-
+    # Update gotm.yaml
+    GY_cfg['title'] = f'GOTM-ERSEM at lon_idx %i, lat_idx %i' %(i,j)
+    GY_cfg['grid']['nlev'] = len(td.z_dim) 
+    GY_cfg['location']['name'] = f'Point i=%i,j=%i' %(i,j)
+    GY_cfg['location']['latitude'] = float(td.latitude.values)
+    GY_cfg['location']['longitude'] = float(td.longitude.values)
+    GY_cfg['location']['depth'] = float(td.depth_0[-1].values)
+    gyaml = open(odir+'/gotm.yaml','w')
+    gyaml.write(yaml.dump(GY_cfg))
+    gyaml.close()

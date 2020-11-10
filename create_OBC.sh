@@ -19,8 +19,10 @@ python 3_extract_OBC.py
 
 . 4_add_gdep.sh
 
+python 5_clean_data.py 
+
 cd bdyfiles
 cp sanh_bdytrc_y1993m01.nc sanh_bdytrc_y1992m12.nc
-cp sanh_bdytrc_y2010m12.nc sanh_bdytrc_y2011m01.nc
+cp sanh_bdytrc_y2015m12.nc sanh_bdytrc_y2016m01.nc
 cd $WDIR
 
