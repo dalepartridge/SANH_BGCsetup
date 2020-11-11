@@ -10,6 +10,12 @@ module load anaconda/python3
 export PBS_O_WORKDIR=$(readlink -f $PBS_O_WORKDIR)
 nn=$(printf "%03d" $PBS_ARRAY_INDEX)
 
+# Check array index is non-zero. If zero, run is a single job not an array, so set
+# nn to the passed in argument
+if [ $nn -eq 000 ]; then
+    nn=$(printf "%03d" $idx)
+fi
+
 # Change to the direcotry that the job was submitted from
 RUNDIR=$PBS_O_WORKDIR/RUN_$nn
 cd $RUNDIR

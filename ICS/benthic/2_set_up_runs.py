@@ -10,13 +10,11 @@ import netCDF4
 #Load indexes for runs
 idx = np.genfromtxt('sample_points.csv', delimiter=',',skip_header=1)
 
-nc = netCDF4.Dataset('domain_cfg.nc')
-h = np.squeeze(nc.variables['bottom_level'][:])
-nc.close()
-
 #Load physics data
 t = coast.NEMO('toce/*.nc','domain_cfg.nc', multiple=True)
 z = coast.NEMO('ssh/*.nc','domain_cfg.nc', multiple=True)
+
+h = coast.NEMO('bathy_meter.nc','domain_cfg.nc')
 
 #Load met data
 met = coast.NEMO('sbc/ERA5_MSDWSWRF*.nc',multiple=True)
@@ -135,9 +133,9 @@ for ix in range(len(idx)):
     GY_cfg['title'] = f'GOTM-ERSEM at lon_idx %i, lat_idx %i' %(i,j)
     GY_cfg['grid']['nlev'] = len(td.z_dim) 
     GY_cfg['location']['name'] = f'Point i=%i,j=%i' %(i,j)
-    GY_cfg['location']['latitude'] = float(td.latitude.values)
-    GY_cfg['location']['longitude'] = float(td.longitude.values)
-    GY_cfg['location']['depth'] = float(td.depth_0[-1].values)
+    GY_cfg['location']['latitude'] = float(td.latitude)
+    GY_cfg['location']['longitude'] = float(td.longitude)
+    GY_cfg['location']['depth'] = float(h.dataset.Bathymetry.isel(y_dim=j,x_dim=i))
     gyaml = open(odir+'/gotm.yaml','w')
     gyaml.write(yaml.dump(GY_cfg))
     gyaml.close()
