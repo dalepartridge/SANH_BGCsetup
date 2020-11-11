@@ -15,6 +15,7 @@ t = coast.NEMO('toce/*.nc','domain_cfg.nc', multiple=True)
 z = coast.NEMO('ssh/*.nc','domain_cfg.nc', multiple=True)
 
 h = coast.NEMO('bathy_meter.nc','domain_cfg.nc')
+h.dataset = h.dataset.assign(coast.NEMO('domain_cfg.nc').dataset)
 
 #Load met data
 met = coast.NEMO('sbc/ERA5_MSDWSWRF*.nc',multiple=True)
@@ -131,7 +132,7 @@ for ix in range(len(idx)):
 
     # Update gotm.yaml
     GY_cfg['title'] = f'GOTM-ERSEM at lon_idx %i, lat_idx %i' %(i,j)
-    GY_cfg['grid']['nlev'] = len(td.z_dim) 
+    GY_cfg['grid']['nlev'] = int(np.max((10,h.dataset.bottom_level.isel(y_dim=j,x_dim=i).values)))
     GY_cfg['location']['name'] = f'Point i=%i,j=%i' %(i,j)
     GY_cfg['location']['latitude'] = float(td.latitude)
     GY_cfg['location']['longitude'] = float(td.longitude)
