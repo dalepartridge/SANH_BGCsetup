@@ -12,6 +12,7 @@ import netCDF4
 import numpy as np
 import datetime as dt
 import xarray
+import sys
 
 ncd = netCDF4.Dataset('domain_cfg.nc')
 SA = ncd.variables['e1t'][:]*ncd.variables['e2t'][:] 
@@ -20,12 +21,13 @@ lat = ncd.variables['nav_lat'][:]
 ncd.close()
 
 # Define year to calculate for / begin loop over years
-syear=1993
-eyear=2010
+syear=sys.argv[1]
+eyear=sys.argv[2]
+
 for year in np.arange(syear,eyear+1): #Loop until end of script
     print('Adding river nutrients for {}'.format(year))
     #################### Load air temperature ##############################
-    nct = xarray.open_dataset('/work/n01/n01/jenjar93/SANH_HINDCAST_CMEMS/SURFACE_FORCING/ERA5_T2M_y{}.nc'.format(year))
+    nct = xarray.open_dataset('surftemp_y{}.nc'.format(year)))
     Tlon = nct['lon']
     Tlat = nct['lat']
     Tavg = nct.resample(time='1MS').mean()
@@ -70,7 +72,7 @@ for year in np.arange(syear,eyear+1): #Loop until end of script
         return K0, K1, K2
 
     #Load pCO2
-    ncp = netCDF4.Dataset('/work/n01/n01/dapa/SANH/INPUTS/SBC/pCO2_y{}.nc'.format(year))
+    ncp = netCDF4.Dataset('pCO2_y{}.nc'.format(year))
     pco2 = np.squeeze(ncp.variables['pCO2a'][:])
     ncp.close()
 

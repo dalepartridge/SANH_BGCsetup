@@ -4,8 +4,6 @@ import pandas as pd
 import glob
 from scipy.interpolate import Rbf
 
-import matplotlib.pyplot as plt
-
 fabm_blist = {
     'Y2':'c', 'Y3':'c', 'Y4':'c', 'H1':'c', 'H2':'c', \
     'K3':'n', 'K4':'n', 'K1':'p', 'K5':'s', 'G2':'o', 'G3':'c', \
@@ -18,7 +16,7 @@ for v in sorted(fabm_blist):
     for c in fabm_blist[v]:
         cols.append('%s_%s' %(v,c))
 
-t_idx = 469
+t_idx = 474
 
 df = pd.DataFrame(columns = cols)
 
@@ -35,26 +33,14 @@ for f in flist:
     df = df.append(pd.Series(dat, index=df.columns),ignore_index=True)
     nc.close()
 
-nc = netCDF4.Dataset('/work/n01/n01/dapa/SANH/BGCsetup/ICS/bgc_ini.nc')
+nc = netCDF4.Dataset('../bgc_ini.nc','a')
 lon = nc.variables['nav_lon'][:]
 lat = nc.variables['nav_lat'][:]
 
-
-ncd = netCDF4.Dataset('/work/n01/n01/dapa/SANH/BGCsetup/ICS/domain_cfg.nc')
-h = ncd.variables['bottom_level'][:]
-h = np.ma.masked_where(h==0,h)
-
 for v in cols[2:]:
-    rbf = Rbf(df['lon'].values,df['lat'].values,df[v].values,function='gaussian')
+    rbf = Rbf(df['lon'].values,df['lat'].values,df[v].values)
     dat = rbf(lon,lat)
     dat[dat<0] = 0
-    dat = np.ma.masked_array(dat,mask=h.mask)
-    plt.figure()
-    plt.pcolormesh(lon,lat,dat)
-    plt.colorbar()
-    plt.title(v+', prior constant value = '+str(nc.variables['fabm_st2Dn'+v][0,50,50]))
-    plt.savefig(v+'.png')
-    plt.close()
-
-
-bd['fabm_st2Dn%s_%s' %(v,c)
+    nc.variables['fabm_st2Dn'+v][:] = dat[np.newaxis,:,:]
+    nc.variables['fabm_st2Db'+v][:] = dat[np.newaxis,:,:]
+nc.close()
