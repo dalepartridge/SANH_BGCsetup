@@ -1,58 +1,28 @@
-import fileinput
-import os
-import re
-import sys
+import xesmf
+import xarray as xr
+import numpy as np
 
-def create_namelists(template_dir,dat):
-    templates = ['1_initcd_source_to_source_var.namelist.template',
-                 '2_source_weights_var.namelist.template',
-                 '3_initcd_source_to_nemo_var.namelist.template']
-    namelists = ['1_initcd_{}_to_{}_{}.namelist'.format(dat['SOURCEID'],dat['SOURCEID'],dat['VAR']),
-                 '2_{}_weights_{}.namelist'.format(dat['SOURCEID'],dat['VAR']),
-                 '3_initcd_{}_to_nemo_{}.namelist'.format(dat['SOURCEID'],dat['VAR'])]
-    for t,n in zip(templates,namelists):
-        with open(template_dir+t) as fin, \
-             open(n,'w') as fout:
-            for l in fin.readlines():
-                a = l 
-                for d in dat:
-                    a = re.sub('__'+d+'__',dat[d],a)
-                fout.write(a)
-            fin.close()
-            fout.close()
-    return
+sfile = ''
+svar = 'n_an'
+s_remap = {}
 
-data = {
-        'SOURCEID':'woa18',
-        'STIMEVAR':'time',
-        'SLONVAR':'lon',
-        'SLATVAR':'lat',
-        'SZVAR':'depth',
-        'TARGETID': 'SANH',
-        'TAG': 'IC',
-        'DOMAIN': 'domain_cfg.nc'
-       }
+dfile = 'mesh_mask.nc'
+d_remap = {'nav_lon':'lon','nav_lat':'lat'}
 
-vars = {'n_an': {'SFILE': 'woa18_nitrate.nc',
-               'VARL': 'Nitrate',
-               'OVAR': 'TRNN3_n',
-               'SCALE': '1.0'
-               },   
-        'i_an': {'SFILE': 'woa18_silicate.nc',
-               'VARL': 'Silicate',
-               'OVAR': 'TRNN5_s',
-               'SCALE': '1.0'
-               },   
-        'p_an': {'SFILE': 'woa18_phosphate.nc',
-               'VARL': 'Phosphate',
-               'OVAR': 'TRNN1_p',
-               'SCALE': '1.0'
-               }}
+ofile = ''
+ovar = 'nitrate'
 
-for i,v in enumerate(vars):
-    create_namelists(sys.argv[1],{'VAR':v, **data, **vars[v]})
-    
-    if i == 0:
-        os.system('sh ./interp_IC_initial.sh {} {} {} {}'.format(v, vars[v]['SFILE'], data['SOURCEID'], data['STIMEVAR']))
-    else:
-        os.system('sh ./interp_IC_additional.sh {} {} {}'.format(v, vars[v]['SFILE'], data['SOURCEID']))
+ds = xr.open_dataset(sfile,decode_times=False).rename(s_remap)
+
+ds_dom = xr.open_dataset(dfile).rename(d_remap)
+ds_dom['mask'] = xr.where(ds_dom.bottom_level.isel(t=0)!=0,1,0)
+
+ds_int = xr.Dataset(coords={'depth':ds.depth,'lon':ds_dom.lon,'lat':ds_dom.lat})
+ds_int[ovar] = (('depth','y','x'),np.zeros((ds.depth.size,ds_dom.y.size,ds_dom.x.size)))
+
+for z in range(ds_int.depth.size):
+    ds['mask'] = xr.where(~np.isnan(ds[svar].isel(time=0,depth=z)),1,0)
+    regridder = xesmf.Regridder(ds.isel(time=0,depth=z),ds_dom.isel(t=0),method='bilinear',extrap_method='nearest_s2d')
+    ds_int[ovar][z,:,:] = regridder(ds[svar].isel(time=0,depth=z)).values
+
+ds_int.to_netcdf(ofile)

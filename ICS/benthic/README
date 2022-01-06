@@ -1,9 +1,0 @@
-This directory contains the files needed to spin up the benthic initial conditions using a series of 1d runs using the General Ocean Turbulence Model (GOTM). 
-
-First we use script 1_sample_domain.py to construct a sample of the domain using k-means sampling, weighted by a combination of the inverse bathymetry and the bottom temperature. Sample size is set to 100, however some points may lie on masked land values and are simply discarded. These points are saved out into the file sample_points.csv
-
-Next the runs are set up using script 2_set_up_runs.py. This script creates a directory for each sample point, and extracts the temperature, salinity, ssh and surface atmospheric values for that point. Note that this can take some time to perform. Additionally a series of nutrient profiles are generated from the pelagic BGC initial conditions, so that the model can be relaxed back to this state annually. The script also updates the fabm.yaml file with the BGC initial conditions, and the core fields needed in the gotmrun.nml. 
-
-The runs are submitted as a job array to run simultaneously. The runs repeat a 10 year cycle 3 times, for a total run time of 30 years. 
-
-Lastly, the output from all the runs is combined together using radial basis functions to interpolate fields to the whole domain. This provides the benthic ICs for the main NEMO-ERSEM run. 
