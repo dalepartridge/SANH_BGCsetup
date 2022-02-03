@@ -73,6 +73,7 @@ def extract_values(BDY,varfile,varname,scaling=1.,bias=0.,fill_mask=False):
         zdim='z'
     elif 'depth' in fvar.variables.keys():
         zvar='depth'
+        zdim='depth'
     else: 
         print ('No recognised depth array in the file')
         zvar=''
@@ -80,7 +81,7 @@ def extract_values(BDY,varfile,varname,scaling=1.,bias=0.,fill_mask=False):
     #extract variable
     # if the length of the time dimension is big (i.e. monthly), then extract data one timstep at time to save memory
     print ('extracting values for '+varname)
-    timelen=len(fvar.dimensions['time_counter'])
+    timelen=len(fvar.dimensions['t'])
     if zvar!='':
         nlev=len(fvar.dimensions[zdim])
         var=zeros((timelen,nlev,BDY['nbj'].size))
@@ -105,10 +106,10 @@ def extract_values(BDY,varfile,varname,scaling=1.,bias=0.,fill_mask=False):
     fvar.close()
     return var,original_depth
     
-def write_bdy(var_to_write,ncname,varname,y0=1960,y1=2099):
+def write_bdy(var_to_write,ncname,varname,y0=1960,y1=2099,climatology=False):
     # this write the BDY in a NEMO netcdf BDY file
-    count=0
-    if var_to_write.shape[0]!=(y1-y0+1)*12:
+    count=-1
+    if climatology == False and var_to_write.shape[0]!=(y1-y0+1)*12:
         print ('time size of the array does not correspondes with the dates provided')
         print ('size: ',var_to_write.shape[0],'dates: %4i-%4i'%(y0,y1))
         return
@@ -117,9 +118,9 @@ def write_bdy(var_to_write,ncname,varname,y0=1960,y1=2099):
         for y in range(y0,y1+1):
             if mod(y,10)==0: print('saving year %3i'%y)
             for m in range(1,13):
+                count = m-1 if climatology else count+1
                 ncfile=DS(ncname+'_y%4im%02i.nc'%(y,m),'a')
                 ncfile.variables[varname][0,:,0,:]=var_to_write[count]
-                count+=1
                 ncfile.close()
     elif len(var_to_write.shape)==2:
         # save 2D variables like barotropic velocities and ssh
@@ -139,7 +140,7 @@ if __name__=='__main__':
         conf_filename='3_extract_OBC.yaml'
     conf_file=open(conf_filename)
     print ('reading configuration from '+conf_filename)
-    Yconfiguration=Y.load(conf_file)
+    Yconfiguration=Y.safe_load(conf_file)
     ystart=Yconfiguration['y0']
     yend=Yconfiguration['y1']
     
@@ -148,7 +149,7 @@ if __name__=='__main__':
     grid=Yconfiguration['grid']
     variables=Yconfiguration['variables']
     
-    infile_dict={'PO4':'PO4', 'O2':'OXY', 'NO3':'NO3', 'Si': 'SIL'}  
+    infile_dict={'PO4':'N1_p', 'O2':'O2_o', 'NO3':'N3_n', 'Si': 'N5_s', 'DIC':'O3_c', 'TA':'O3_TA'}  
     out_dict={'TA': 'TA', 'NH4':'ammonium','NO3':'nitrate','PO4':'phosphate','Si':'silicate','temp':'votemper','sal':'vosaline','O2':'oxygen','DIC':'DIC','bioalk':'bioalk','uo':'vozocrtx','vo':'vomecrty','ssh':'sossheig','small_pon':'small_pon','large_poc':'large_poc','calcite_c':'calcite_c','R3_c':'R3_c','nanophytoplankton_Chl':'nanophytoplankton_Chl','small_pop':'small_pop','R2_c':'R2_c','picophytoplankton_n':'picophytoplankton_n','microphytoplankton_p':'microphytoplankton_p','picophytoplankton_c':'picophytoplankton_c','microphytoplankton_c':'microphytoplankton_c','medium_pos': 'medium_pos','microphytoplankton_n':'microphytoplankton_n','picophytoplankton_p':'picophytoplankton_p','nanophytoplankton_p':'nanophytoplankton_p','large_pop':'large_pop','large_pos':'large_pos','diatoms_p':'diatoms_p','diatoms_s':'diatoms_s','diatoms_n':'diatoms_n','microphytoplankton_Chl':'microphytoplankton_Chl','large_pon':'large_pon','small_poc':'small_poc','nanophytoplankton_n':'nanophytoplankton_n','medium_poc':'medium_poc','medium_pon':'medium_pon','nanophytoplankton_c':'nanophytoplankton_c','picophytoplankton_Chl':'picophytoplankton_Chl','diatoms_c':'diatoms_c','diatoms_Chl':'diatoms_Chl','medium_pop': 'medium_pop'}
     
     #here the information about themetadata are read and sotred tin the BDY dictionnary
@@ -176,9 +177,9 @@ if __name__=='__main__':
             # extract the BGC variable from the reference dataset
             print ('Extracting field from %s'%var_keys['input_file'])
             output_val,input_depth=extract_values(BDY,var_keys['input_file'],infile_dict[varname])
-            
+            climatology = True if 'climatology' in var_keys else False
             #save the boundary in the appropriate files
             outfile=var_keys['output_file']
             outvar=out_dict[varname]
-            write_bdy(output_val,outfile,outvar,y0=ystart,y1=yend)
+            write_bdy(output_val,outfile,outvar,y0=ystart,y1=yend,climatology=climatology)
             continue

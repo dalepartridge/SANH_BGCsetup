@@ -70,7 +70,7 @@ if __name__=='__main__':
         conf_filename='2_create_OBC_file.yaml'
     conf_file=open(conf_filename)
     print ('reading configuration from '+conf_filename)
-    Yconfiguration=Y.load(conf_file)
+    Yconfiguration=Y.safe_load(conf_file)
     ystart=Yconfiguration['ystart']
     yend=Yconfiguration['yend']
     coords_file=Yconfiguration['coords_file']

@@ -13,7 +13,7 @@ _,vars,_ = cdl_parser('nemo_ini_trc.cdl')
 
 dims = {'y': lon.shape[0], 'x': lon.shape[1], 'z':len(z), 't': None}
 
-nco = netCDF4.Dataset('bgc_ini.nc','w')
+nco = netCDF4.Dataset('restart_trc.nc','w')
 for d in dims:
     nco.createDimension(d,dims[d])
 for v in vars:

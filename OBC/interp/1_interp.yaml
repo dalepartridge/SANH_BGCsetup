@@ -1,0 +1,36 @@
+domainfile: domain_cfg.nc
+bdydepthfile: bdy_depths.nc
+outfile: woa_OBCs.nc
+variables:
+   N1_p:
+       input_file: woa18_phosphate_monthly_depth.nc
+       varname: p_an
+       dim_map:
+            z: depth
+            x: lon
+            y: lat
+            t: time
+   N3_n:
+       input_file: woa18_nitrate_monthly_depth.nc
+       varname: n_an
+       dim_map:
+            z: depth
+            x: lon
+            y: lat
+            t: time
+   N5_s:
+       input_file: woa18_silicate_monthly_depth.nc
+       varname: i_an
+       dim_map:
+            z: depth
+            x: lon
+            y: lat
+            t: time
+   O2_o:
+       input_file: woa18_oxygen_monthly_depth.nc
+       varname: o_an
+       dim_map:
+            z: depth
+            x: lon
+            y: lat
+            t: time

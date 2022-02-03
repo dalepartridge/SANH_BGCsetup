@@ -1,0 +1,263 @@
+domainfile: domain_cfg.nc
+outfile: pelagic_ICs.nc
+variables:
+   N1_p:
+       input_file: woa18_phosphate_monthly_depth.nc
+       varname: p_an
+       dim_map:
+            z: depth
+            x: lon
+            y: lat
+            t: time
+   N3_n:
+       input_file: woa18_nitrate_monthly_depth.nc
+       varname: n_an
+       dim_map:
+            z: depth
+            x: lon
+            y: lat
+            t: time
+   N5_s:
+       input_file: woa18_silicate_monthly_depth.nc
+       varname: i_an
+       dim_map:
+            z: depth
+            x: lon
+            y: lat
+            t: time
+   O2_o:
+       input_file: woa18_oxygen_monthly_depth.nc
+       varname: o_an
+       dim_map:
+            z: depth
+            x: lon
+            y: lat
+            t: time
+   O3_TA:
+       input_file: GLODAPv2.2016b.TAlk.reordered.nc
+       varname: TAlk
+       dim_map:
+            z: depth_surface
+            x: lon
+            y: lat
+   O3_c:
+       input_file: GLODAPv2.2016b.TCO2.reordered.nc
+       varname: TCO2
+       dim_map:
+            z: depth_surface
+            x: lon
+            y: lat
+   light_ADY:
+       input_file: adyBroadBandClimatology.8days.filled.nc
+       varname: ady
+       has_depth: False
+       dim_map:
+            x: lon
+            y: lat
+            t: day
+   Chl_Tot:
+       input_file: chlor_a_jan_mean.nc
+       varname: chlor_a
+       has_depth: False
+       dim_map:
+            x: lon
+            y: lat
+            t: time
+   Z4_c:
+       input_file: iMarNet_data.nc
+       varname: TRNZ4c
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   Z5_c:
+       input_file: iMarNet_data.nc
+       varname: TRNZ5c
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   Z5_n:
+       input_file: iMarNet_data.nc
+       varname: TRNZ5n
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   Z5_p:
+       input_file: iMarNet_data.nc
+       varname: TRNZ5p
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   Z6_c:
+       input_file: iMarNet_data.nc
+       varname: TRNZ6c
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   Z6_n:
+       input_file: iMarNet_data.nc
+       varname: TRNZ6n
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   Z6_p:
+       input_file: iMarNet_data.nc
+       varname: TRNZ6p
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   R4_c:
+       input_file: iMarNet_data.nc
+       varname: TRNR4c
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   R4_n:
+       input_file: iMarNet_data.nc
+       varname: TRNR4n
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   R4_p:
+       input_file: iMarNet_data.nc
+       varname: TRNR4p
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   R6_c:
+       input_file: iMarNet_data.nc
+       varname: TRNR6c
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   R6_n:
+       input_file: iMarNet_data.nc
+       varname: TRNR6n
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   R6_p:
+       input_file: iMarNet_data.nc
+       varname: TRNR6p
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   R6_s:
+       input_file: iMarNet_data.nc
+       varname: TRNR6s
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   R8_c:
+       input_file: iMarNet_data.nc
+       varname: TRNR8c
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   R8_n:
+       input_file: iMarNet_data.nc
+       varname: TRNR8n
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   R8_p:
+       input_file: iMarNet_data.nc
+       varname: TRNR8n
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude
+   R8_s:
+       input_file: iMarNet_data.nc
+       varname: TRNR8s
+       dim_map:
+           x: longitude 
+           y: latitude
+           t: time
+           z: depth
+       var_map:
+           lon: longitude
+           lat: latitude

@@ -1,16 +1,10 @@
-module load cdo
+#!/usr/bin/env bash
 
-mkdir cmems/
-cd cmems/
-ln -s $RAWDATA/OBC/cmems*.nc .
-ln -s $RAWDATA/OBC/domain_bdy_depths.nc domain_cfg.nc
-ln -s $RAWDATA/OBC/bdy_depth.nc bdy_gdept.nc
-ln -s $TOOLS/interp-files/interp_OBC*.sh .
-ln -s ../mesh_mask.nc .
-
-python interp_cmems.py $TOOLS/interp-files/namelist-templates/
+cd interp
+ln -s $RAWDATA/global/woa*.nc .
+ln -s $RAWDATA/global/GLODAP*.nc .
+ln -s $DOMAINFILE .
+ln -s $RAWDATA/OBC/bdy_depths.nc .
+python 1_interp_woa.py
+python 2_interp_glodap.py
 cd ..
-
-
-
-

@@ -10,7 +10,7 @@ nc = netCDF4.Dataset('density.nc')
 dens = np.squeeze(nc.variables['rhop'][:])
 nc.close()
 
-outfile = 'bgc_ini.nc'
+outfile = 'restart_trc.nc'
 nco = netCDF4.Dataset(outfile,'a')
 
 ##########################
@@ -21,41 +21,26 @@ print('Compiling pelagic variables into '+outfile)
 
 # Nitrate
 print('Nitrate')
-nci = netCDF4.Dataset('woa18/TRNN3_n_woa18-SANH_IC.nc')
-dat = nci.variables['TRNN3_n'][:]
-dat[dat<0] = 0
+nci = netCDF4.Dataset('pelagic/pelagic_ICs.nc')
+dat = nci.variables['N3_n'][:][np.newaxis,:]
 nco.variables['TRNN3_n'][:] = dat
-nco.sync()
-nci.close()
-_,z,y,x = dat.shape
+
+t,z,y,x = dat.shape
+unit = np.ones((dat.shape))
 
 # Phosphate
 print('Phosphate')
-nci = netCDF4.Dataset('woa18/TRNN1_p_woa18-SANH_IC.nc')
-dat = nci.variables['TRNN1_p'][:]
-dat[dat<0] = 0
-nco.variables['TRNN1_p'][:] = dat
-nco.sync()
-nci.close()
+nco.variables['TRNN1_p'][:] = nci.variables['N1_p'][:][np.newaxis,:]
 
 # Silicate
 print('Silicate')
-nci = netCDF4.Dataset('woa18/TRNN5_s_woa18-SANH_IC.nc')
-dat = nci.variables['TRNN5_s'][:]
-dat[dat<0] = 0
-nco.variables['TRNN5_s'][:] = dat
-nco.sync()
-nci.close()
+nco.variables['TRNN5_s'][:] = nci.variables['N5_s'][:][np.newaxis,:]
 
 # Oxygen
 print('Dissolved Oxygen')
-nci = netCDF4.Dataset('woa18-oxy/TRNO2_o_woa18-SANH_IC.nc')
-dat = nci.variables['TRNO2_o'][:]
-dat[dat<0] = 0
-nco.variables['TRNO2_o'][:] = dat
-nco.sync()
-nci.close()
+nco.variables['TRNO2_o'][:] = nci.variables['O2_o'][:][np.newaxis,:]
 
+nco.sync()
 ################################################
 # Set Alkalinity and Dissolved inorganic carbon
 # Source - GLODAP
@@ -63,40 +48,25 @@ nci.close()
 
 # Total Alkalinity
 print('Total Alkalinity')
-nci = netCDF4.Dataset('glodap/TRNO3_bioalk_glodap-SANH_IC.nc')
-dat = nci.variables['TRNO3_bioalk'][:]
-dat[dat<0] = 0
-nco.variables['TRNO3_bioalk'][:] = dat
-nco.sync()
-nci.close()
+nco.variables['TRNO3_TA'][:] = nci.variables['O3_TA'][:][np.newaxis,:]
 
 print('DIC')
-nci = netCDF4.Dataset('glodap/TRNO3_c_glodap-SANH_IC.nc')
-dat = nci.variables['TRNO3_c'][:]
-dat[dat<0] = 0
-nco.variables['TRNO3_c'][:] = dat
-nco.sync()
-nci.close()
+nco.variables['TRNO3_c'][:] = nci.variables['O3_c'][:][np.newaxis,:]
 
 ##########################
 # Set Light Attenuation
 # Source - PML
 ##########################
 print('ADY') 
-nci = netCDF4.Dataset('ady/TRNlight_ADY_ady-SANH_IC.nc')
-dat = nci.variables['TRNlight_ADY'][0,:]
-dat[dat<0] = 0
+dat = nci.variables['light_ADY'][:]
 nco.variables['TRNlight_ADY'][:] = np.tile(dat,(z,1,1))[np.newaxis,:,:,:]
-nco.sync()
-nci.close()
 
+nco.sync()
 ##########################################################
 # Set homogeneous fields - Ammonium & DOC
 # Source - Yuri Artioli
 ########################################################
 
-dat = nco.variables['TRNN3_n'][:] 
-unit = np.ones((dat.shape))
 
 print('Ammonium')
 nco.variables['TRNN4_n'][:] = 0.25 * nco.variables['TRNN3_n'][:] 
@@ -127,14 +97,10 @@ nco.sync()
 #          Redfield ratio for nitrogen, phosphate, silicate
 ########################################################
 
-
-nci = netCDF4.Dataset('occci/TRNChl_Tot_CCI-OC-SANH_IC.nc')
-dat = nci.variables['TRNChl_Tot'][:]
-dat[dat<0] = 0
+dat = nci.variables['Chl_Tot'][:][np.newaxis,:]
 # Set uniform down to pycnocline, exponentially step down below
 Chl_tot = np.tile(dat,(z,1,1))
 pycno = np.argmax(np.diff(dens,axis=0),axis=0)
-x = nco.dimensions['x'].size
 for i in np.arange(x):
     for j in np.arange(y):
         k = pycno[j,i]
@@ -197,11 +163,7 @@ vars = meso_zoo + micro_zoo + heteroflagellates + \
 
 print('Zooplankton and POM')
 for var in vars:
-    nci = netCDF4.Dataset('imarnet/{}_imarnet-SANH_IC.nc'.format(var))
-    dat = nci.variables[var][:]
-    dat[dat<0] = 0
-    nco.variables[var][:] = dat
-    nci.close()
+    nco.variables[var][:] = nci.variables[var[3:]][:][np.newaxis,:]
 nco.sync()
 
 ##########################################################

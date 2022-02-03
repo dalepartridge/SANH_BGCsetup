@@ -1,4 +1,4 @@
-meshfile: bdy_gdept.nc
+meshfile: bdy_depths.nc
 coordsfile: coordinates.bdy.nc
 y0: 1993
 y1: 2015
@@ -6,23 +6,29 @@ njobs: 8
 grid: T
 variables:
    NO3:
-       input_file: cmems/NO3_cmems-SANH_OBC.nc
+       input_file: interp/woa_OBCs.nc
        output_file: bdyfiles/sanh_bdytrc
+       climatology: True
    PO4:
-       input_file: cmems/PO4_cmems-SANH_OBC.nc 
+       input_file: interp/woa_OBCs.nc
        output_file: bdyfiles/sanh_bdytrc
+       climatology: True
    O2:
-       input_file: cmems/OXY_cmems-SANH_OBC.nc 
+       input_file: interp/woa_OBCs.nc
        output_file: bdyfiles/sanh_bdytrc
+       climatology: True
    Si:
-       input_file: cmems/SIL_cmems-SANH_OBC.nc
+       input_file: interp/woa_OBCs.nc
        output_file: bdyfiles/sanh_bdytrc
+       climatology: True
    DIC:
+       input_file: interp/glodap_OBCs.nc
        output_file: bdyfiles/sanh_bdytrc
-       fixed_value: 2000.
+       climatology: True
    TA: 
+       input_file: interp/glodap_OBCs.nc
        output_file: bdyfiles/sanh_bdytrc
-       fixed_value: 2400.
+       climatology: True
    R2_c:
        output_file: bdyfiles/sanh_bdytrc
        fixed_value: 60.

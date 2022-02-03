@@ -1,5 +1,5 @@
 
 for i in bdyfiles/sanh*nc; do
-  ncks -A bdy_gdept.nc $i
+  ncks -A bdy_depths.nc $i
 done
 

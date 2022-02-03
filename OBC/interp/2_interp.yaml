@@ -1,0 +1,18 @@
+domainfile: domain_cfg.nc
+bdydepthfile: bdy_depths.nc
+outfile: glodap_OBCs.nc
+variables:
+   O3_TA:
+       input_file: GLODAPv2.2016b.TAlk.reordered.nc
+       varname: TAlk
+       dim_map:
+            z: depth_surface
+            x: lon
+            y: lat
+   O3_c:
+       input_file: GLODAPv2.2016b.TCO2.reordered.nc
+       varname: TCO2
+       dim_map:
+            z: depth_surface
+            x: lon
+            y: lat

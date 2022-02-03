@@ -26,6 +26,7 @@ eyear=sys.argv[2]
 
 for year in np.arange(syear,eyear+1): #Loop until end of script
     print('Adding river nutrients for {}'.format(year))
+
     #################### Load air temperature ##############################
     nct = xarray.open_dataset('surftemp_y{}.nc'.format(year)))
     Tlon = nct['lon']
@@ -36,7 +37,15 @@ for year in np.arange(syear,eyear+1): #Loop until end of script
     ncr = netCDF4.Dataset('rivers_y{}.nc'.format(year),'a')
     r = ncr.variables['rorunoff'][:]
 
-    # Create new variables
+    ################### Scale POM/DOM data #############################
+    DOM_scale = 0.25 
+    POM_scale = 0.35
+    for v in ['DON','DOP','DOC']:
+        ncr.variables[v][:] = DOM_scale * ncr.variables[v][:]
+    for v in ['PN','PP','POC']:
+        ncr.variables[v][:] = POM_scale * ncr.variables[v][:]
+
+    ################### Create new variables ###########################
     rdim = ncr.variables['rorunoff'].dimensions
     ncr.createVariable('DIOrunoff','double',rdim)
     ncr.createVariable('DICrunoff','double',rdim)
