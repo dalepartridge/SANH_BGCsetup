@@ -17,21 +17,22 @@ Create the initial conditions using data from:
 ## Lateral Boundary Condtions
 *create_OBC.sh*  
 
-Create OBC conditions using data from CMEMS (Monthly averages of nitrate, phosphate, silicate and oxygen from GLOBAL_REANALYSIS_BIO_001_029), https://resources.marine.copernicus.eu/?option=com_csw&view=details&product_id=GLOBAL_REANALYSIS_BIO_001_029
-
+Lateral boundary conditions are provided using monthly climatological data, with DIC and Total Alkalinity provided by GLODAP, and nutrients (nitrate, phosphate, silicate and oxygen) provided by World Ocean Atlas (WOA). 
+- For WOA data the monthly fields are available down to a maximum depth of 800m, whilst their annual dataset contains data down to depth of 5500m. To achieve both a full depth profile and keep the seasonal variability, the annual fields below 800m have been added to the monthly records before extracting the boundary forcings. 
+- GLODAP data is available as an annual field. To enable seasonal variability we assume that DIC/Alkalinity seasonality is driven by biogeochemical processes only. Therefore approximate seasonal fields can be defined in terms of nitrate anomalies, making use of the the Redfield ratio to convert from nitrogen to carbon for DIC
 
 ## Surface Conditions
 *create_SBC.sh*  
 
-Create surface boundary conditions using data from:  
-- Ocean Color Climate Change Initiative (Filled climatology of the Gelbstoff absorption coefficient), http://www.esa-oceancolour-cci.org  
-- University of Minnesota (Global wet and dry Nitrogen deposition provided for the years 1984-1986, 1994-1996, 2004-2006, and 2014-2016), https://conservancy.umn.edu/handle/11299/197613  
-- CMIP5 (pCO2 data under scenario RCP8.5), https://www.iiasa.ac.at/web-apps/tnt/RcpDb/  
+Create surface boundary conditions using data from:
+- Ocean Color Climate Change Initiative (Filled climatology of the Gelbstoff absorption coefficient), http://www.esa-oceancolour-cci.org
+- Wet and Dry Nitrogen deposition https://data.isimip.org/
+- CMIP5 (pCO2 data under scenario RCP8.5), https://www.iiasa.ac.at/web-apps/tnt/RcpDb/
 
 ## Rivers
 *create_RIV.sh*  
 
-River nitrate, phosphate and silicate provided through GLOBALNEWS with the physical river values.This script adds the additional fields for Oxygen, DIC and TAlk based on:  
+River nitrate, phosphate and silicate provided through GLOBALNEWS with the physical river values, along with fields for DOM and POM. DOM take up is estimated to be 25%, and POM is around 35%. This script also adds the additional fields for Oxygen, DIC and TAlk based on:  
 - Oxygen values are calculate at saturation using surface air temperature and the formula provided here https://www.waterontheweb.org/under/waterquality/oxygen.html  
 - TAlk assumed to be a constant value of 1500 mmol/m3, based upon GEMS/GLORI project
 - DIC calculated from carbonate equilibruum equation found in the ERSEM carbonate module (ICALC=4) using surface air temperature, pCO2, TAlk above and salinity at zero.  
