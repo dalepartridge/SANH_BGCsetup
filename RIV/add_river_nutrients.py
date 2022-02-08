@@ -20,15 +20,17 @@ lon = ncd.variables['nav_lon'][:]
 lat = ncd.variables['nav_lat'][:]
 ncd.close()
 
+SDIR='/work/n01/n01/jrule/SANH/RUN_FILES_STORE/SANH/SURFACE_FORCING/ERA5_T2M_y'
+
 # Define year to calculate for / begin loop over years
-syear=sys.argv[1]
-eyear=sys.argv[2]
+syear=1993
+eyear=2015
 
 for year in np.arange(syear,eyear+1): #Loop until end of script
     print('Adding river nutrients for {}'.format(year))
 
     #################### Load air temperature ##############################
-    nct = xarray.open_dataset('surftemp_y{}.nc'.format(year)))
+    nct = xarray.open_dataset(SDIR+str(year)+'.nc')
     Tlon = nct['lon']
     Tlat = nct['lat']
     Tavg = nct.resample(time='1MS').mean()
@@ -36,14 +38,6 @@ for year in np.arange(syear,eyear+1): #Loop until end of script
     #################### Load river runoff #############################
     ncr = netCDF4.Dataset('rivers_y{}.nc'.format(year),'a')
     r = ncr.variables['rorunoff'][:]
-
-    ################### Scale POM/DOM data #############################
-    DOM_scale = 0.25 
-    POM_scale = 0.35
-    for v in ['DON','DOP','DOC']:
-        ncr.variables[v][:] = DOM_scale * ncr.variables[v][:]
-    for v in ['PN','PP','POC']:
-        ncr.variables[v][:] = POM_scale * ncr.variables[v][:]
 
     ################### Create new variables ###########################
     rdim = ncr.variables['rorunoff'].dimensions

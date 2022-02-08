@@ -9,14 +9,7 @@ for f in /work/n01/n01/jenjar93/SANH_HINDCAST_CMEMS/SURFACE_FORCING/ERA5_T2M_y*.
   ln -s $f surftemp_${f: -8}; 
 done
 
-conda create -n xarr python=3.6
-source activate xarr
-pip install xarray netcdf4
-
 python add_river_nutrients.py $SYEAR $EYEAR
-
-source deactivate
-conda remove -n xarr --all
 
 ln -s rivers*nc $INPUTS/RIVERS/
 
