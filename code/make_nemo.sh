@@ -13,15 +13,26 @@ cd $NEMO_DIR
 cp $CODE_DIR/extra-files/nemo/Config_cray.pm $NEMO_DIR/ext/FCM/lib/Fcm/Config.pm
 
 # AMM7 FABM
-CFG=$CONFIG
+CFG=SANH_FABM
 ARCH=X86_ARCHER2-Cray_FABM
 REF=AMM7_FABM
 printf 'y\nn\nn\ny\nn\nn\nn\nn\n' |./makenemo -n $CFG -r $REF -m $ARCH -j 0
 
-cp $CODE_DIR/extra-files/nemo/cpp_SANH_FABM.fcm $NEMO_DIR/cfgs/$CONFIG/cpp_$CONFIG.fcm
-cp -r $CODE_DIR/extra-files/nemo/MY_SRC/ $NEMO_DIR/cfgs/$CONFIG/
+cp $CODE_DIR/extra-files/nemo/cpp_SANH_FABM.fcm $NEMO_DIR/cfgs/$CFG/cpp_$CFG.fcm
+cp -r $CODE_DIR/extra-files/nemo/MY_SRC/ $NEMO_DIR/cfgs/$CFG/
 
 ./makenemo -n $CFG -r $REF -m $ARCH -j 4 clean
 ./makenemo -n $CFG -r $REF -m $ARCH -j 4 
+
+
+############## DEBUG #######################
+CFG=SANH_FABM_DEBUG
+ARCH=X86_ARCHER2-Cray_FABM_DEBUG
+export FABM_HOME=$CODE_DIR/fabm-debug
+cp $CODE_DIR/extra-files/nemo/cpp_SANH_FABM.fcm $NEMO_DIR/cfgs/$CFG/cpp_$CFG.fcm
+cp -r $CODE_DIR/extra-files/nemo/MY_SRC/ $NEMO_DIR/cfgs/$CFG/
+./makenemo -n $CFG -r $REF -m $ARCH -j 4 clean
+./makenemo -n $CFG -r $REF -m $ARCH -j 4 
+
 
 cd $WORK

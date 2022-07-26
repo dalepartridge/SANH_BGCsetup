@@ -44,6 +44,14 @@ instances:
       s0: 0.0003                                           # background silicon concentration (mmol Si/m^3), default = 0.0
     initialization:
       s: 4.5                                               # silicate (mmol Si/m^3)
+  N6:
+    long_name: reduction equivalent
+    model: ersem/pelagic_base
+    parameters:
+      composition: h
+      c0: 0.000                                           # background reduction equivalent concentration (mmol S/m^3), default = 0.0
+    initialization:
+      h: 1.e-08
   O2:
     long_name: oxygen
     model: ersem/oxygen
@@ -227,6 +235,16 @@ instances:
       rR2: 0.0075                                          # fraction of semi-labile DOC available to bacteria (-)
       rR3: 0.0025                                          # fraction of semi-refractory DOC available to bacteria (-)
       frR3: 0.3                                            # fraction of activity respiration converted to semi-refractory DOC (-)
+      Denix: 0                                          # potential denitrification rate (1/d)
+      reox: 0                                           # specific reoxidation rate of reduction equivalents (d-1)
+      omroX: 0                                           # stoichiometric coefficiena for reduction equivalentst [mmol HS mmol O2-1]
+      omonX: 0                                          # stochiometric coefficient for denitrification reaction [mmol O2 mmol N-1]
+      chN3o: 0                                        # Michaelis-Menten constant for cubic oxygen dependence of nitrification ((mmol O_2/m^3)^3)
+      Denix: 0.35                                          # potential denitrification rate (1/d)
+      reox: 0.05                                           # specific reoxidation rate of reduction equivalents (d-1)
+      omroX: 0.5                                           # stoichiometric coefficiena for reduction equivalentst [mmol HS mmol O2-1]
+      omonX: 1.25                                          # stochiometric coefficient for denitrification reaction [mmol O2 mmol N-1]
+      chN3o: 2700.0                                        # Michaelis-Menten constant for cubic oxygen dependence of nitrification ((mmol O_2/m^3)^3)
     initialization:
       c: 15.7                                              # carbon (mg C/m^3)
       n: 0.26                                              # nitrogen (mmol N/m^3)
@@ -244,6 +262,8 @@ instances:
       R3c: R3/c                                            # semi-refractory DOC (mg C/m^3)
       O3c: O3/c                                            # carbon dioxide (mmol C/m^3)
       O2o: O2/o                                            # oxygen (mmol O_2/m^3)
+      N6:  N6/h                                            # reduction equivalent (mmol S/m^3)
+      N3n: N3/n                                            # nitrate (mmol N /m^3)
   pel_nit:
     long_name: pelagic nitrification
     model: ersem/nitrification
@@ -354,7 +374,7 @@ instances:
       iopABS: 0.0041                                       # specific shortwave absorption (m^2/mg Chl), default = 0.008
       iopBBS: 0.003                                        # specific shortwave backscatter (m^2/mg Chl), default = 0.003
       c0: 0.001                                            # background carbon concentration (mg C/m^3), default = 0.0
-      calcify: false                                        # calcify, default = false
+      calcify: true                                        # calcify, default = false
       resm: 0.0                                            # maximum nutrient-limitation-induced sinking velocity (m/d), default = 0.0
       esni: 0.7                                            # level of nutrient limitation below which sinking commences (-)
       cenh: false                                          # enable atmospheric CO2 influence on photosynthesis, default = false
@@ -384,6 +404,8 @@ instances:
       R2c: R2/c                                            # semi-labile dissolved organic carbon (mg C/m^3)
       O2o: O2/o                                            # oxygen (mmol O_2/m^3)
       O3c: O3/c                                            # carbon dioxide (mmol C/m^3)
+      RainR: L2/RainR                                                           # rain ratio (PIC : POC) (-)
+      L2c: L2/c      
   P3:
     long_name: picophytoplankton
     model: ersem/primary_producer
@@ -563,6 +585,7 @@ instances:
       R2c: R2/c                                            # semi-labile dissolved organic carbon (mg C/m^3)
       O2o: O2/o                                            # oxygen source (mmol O_2/m^3)
       O3c: O3/c                                            # carbon dioxide sink (mmol C/m^3)
+      L2c: L2/c                                                                 # calcite (mg C/m^3)
   Z5:
     long_name: microzooplankton
     model: ersem/microzooplankton
@@ -617,6 +640,7 @@ instances:
       R2c: R2/c                                            # semi-labile dissolved organic carbon (mg C/m^3)
       O2o: O2/o                                            # oxygen source (mmol O_2/m^3)
       O3c: O3/c                                            # carbon dioxide sink (mmol C/m^3)
+      L2c: L2/c                                                                 # calcite (mg C/m^3)
   Z6:
     long_name: nanoflagellates
     model: ersem/microzooplankton
@@ -666,6 +690,36 @@ instances:
       RPs: R6/s                                            # particulate organic silicate (mmol Si/m^3)
       O2o: O2/o                                            # oxygen source (mmol O_2/m^3)
       O3c: O3/c                                            # carbon dioxide sink (mmol C/m^3)
+      L2c: L2/c                                                                 # calcite (mg C/m^3)
+  L2:
+    long_name: calcite
+    model: ersem/calcification
+    parameters:
+      iswcal: 1                                                                 # calcification/dissolution dependence on calcite saturation (1: power law, 2: hyperbolic)
+      ncalc: 0.81                                                               # power of the calcification law (Ridgwell et al. 2007, mineral calcite) (-)
+      ndiss: 2.22                                                               # power of the dissolution law (Keir 1980) (-)
+      Rain0: 0.6                                                                # maximum rain ratio from PISCES (-)
+      sedL2: 10.0                                                               # sinking velocity (m/d)
+      sL2O3: 0.03                                                               # maximum specific dissolution rate (1/d), default = 1.0
+      c0: 1e-05                                                                 # background concentration (mg C/m^3), default = 0.0
+      ndeposition: 1                                                            # number of target pools for sedimentation, default = 1
+    initialization:
+      c: 0.05                                                                   # carbon (mg C/m^3)
+    coupling:
+      deposition_target1: bL2
+      om_cal: O3/Om_cal                                                         # calcite saturation (-)
+      O3c: O3/c                                                                 # total dissolved inorganic carbon (mmol C/m^3)
+  bL2:
+    long_name: benthic calcite
+    model: ersem/benthic_base
+    parameters:
+      composition: c                                                            # elemental composition
+      remin: 0.05                                                               # remineralisation rate at 10 degrees Celsius (1/d), default = 0.0
+      c0: 1e-05                                                                 # background carbon concentration (mg C/m^2), default = 0.0
+    initialization:
+      c: 0.05                                                                   # carbon (mg C/m^2)
+    coupling:
+      O3c: O3/c  
   ben_col:
     long_name: benthic column
     model: ersem/benthic_column
@@ -922,7 +976,7 @@ instances:
     parameters:
       qnc: 0.0119                                          # nitrogen to carbon ratio (mmol N/mg C)
       qpc: 0.000792                                        # phosphorus to carbon ratio (mmol P/mg C)
-      c0: 0.001                                            # background carbon concentration (mg C/m^2)
+      c0: 0.1 #0.001                                            # background carbon concentration (mg C/m^2)
       q10: 2.0                                             # Q_10 temperature coefficient (-)
       rlO2: 0.0                                            # minimum pelagic oxygen concentration (mmol O2/m^3)
       hO2: 0.0                                             # Michaelis-Menten constant for oxygen limitation (mmol O2/m^3)
@@ -1004,7 +1058,7 @@ instances:
     parameters:
       qnc: 0.0119                                          # nitrogen to carbon ratio (mmol N/mg C)
       qpc: 0.000792                                        # phosphorus to carbon ratio (mmol P/mg C)
-      c0: 0.001                                            # background carbon concentration (mg C/m^2)
+      c0: 0.1 #0.001                                            # background carbon concentration (mg C/m^2)
       q10: 2.0                                             # Q_10 temperature coefficient (-)
       rlO2: 0.0                                            # minimum pelagic oxygen concentration (mmol O2/m^3)
       hO2: 0.0                                             # Michaelis-Menten constant for oxygen limitation (mmol O2/m^3)
@@ -1074,7 +1128,7 @@ instances:
     parameters:
       qnc: 0.0119                                          # nitrogen to carbon ratio (mmol N/mg C)
       qpc: 0.000792                                        # phosphorus to carbon ratio (mmol P/mg C)
-      c0: 0.001                                            # background carbon concentration (mg C/m^2)
+      c0: 0.1 #0.001                                            # background carbon concentration (mg C/m^2)
       q10: 2.0                                             # Q_10 temperature coefficient (-)
       rlO2: 0.0                                            # minimum pelagic oxygen concentration (mmol O2/m^3)
       hO2: 0.0                                             # Michaelis-Menten constant for oxygen limitation (mmol O2/m^3)
@@ -1531,6 +1585,16 @@ instances:
     coupling:
       term1: Z5/fZINIp
       term2: Z6/fZINIp
+  gross_calcification_rate:
+    long_name: gross calcification rate
+    model: weighted_sum
+    parameters:
+      n: 4
+    coupling:
+      term1: P2/calcification
+      term2: Z4/calcification
+      term3: Z5/calcification
+      term4: Z6/calcification
   ben_PON:
     long_name: benthic particulate organic nitrogen
     model: horizontal_weighted_sum

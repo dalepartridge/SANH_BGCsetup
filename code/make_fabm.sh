@@ -18,4 +18,12 @@ make install -j4
 
 cd $WORK
 
+######################################################3
+FABM_DEBUG_INSTALL=$CODE_DIR/fabm-debug
 
+mkdir $FABM_DEBUG_INSTALL
+cd $FABM_DEBUG_INSTALL
+cmake $FABM_DIR/src -DFABM_HOST=nemo -DFABM_ERSEM_BASE=$ERSEM_DIR -DFABM_EMBED_VERSION=ON -DCMAKE_INSTALL_PREFIX=$FABM_DEBUG_INSTALL -DCMAKE_Fortran_COMPILER=ftn -DCMAKE_BUILD_TYPE=debug
+make
+make install -j4
+cd $WORK

@@ -22,7 +22,7 @@ print('Compiling pelagic variables into '+outfile)
 # Nitrate
 print('Nitrate')
 nci = netCDF4.Dataset('pelagic/pelagic_ICs.nc')
-dat = nci.variables['N3_n'][:][np.newaxis,:]
+dat = np.ma.filled(nci.variables['N3_n'][:][np.newaxis,:],fill_value=0)
 nco.variables['TRNN3_n'][:] = dat
 
 t,z,y,x = dat.shape
@@ -30,15 +30,15 @@ unit = np.ones((dat.shape))
 
 # Phosphate
 print('Phosphate')
-nco.variables['TRNN1_p'][:] = nci.variables['N1_p'][:][np.newaxis,:]
+nco.variables['TRNN1_p'][:] = np.ma.filled(nci.variables['N1_p'][:][np.newaxis,:],fill_value=0)
 
 # Silicate
 print('Silicate')
-nco.variables['TRNN5_s'][:] = nci.variables['N5_s'][:][np.newaxis,:]
+nco.variables['TRNN5_s'][:] = np.ma.filled(nci.variables['N5_s'][:][np.newaxis,:],fill_value=0)
 
 # Oxygen
 print('Dissolved Oxygen')
-nco.variables['TRNO2_o'][:] = nci.variables['O2_o'][:][np.newaxis,:]
+nco.variables['TRNO2_o'][:] = np.ma.filled(nci.variables['O2_o'][:][np.newaxis,:],fill_value=0)
 
 nco.sync()
 ################################################
@@ -48,10 +48,10 @@ nco.sync()
 
 # Total Alkalinity
 print('Total Alkalinity')
-nco.variables['TRNO3_TA'][:] = nci.variables['O3_TA'][:][np.newaxis,:]
+nco.variables['TRNO3_TA'][:] = np.ma.filled(nci.variables['O3_TA'][:][np.newaxis,:],fill_value=0)
 
 print('DIC')
-nco.variables['TRNO3_c'][:] = nci.variables['O3_c'][:][np.newaxis,:]
+nco.variables['TRNO3_c'][:] = np.ma.filled(nci.variables['O3_c'][:][np.newaxis,:],fill_value=0)
 
 ##########################
 # Set Light Attenuation
@@ -59,7 +59,7 @@ nco.variables['TRNO3_c'][:] = nci.variables['O3_c'][:][np.newaxis,:]
 ##########################
 print('ADY') 
 dat = nci.variables['light_ADY'][:]
-nco.variables['TRNlight_ADY'][:] = np.tile(dat,(z,1,1))[np.newaxis,:,:,:]
+nco.variables['TRNlight_ADY'][:] = np.ma.filled(np.tile(dat,(z,1,1))[np.newaxis,:,:,:],fill_value=0)
 
 nco.sync()
 ##########################################################
@@ -69,7 +69,7 @@ nco.sync()
 
 
 print('Ammonium')
-nco.variables['TRNN4_n'][:] = 0.25 * nco.variables['TRNN3_n'][:] 
+nco.variables['TRNN4_n'][:] = 0.25 * np.ma.filled(nco.variables['TRNN3_n'][:],fill_value=0) 
 
 print('Dissolved Organic Carbon')
 nco.variables['TRNR1_c'][:] = 12 * unit
@@ -107,7 +107,7 @@ for i in np.arange(x):
         p1 = Chl_tot[k,j,i]
         p2 = 0.0001
         Chl_tot[pycno[j,i]:,j,i] = p1*np.exp((np.log(p2/p1)/(z-k))*np.arange(1,z-k+1)) 
-Chl_tot = Chl_tot[np.newaxis,:,:,:]
+Chl_tot = np.ma.filled(Chl_tot[np.newaxis,:,:,:],fill_value=0)
 
 # Split Chl using Brewin2010 Eq13-16, parameterised using Brewin2012 Table 1
 Chl_pn = 0.937*(1-np.exp(-1.033*Chl_tot))
@@ -163,7 +163,7 @@ vars = meso_zoo + micro_zoo + heteroflagellates + \
 
 print('Zooplankton and POM')
 for var in vars:
-    nco.variables[var][:] = nci.variables[var[3:]][:][np.newaxis,:]
+    nco.variables[var][:] = np.ma.filled(nci.variables[var[3:]][:][np.newaxis,:],fill_value=0)
 nco.sync()
 
 ##########################################################

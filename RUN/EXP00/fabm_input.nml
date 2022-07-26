@@ -2,19 +2,19 @@
 !              !              !  (if <0  months)  !   name    !   (logical)  !  (T/F) ! 'monthly' ! filename ! pairing  ! filename      !
 &variable
    name='mole_fraction_of_carbon_dioxide_in_air'
-   sn=         '/work/n01/n01/dapa/SANH/INPUTS/SBC/pCO2_y1993.nc',-12,            'pCO2a', .true.,  .true.,   'yearly',     '',         '',        ''
+   sn=         'fluxes/SANH_pCO2.nc',-12,            'pCO2a', .true.,  .true.,   'yearly',     '',         '',        ''
 /
 &variable
    name='gelbstoff_absorption_satellite'
-   sn=         '/work/n01/n01/dapa/SANH/INPUTS/SBC/ady.nc',192,'gelbstoff_absorption_satellite', .true.,  .true.,   'yearly',     '',         '',        ''
+   sn=         'fluxes/SANH_ady.nc',192,'ady', .true.,  .true.,   'yearly',     '',         '',        ''
 /
 &variable
    name='N3_flux/flux'
-   sn=         '/work/n01/n01/dapa/SANH/INPUTS/SBC/Ndep.nc',-12,'N3_flux', .false.,  .true.,   'yearly',     '',         '',        ''
+   sn=         'fluxes/SANH_Ndep.nc',-12,'N3_flux', .false.,  .true.,   'yearly',     '',         '',        ''
 /
 &variable
    name='N4_flux/flux'
-   sn=         '/work/n01/n01/dapa/SANH/INPUTS/SBC/Ndep.nc',-12,'N4_flux', .false.,  .true.,   'yearly',     '',         '',        ''
+   sn=         'fluxes/SANH_Ndep.nc',-12,'N4_flux', .false.,  .true.,   'yearly',     '',         '',        ''
 /
 &riverdata
    name='N3_n'

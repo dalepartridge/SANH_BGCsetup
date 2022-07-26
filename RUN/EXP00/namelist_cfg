@@ -34,19 +34,19 @@
 &namrun        !   parameters of the run
 !-----------------------------------------------------------------------
    nn_no       =       0   !  Assimilation cycle index
-   cn_exp      =  "test_sanh"
-   nn_it000    =  2016001 !241 !2016001 ! 16993 !  8641 ! 1   !  first time step
-   nn_itend    =  2023200 !1year=87600! 1day =240 !  last  time step 
-   nn_date0    =  20160101   !  date at nit_0000 (format yyyymmdd) used if ln_rstart=F or (ln_rstart=T and nn_rstctl=0 or 1)
+   cn_exp      =  "SANH"
+   nn_it000    =  1 !241 !2016001 ! 16993 !  8641 ! 1   !  first time step
+   nn_itend    =  7680 !1year=87600! 1day =240 !  last  time step 
+   nn_date0    =  19930101   !  date at nit_0000 (format yyyymmdd) used if ln_rstart=F or (ln_rstart=T and nn_rstctl=0 or 1)
    nn_time0    =       0   !  initial time of day in hhmm
    nn_leapy    =       1   !  Leap year calendar (1) or not (0)
-   ln_rstart   = .true.   !  start from rest (F) or from a restart file (T)
+   ln_rstart   = .false.   !  start from rest (F) or from a restart file (T)
       nn_euler    =    0      !  = 0 : start with forward time step if ln_rstart=T
       nn_rstctl   =    2      !  restart control ==> activated only if ln_rstart=T
       !                          !    = 0 nn_date0 read in namelist ; nn_it000 : read in namelist
       !                          !    = 1 nn_date0 read in namelist ; nn_it000 : check consistancy between namelist and restart
       !                          !    = 2 nn_date0 read in restart  ; nn_it000 : check consistancy between namelist and restart
-      cn_ocerst_in    = "SANH_02016000_new_restart" ! "test_sanh_00000240_restart" !"SANH_02016000_restart"   !  suffix of ocean restart name (input)
+      cn_ocerst_in    = "restart" !    !  suffix of ocean restart name (input)
       cn_ocerst_indir = "./restarts"  !"/work/n01/n01/jrule/SANH/RUN_DIRECTORY"         !  directory from which to read input ocean restarts
       cn_ocerst_out   = "restart"   !  suffix of ocean restart name (output)
       cn_ocerst_outdir = "./restarts"        !  directory in which to write output ocean restarts
@@ -64,8 +64,8 @@
    ln_cfmeta   = .false.   !  output additional data to netCDF files required for compliance with the CF metadata standard
    ln_clobber  = .true.    !  clobber (overwrite) an existing file
    nn_chunksz  =       0   !  chunksize (bytes) for NetCDF file (works only with iom_nf90 routines)
-   ln_xios_read = .TRUE.  !  use XIOS to read restart file (only for a single file restart)
-   nn_wxios = 1      !  use XIOS to write restart file 0 - no, 1 - single file output, 2 - multiple file output
+   ln_xios_read = .FALSE.  !  use XIOS to read restart file (only for a single file restart)
+   nn_wxios = 0      !  use XIOS to write restart file 0 - no, 1 - single file output, 2 - multiple file output
 /
 !-----------------------------------------------------------------------
 &namdom        !   time and space domain
@@ -85,7 +85,7 @@
 !-----------------------------------------------------------------------
    ln_read_cfg = .true.   !  (=T) read the domain configuration file
       !                    !  (=F) user defined configuration           (F => create/check namusr_def)
-      cn_domcfg = "/work/n01/n01/jrule/SANH/RUN_DIRECTORY/domain_cfg.nc" !"domain_cfg"  ! domain configuration filename
+      cn_domcfg = "domain_cfg.nc" !"domain_cfg"  ! domain configuration filename
       !
       ln_closea    = .false.    !  T => keep closed seas (defined by closea_mask field) in the  
       !                         !       domain and apply special treatment of freshwater fluxes.
@@ -131,11 +131,11 @@
 &namtsd        !    Temperature & Salinity Data  (init/dmp)             (default: OFF)
 !-----------------------------------------------------------------------
    !                       ! =T  read T-S fields for:
-   ln_tsd_init   = .false.         !  ocean initialisation
+   ln_tsd_init   = .true.         !  ocean initialisation
    ln_tsd_interp = .true.          !  Interpolation of T & S in the verticalinput data (T) or not (F)
    ln_tsd_dmp    = .false.         !  T-S restoring   (see namtra_dmp)
    
-   cn_dir      = '/work/n01/n01/jrule/SANH/INITIAL_CONDITIONS/'      !  root directory for the T-S data location
+   cn_dir      = './'      !  root directory for the T-S data location
    !___________!_________________________!___________________!___________!_____________!________!___________!__________________!__________!_______________!
    !           !  file name              ! frequency (hours) ! variable  ! time interp.!  clim  ! 'yearly'/ ! weights filename ! rotation ! land/sea mask !
    !           !                         !  (if <0  months)  !   name    !   (logical) !  (T/F) ! 'monthly' !                  ! pairing  !    filename   !
@@ -234,7 +234,7 @@
       rn_vfac     = 0.        !  multiplicative factor for ocean & ice velocity used to
       !                       !  calculate the wind stress (0.=absolute or 1.=relative winds)
 
-   cn_dir      = '/work/n01/n01/jrule/SANH/SURFACE_FORCING/'      !  root directory for the bulk data location
+   cn_dir      = 'fluxes/'      !  root directory for the bulk data location
    !___________!_________________________!___________________!___________!_____________!________!___________!______________________________________!__________!_______________!
    !           !  file name              ! frequency (hours) ! variable  ! time interp.!  clim  ! 'yearly'/ !       weights filename               ! rotation ! land/sea mask !
    !           !                         !  (if <0  months)  !   name    !   (logical) !  (T/F) ! 'monthly' !                                      ! pairing  !    filename   !
@@ -386,11 +386,11 @@
       rn_dep_max  = 50. !10.      !  depth over which runoffs is spread ( ln_rnf_depth_ini = .true )
       nn_rnf_depth_file = 0   !  create (=1) a runoff depth file or not (=0)
 
-   cn_dir      = '/work/n01/n01/jrule/SANH/RIVERS/'      !  root directory for the runoff data location
+   cn_dir      = './'      !  root directory for the runoff data location
    !___________!_________________________!___________________!___________!_____________!________!___________!__________________!__________!_______________!
    !           !  file name              ! frequency (hours) ! variable  ! time interp.!  clim  ! 'yearly'/ ! weights filename ! rotation ! land/sea mask !
    !           !                         !  (if <0  months)  !   name    !   (logical) !  (T/F) ! 'monthly' !                  ! pairing  !    filename   !
-   sn_rnf      = 'rivers'   ,        -1        , 'rorunoff',   .false.    , .false. , 'yearly'  , ''               , ''       , ''
+   sn_rnf      = 'river'   ,        -1        , 'rorunoff',   .false.    , .false. , 'yearly'  , ''               , ''       , ''
    sn_cnf      = ''   ,         0.        , 'socoefr0',   .false.   , .true. , 'yearly'  , ''               , ''       , ''
    sn_s_rnf    = ''               ,        0.        , 'rosaline',   .true.    , .true. , 'yearly'  , ''               , ''       , ''
    sn_t_rnf    = ''               ,       0.        , 'rotemper',   .true.    , .true. , 'yearly'  , ''               , ''       , ''
@@ -407,7 +407,7 @@
    !___________!_________________________!___________________!___________!_____________!________!___________!__________________!__________!_______________!
    !           !  file name              ! frequency (hours) ! variable  ! time interp.!  clim  ! 'yearly'/ ! weights filename ! rotation ! land/sea mask !
    !           !                         !  (if <0  months)  !   name    !   (logical) !  (T/F) ! 'monthly' !                  ! pairing  !    filename   !
-   sn_apr      = 'ERA5_MSL'              ,          -1        ,    'MSL'  ,    .true.   , .false., 'yearly'  ,'weights_era5_amm7_bicubic.nc','','ERA5_LSM'
+   sn_apr      = 'ERA5_MSL'              ,          -1        ,    'MSL'  ,    .true.   , .false., 'yearly'  ,'weights_era5_SANH_bicubic.nc','','ERA5_LSM'
 /
 
 /
@@ -487,7 +487,7 @@
     nb_bdy         =  1       !  number of open boundary sets
     !
     ln_coords_file = .true.                                 !  =T : read bdy coordinates from file
-    cn_coords_file = '/work/n01/n01/jrule/SANH/RUN_DIRECTORY/coordinates.bdy.nc' !  bdy coordinates files
+    cn_coords_file = 'coordinates.bdy.nc' !  bdy coordinates files
     ln_mask_file   = .false.                !  =T : read mask from file
     cn_mask_file   = ''                      !  name of mask file (if ln_mask_file=.TRUE.)
     cn_dyn2d       =  'flather'    !
@@ -537,7 +537,7 @@
    !                          !  automatically defined to T if the number of vertical levels in bdy dta /= jpk
    ln_full_vel = .true.       !  T if [uv]3d are "full" velocities and not only its baroclinic components
    !
-   cn_dir  =    '/work/n01/n01/jrule/SANH/BOUNDARY_FORCING/2016/'
+   cn_dir  =    'bdyfiles/'
    !___________!_________________________!___________________!___________!_____________!________!___________!__________________!__________!_______________!
    !           !  file name              ! frequency (hours) ! variable  ! time interp.!  clim  ! 'yearly'/ ! weights filename ! rotation ! land/sea mask !
    !           !                         !  (if <0  months)  !   name    !   (logical) !  (T/F) ! 'monthly' !                  ! pairing  !    filename   !
@@ -552,7 +552,7 @@
 !-----------------------------------------------------------------------
 &nambdy_tide   !  tidal forcing at open boundaries
 !-----------------------------------------------------------------------
-   filtide      = '../TIDES/SANH_CMEMS_bdytide_rotT_'      !  file name root of tidal forcing files
+   filtide      = 'tides/SANH_CMEMS_bdytide_rotT_'      !  file name root of tidal forcing files
 /
 !!======================================================================
 !!                ***  Top/Bottom boundary condition  ***             !!
@@ -809,8 +809,8 @@
    ln_listonly =  .false.  !  do nothing else than listing the best domain decompositions (with land domains suppression)
    !                       !  if T: the largest number of cores tested is defined by max(mppsize, jpni*jpnj)
    ln_nnogather =  .true.  !  activate code to avoid mpi_allgather use at the northfold
-   jpni        = 24      !  jpni   number of processors following i (set automatically if < 1)
-   jpnj        = 13      !  jpnj   number of processors following j (set automatically if < 1)
+   jpni        = -1      !  jpni   number of processors following i (set automatically if < 1)
+   jpnj        = -1      !  jpnj   number of processors following j (set automatically if < 1)
 /
 !-----------------------------------------------------------------------
 &namctl        !   Control prints                                       (default: OFF)
