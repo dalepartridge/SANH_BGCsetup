@@ -2,23 +2,28 @@
 !              !              !  (if <0  months)  !   name    !   (logical)  !  (T/F) ! 'monthly' ! filename ! pairing  ! filename      !
 &variable
    name='mole_fraction_of_carbon_dioxide_in_air'
-   sn=         'fluxes/SANH_pCO2.nc',-12,            'pCO2a', .true.,  .true.,   'yearly',     '',         '',        ''
+   sn=         'fluxes/pCO2.nc',-12,            'pCO2a', .true.,  .true.,   'yearly',     '',         '',        ''
 /
 &variable
    name='gelbstoff_absorption_satellite'
-   sn=         'fluxes/SANH_ady.nc',192,'ady', .true.,  .true.,   'yearly',     '',         '',        ''
+   sn=         'fluxes/ady.nc',192,'ady', .true.,  .true.,   'yearly',     '',         '',        ''
 /
 &variable
    name='N3_flux/flux'
-   sn=         'fluxes/SANH_Ndep.nc',-12,'N3_flux', .false.,  .true.,   'yearly',     '',         '',        ''
+   sn=         'fluxes/Ndep.nc',-12,'N3_flux', .false.,  .true.,   'yearly',     '',         '',        ''
 /
 &variable
    name='N4_flux/flux'
-   sn=         'fluxes/SANH_Ndep.nc',-12,'N4_flux', .false.,  .true.,   'yearly',     '',         '',        ''
+   sn=         'fluxes/Ndep.nc',-12,'N4_flux', .false.,  .true.,   'yearly',     '',         '',        ''
 /
 &riverdata
    name='N3_n'
-   sn=         'river.nc',-1,'DINrunoff', .true.,  .true.,   'yearly',     '',         '',        ''
+   sn=         'river.nc',-1,'NO3runoff', .true.,  .true.,   'yearly',     '',         '',        ''
+   rfac=71.4 ! 1000./14.0067 (g/s -> mmol/s)
+/
+&riverdata
+   name='N4_n'
+   sn=         'river.nc',-1,'NH4runoff', .true.,  .true.,   'yearly',     '',         '',        ''
    rfac=71.4 ! 1000./14.0067 (g/s -> mmol/s)
 /
 &riverdata
@@ -49,30 +54,60 @@
 &riverdata
    name='R1_n'
    sn=         'river.nc',-1,'DONrunoff', .true.,  .true.,   'yearly',     '',         '',        ''
-   rfac=17.85 ! 0.25 * 1000./14.0067 (g/s -> mmol/s, 25% takeup)
+   rfac=64.25 ! 0.9 * 1000./14.0067 (g/s -> mmol/s, 90% takeup)
 /
 &riverdata
    name='R1_p'
    sn=         'river.nc',-1,'DOPrunoff', .true.,  .true.,   'yearly',     '',         '',        ''
-   rfac=8.07  ! 0.25 * 1000./30.9738 (g/s -> mmol/s, 25% takeup)
+   rfac=29.06  ! 0.9 * 1000./30.9738 (g/s -> mmol/s, 90% takeup)
 /
 &riverdata
-   name='R1_c'
-   sn=         'river.nc',-1,'DOCrunoff', .true.,  .true.,   'yearly',     '',         '',        ''
-   rfac=20.81 ! 0.25 * 1000./12.0107 (g/s -> mmol/s, 25% takeup)
+   name='DIN_ind_n'
+   sn=         'river.nc',-1,'DIN_ind', .true.,  .true.,   'yearly',     '',         '',        ''
+   rfac=71.4 ! 1000./14.0067 (g/s -> mmol/s)
 /
 &riverdata
-   name='R4_n'
-   sn=         'river.nc',-1,'PNrunoff', .true.,  .true.,   'yearly',     '',         '',        ''
-   rfac=24.99 ! 0.35 * 1000./14.0067 (g/s -> mmol/s, 35% takeup)
+   name='DON_ind_n'
+   sn=         'river.nc',-1,'DON_ind', .true.,  .true.,   'yearly',     '',         '',        ''
+   rfac=64.25 ! 0.9*1000./14.0067 (g/s -> mmol/s)
 /
 &riverdata
-   name='R4_p'
-   sn=         'river.nc',-1,'PPrunoff', .true.,  .true.,   'yearly',     '',         '',        ''
-   rfac=11.30 ! 0.35 * 1000./30.9738 (g/s -> mmol/s, 35% takeup)
+   name='DIN_ban_n'
+   sn=         'river.nc',-1,'DIN_ban', .true.,  .true.,   'yearly',     '',         '',        ''
+   rfac=71.4 ! 1000./14.0067 (g/s -> mmol/s)
 /
 &riverdata
-   name='R4_c'
-   sn=         'river.nc',-1,'POCrunoff', .true.,  .true.,   'yearly',     '',         '',        ''
-   rfac=29.14 ! 0.35 * 1000./12.0107 (g/s -> mmol/s, 35% takeup)
+   name='DON_ban_n'
+   sn=         'river.nc',-1,'DON_ban', .true.,  .true.,   'yearly',     '',         '',        ''
+   rfac=64.25 ! 0.9*1000./14.0067 (g/s -> mmol/s)
+/
+&riverdata
+   name='DIN_sri_n'
+   sn=         'river.nc',-1,'DIN_sri', .true.,  .true.,   'yearly',     '',         '',        ''
+   rfac=71.4 ! 1000./14.0067 (g/s -> mmol/s)
+/
+&riverdata
+   name='DON_sri_n'
+   sn=         'river.nc',-1,'DON_sri', .true.,  .true.,   'yearly',     '',         '',        ''
+   rfac=64.25 ! 0.9*1000./14.0067 (g/s -> mmol/s)
+/
+&riverdata
+   name='DIN_pak_n'
+   sn=         'river.nc',-1,'DIN_pak', .true.,  .true.,   'yearly',     '',         '',        ''
+   rfac=71.4 ! 1000./14.0067 (g/s -> mmol/s)
+/
+&riverdata
+   name='DON_pak_n'
+   sn=         'river.nc',-1,'DON_pak', .true.,  .true.,   'yearly',     '',         '',        ''
+   rfac=64.25 ! 0.9*1000./14.0067 (g/s -> mmol/s)
+/
+&riverdata
+   name='DIN_mya_n'
+   sn=         'river.nc',-1,'DIN_mya', .true.,  .true.,   'yearly',     '',         '',        ''
+   rfac=71.4 ! 1000./14.0067 (g/s -> mmol/s)
+/
+&riverdata
+   name='DON_mya_n'
+   sn=         'river.nc',-1,'DON_mya', .true.,  .true.,   'yearly',     '',         '',        ''
+   rfac=64.25 ! 0.9*1000./14.0067 (g/s -> mmol/s)
 /

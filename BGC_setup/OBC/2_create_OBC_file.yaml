@@ -1,5 +1,5 @@
 ystart: 1993
-yend: 2016
+yend: 2021
 coords_file: coordinates.bdy.nc
 output_folder: bdyfiles
 monthly: True
@@ -190,3 +190,8 @@ files:
             units: "mmolSi m-3"
             short_name: "R8_s"
             long_name: "large-size pom silicate"
+        calcite:
+            depth: 50
+            units: "mg m-3"
+            short_name: "L2_c"
+            long_name: "calcite"

@@ -69,8 +69,8 @@ CONTAINS
          &             ln_vol, nn_volctl, nn_rimwidth
          !
 !     davbyr Propagating ENDA's stuff from 3.6
-      NAMELIST/nambdy_ssh/ ln_ssh_bdy, rn_ssh_shift
-      INTEGER  ::   ib_bdy
+!      NAMELIST/nambdy_ssh/ ln_ssh_bdy, rn_ssh_shift
+!      INTEGER  ::   ib_bdy
 !     END davbyr
       INTEGER  ::   ios                 ! Local integer output status for namelist read
       !!----------------------------------------------------------------------
@@ -102,32 +102,31 @@ CONTAINS
       IF(lwm) WRITE ( numond, nambdy )
       
       ! davbyr Propagating ENDA's stuff from 3.6
-      REWIND( numnam_ref )              ! Namelist nambdy in reference namelist :Unstructured open boundaries
-      READ  ( numnam_ref, nambdy_ssh, IOSTAT = ios, ERR = 905)
-905   IF( ios /= 0 ) CALL ctl_nam ( ios , 'nambdy_ssh in reference namelist' )
+!      REWIND( numnam_ref )              ! Namelist nambdy in reference namelist :Unstructured open boundaries
+!      READ  ( numnam_ref, nambdy_ssh, IOSTAT = ios, ERR = 905)
+!905   IF( ios /= 0 ) CALL ctl_nam ( ios , 'nambdy_ssh in reference namelist' )
 
-      REWIND( numnam_cfg )              ! Namelist nambdy in configuration namelist :Unstructured open boundaries
-      READ  ( numnam_cfg, nambdy_ssh, IOSTAT = ios, ERR = 906)
-906   IF( ios /= 0 ) CALL ctl_nam ( ios , 'nambdy_ssh in configuration namelist' )
-      IF(lwm) WRITE ( numond, nambdy_ssh )
-
-      IF(lwp) WRITE(numout,*)
-      IF(lwp) WRITE(numout,*) 'nambdy_ssh : use of ssh boundaries'
-      IF(lwp) WRITE(numout,*) '~~~~~~~~'
-      IF(lwp) WRITE(numout,*) '      ln_ssh_bdy: '
-      DO ib_bdy = 1,nb_bdy
-        IF(lwp) WRITE(numout,*) '      ln_ssh_bdy  (',ib_bdy,'): ',ln_ssh_bdy(ib_bdy)
-      IF(lwp) WRITE(numout,*) '      rn_ssh_shift: '
-      ENDDO
-      DO ib_bdy = 1,nb_bdy
-        IF(lwp) WRITE(numout,*) '      rn_ssh_shift(',ib_bdy,'): ',rn_ssh_shift(ib_bdy)
-      ENDDO
-      IF(lwp) WRITE(numout,*) '~~~~~~~~'
-      IF(lwp) WRITE(numout,*)
+!      REWIND( numnam_cfg )              ! Namelist nambdy in configuration namelist :Unstructured open boundaries
+!      READ  ( numnam_cfg, nambdy_ssh, IOSTAT = ios, ERR = 906)
+!906   IF( ios /= 0 ) CALL ctl_nam ( ios , 'nambdy_ssh in configuration namelist' )
+!      IF(lwm) WRITE ( numond, nambdy_ssh )
+!
+!      IF(lwp) WRITE(numout,*)
+!      IF(lwp) WRITE(numout,*) 'nambdy_ssh : use of ssh boundaries'
+!      IF(lwp) WRITE(numout,*) '~~~~~~~~'
+!      IF(lwp) WRITE(numout,*) '      ln_ssh_bdy: '
+!      DO ib_bdy = 1,nb_bdy
+!        IF(lwp) WRITE(numout,*) '      ln_ssh_bdy  (',ib_bdy,'): ',ln_ssh_bdy(ib_bdy)
+!      IF(lwp) WRITE(numout,*) '      rn_ssh_shift: '
+!      ENDDO
+!      DO ib_bdy = 1,nb_bdy
+!        IF(lwp) WRITE(numout,*) '      rn_ssh_shift(',ib_bdy,'): ',rn_ssh_shift(ib_bdy)
+!      ENDDO
+!      IF(lwp) WRITE(numout,*) '~~~~~~~~'
+!      IF(lwp) WRITE(numout,*)
 !     END davbyr
 
       IF( .NOT. Agrif_Root() ) ln_bdy = .FALSE.   ! forced for Agrif children
-
       IF( nb_bdy == 0 ) ln_bdy = .FALSE.
       
       ! -----------------------------------------
@@ -199,9 +198,7 @@ CONTAINS
          &                               ' and general open boundary condition are not compatible' )
 
       IF(lwp) WRITE(numout,*) 'Number of open boundary sets : ', nb_bdy
-
       DO ib_bdy = 1,nb_bdy
-
          IF(lwp) THEN
             WRITE(numout,*) ' ' 
             WRITE(numout,*) '------ Open boundary data set ',ib_bdy,' ------' 
@@ -230,14 +227,14 @@ CONTAINS
          dta_bdy(ib_bdy)%lneed_ssh   = cn_dyn2d(ib_bdy) == 'flather'
          dta_bdy(ib_bdy)%lneed_dyn2d = cn_dyn2d(ib_bdy) /= 'none'
 
-		 ! davbyr propagating JT override dta_bdy(ib_bdy)%ll_ssh with namelist value (ln_ssh_bdy)
-         dta_bdy(ib_bdy)%lforced_ssh = ln_ssh_bdy(ib_bdy)
-         IF(lwp) WRITE(numout,*) 'nambdy_ssh : use of ssh boundaries'
-         IF(lwp) WRITE(numout,*) '~~~~~~~~'
-         IF(lwp) WRITE(numout,*) '      ib_bdy: ',ib_bdy
-         IF(lwp) WRITE(numout,*) '      dta_bdy(ib_bdy)%lneed_ssh  : ',dta_bdy(ib_bdy)%lneed_ssh
-         IF(lwp) WRITE(numout,*) '      dta_bdy(ib_bdy)%lforced_ssh: ',dta_bdy(ib_bdy)%lforced_ssh
-         IF(lwp) WRITE(numout,*) '~~~~~~~~'
+        ! davbyr propagating JT override dta_bdy(ib_bdy)%ll_ssh with namelist value (ln_ssh_bdy)
+        ! dta_bdy(ib_bdy)%lforced_ssh = ln_ssh_bdy(ib_bdy)
+        ! IF(lwp) WRITE(numout,*) 'nambdy_ssh : use of ssh boundaries'
+        ! IF(lwp) WRITE(numout,*) '~~~~~~~~'
+        ! IF(lwp) WRITE(numout,*) '      ib_bdy: ',ib_bdy
+        ! IF(lwp) WRITE(numout,*) '      dta_bdy(ib_bdy)%lneed_ssh  : ',dta_bdy(ib_bdy)%lneed_ssh
+        ! IF(lwp) WRITE(numout,*) '      dta_bdy(ib_bdy)%lforced_ssh: ',dta_bdy(ib_bdy)%lforced_ssh
+        ! IF(lwp) WRITE(numout,*) '~~~~~~~~'
          ! END davbyr
 
          IF( lwp .AND. dta_bdy(ib_bdy)%lneed_dyn2d ) THEN
@@ -325,7 +322,6 @@ CONTAINS
             CASE DEFAULT   ;   CALL ctl_stop( 'nn_tra_dta must be 0 or 1' )
             END SELECT
          ENDIF
-
          IF ( ln_tra_dmp(ib_bdy) ) THEN
             IF ( cn_tra(ib_bdy) == 'none' ) THEN
                IF(lwp) WRITE(numout,*) 'No open boundary condition for tracers: ln_tra_dmp is set to .false.'
@@ -414,11 +410,8 @@ CONTAINS
       DO ib_bdy = 1, nb_bdy
          !
          IF( .NOT. ln_coords_file(ib_bdy) ) THEN     ! build bdy coordinates with segments defined in namelist
-
             CALL bdy_read_seg( ib_bdy, nblendta(:,ib_bdy) )
-
-         ELSE                                        ! Read size of arrays in boundary coordinates file.
-            
+         ELSE                                        ! Read size of arrays in boundary coordinates file. 
             CALL iom_open( cn_coords_file(ib_bdy), inum )
             DO igrd = 1, jpbgrd
                id_dummy = iom_varid( inum, 'nbi'//cgrid(igrd), kdimsz=kdimsz )  
@@ -428,7 +421,6 @@ CONTAINS
          ENDIF
          !
       END DO ! ib_bdy
-
       ! Now look for crossings in user (namelist) defined open boundary segments:
       IF( nbdysege > 0 .OR. nbdysegw > 0 .OR. nbdysegn > 0 .OR. nbdysegs > 0)   CALL bdy_ctl_seg
       
@@ -554,7 +546,6 @@ CONTAINS
             idx_bdy(ib_bdy)%nblenrim (igrd) = icountr  !: length of rim 0 and rim 1 boundary data on each proc   
             idx_bdy(ib_bdy)%nblenrim0(igrd) = icountr0 !: length of rim 0 boundary data on each proc     
          END DO   ! igrd
-
          ! Allocate index arrays for this boundary set
          !--------------------------------------------
          ilen1 = MAXVAL( idx_bdy(ib_bdy)%nblen(:) )
@@ -568,7 +559,6 @@ CONTAINS
             &      idx_bdy(ib_bdy)%nbw   (ilen1,jpbgrd) ,   &
             &      idx_bdy(ib_bdy)%flagu (ilen1,jpbgrd) ,   &
             &      idx_bdy(ib_bdy)%flagv (ilen1,jpbgrd) )
-
          ! Dispatch mapping indices and discrete distances on each processor
          ! -----------------------------------------------------------------
          DO igrd = 1, jpbgrd
@@ -592,13 +582,11 @@ CONTAINS
          END DO   ! igrd
 
       END DO   ! ib_bdy
-
       ! Initialize array indicating communications in bdy
       ! -------------------------------------------------
       ALLOCATE( lsend_bdy(nb_bdy,jpbgrd,4,0:1), lrecv_bdy(nb_bdy,jpbgrd,4,0:1) )
       lsend_bdy(:,:,:,:) = .false.
       lrecv_bdy(:,:,:,:) = .false. 
-
       DO ib_bdy = 1, nb_bdy
          DO igrd = 1, jpbgrd
             DO ib = 1, idx_bdy(ib_bdy)%nblenrim(igrd)   ! only the rim triggers communications, see bdy routines
@@ -630,7 +618,6 @@ CONTAINS
                !
             END DO
          END DO  ! igrd
-
          ! Compute rim weights for FRS scheme
          ! ----------------------------------
          DO igrd = 1, jpbgrd
@@ -643,7 +630,6 @@ CONTAINS
                !               idx_bdy(ib_bdy)%nbw(ib,igrd) =  REAL(nn_rimwidth(ib_bdy)+1-ir)/REAL(nn_rimwidth(ib_bdy))       ! linear
             END DO
          END DO
-
          ! Compute damping coefficients
          ! ----------------------------
          DO igrd = 1, jpbgrd
@@ -655,9 +641,7 @@ CONTAINS
                   & *(REAL(nn_rimwidth(ib_bdy)+1-ir)/REAL(nn_rimwidth(ib_bdy)))**2.   ! quadratic
             END DO
          END DO
-
       END DO ! ib_bdy
-
       ! ------------------------------------------------------
       ! Initialise masks and find normal/tangential directions
       ! ------------------------------------------------------
@@ -665,7 +649,6 @@ CONTAINS
       ! ------------------------------------------
       ! handle rim0, do as if rim 1 was free ocean
       ! ------------------------------------------
-
       ztmask(:,:) = tmask(:,:,1)   ;   zumask(:,:) = umask(:,:,1)   ;   zvmask(:,:) = vmask(:,:,1)
       ! For the flagu/flagv calculation below we require a version of fmask without
       ! the land boundary condition (shlat) included:
@@ -681,7 +664,6 @@ CONTAINS
       ! -----------------------------------------
       ! bdytmask = 1  on the computational domain AND on open boundaries
       !          = 0  elsewhere   
-
       bdytmask(:,:) = ssmask(:,:)
 
       ! Derive mask on U and V grid from mask on T grid

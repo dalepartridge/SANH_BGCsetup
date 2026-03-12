@@ -1,5 +1,7 @@
+#!/bin/bash
 
-#Load modules
+source ./set_paths.sh
+
 cd $WDIR/ICS/
 . 1_interp.sh
 

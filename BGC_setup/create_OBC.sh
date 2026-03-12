@@ -1,4 +1,6 @@
-#Load modules
+#!/bin/bash
+
+source ./set_paths.sh
 
 cd $WDIR/OBC/
 . 1_interp.sh
@@ -15,6 +17,6 @@ python 3_extract_OBC.py
 
 cd bdyfiles
 cp sanh_bdytrc_y1993m01.nc sanh_bdytrc_y1992m12.nc
-cp sanh_bdytrc_y2015m12.nc sanh_bdytrc_y2016m01.nc
+cp sanh_bdytrc_y2021m12.nc sanh_bdytrc_y2022m01.nc
 cd $WDIR
 

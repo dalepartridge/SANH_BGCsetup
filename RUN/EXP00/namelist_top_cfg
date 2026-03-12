@@ -19,7 +19,7 @@
    nn_rsttr      = 0       ! restart control = 0 initial time step is not compared to the restart file value
                            !                  = 1 do not use the value in the restart file
                            !                  = 2 calendar parameters read in the restart file
-   cn_trcrst_in  = "SANH_00036240_restart_trc"   !  suffix of pass. sn_tracer restart name (input)
+   cn_trcrst_in  =  'SANH_FABM_20070101_restart_trc'
    cn_trcrst_out = "restart_trc"   !  suffix of pass. sn_tracer restart name (output)
    cn_trcrst_indir   = "./restarts"   !  directory of ocean restart name (input)
    cn_trcrst_outdir  = "./restarts"   !  directory of ocean restart name (output)
@@ -28,7 +28,7 @@
 &namtrc     !   tracers definition
 !-----------------------------------------------------------------------
   ln_fabm     = .true. 
-  jp_bgc      =   53          !  Number of passive tracers of the BGC model
+  jp_bgc      =   63          !  Number of passive tracers of the BGC model
 !                    sname       lname                                                 unit ,  init    ,  sbc     ,   cbc   ,  obc   ,  save
    sn_tracer(1)   = 'light_ADY' , 'light gelbstoff absorption',                        ' '  , .true.  ,  .false. , .false. , .false. , .false.
    sn_tracer(2)   = 'N1_p     ' , 'phosphate  ',                                       ' '  , .true.  ,  .false. , .false. , .true. , .false.
@@ -82,7 +82,17 @@
    sn_tracer(50)  = 'Z6_c     ' , 'nanoflagellates carbon         ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
    sn_tracer(51)  = 'Z6_n     ' , 'nanoflagellates nitrogen       ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
    sn_tracer(52)  = 'Z6_p     ' , 'nanoflagellates phosphorus     ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
-   sn_tracer(53)  = 'L2_c     ' , 'calcite                        ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
+   sn_tracer(53)  = 'L2_c     ' , 'calcite                        ',                   ' '  , .true.  ,  .false. , .false. , .true. , .false.
+   sn_tracer(54)  = 'DIN_ind_n     ' , 'DIN India                 ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
+   sn_tracer(55)  = 'DON_ind_n     ' , 'DON India                 ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
+   sn_tracer(56)  = 'DIN_ban_n     ' , 'DIN Bangladesh                 ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
+   sn_tracer(57)  = 'DON_ban_n     ' , 'DON Bangladesh                 ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
+   sn_tracer(58)  = 'DIN_sri_n     ' , 'DIN Sri Lanka                 ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
+   sn_tracer(59)  = 'DON_sri_n     ' , 'DON Sri Lanka                 ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
+   sn_tracer(60)  = 'DIN_pak_n     ' , 'DIN Pakistan                 ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
+   sn_tracer(61)  = 'DON_pak_n     ' , 'DON Pakistan                 ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
+   sn_tracer(62)  = 'DIN_mya_n     ' , 'DIN Myanmar                 ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
+   sn_tracer(63)  = 'DON_mya_n     ' , 'DON Myanmar                 ',                   ' '  , .true.  ,  .false. , .false. , .false. , .false.
    ln_trcdta  =  .false.  !  Initialisation from data input file (T) or not (F)
    ln_trcdmp     =  .false.  !  add a damping termn (T) or not (F)
    ln_trcdmp_clo =  .false.  !  damping term (T) or not (F) on closed seas
@@ -130,14 +140,14 @@
 &namtrc_trd       !   diagnostics on tracer trends        ('key_trdtrc')
 !                          or mixed-layer trends          ('key_trdmld_trc')
 !----------------------------------------------------------------------
-   nn_trd_trc  =   1     !  time step frequency and tracers trends
+   nn_trd_trc  =   360     !  time step frequency and tracers trends
    nn_ctls_trc =   50        !  control surface type in mixed-layer trends (0,1 or n<jpk)
    rn_ucf_trc  =   1        !  unit conversion factor (=1 -> /seconds ; =86400. -> /day)
    ln_trdmxl_trc_restart = .false.  !  restart for ML diagnostics
    ln_trdmxl_trc_instant = .true.  !  flag to diagnose trends of instantantaneous or mean ML T/S
    cn_trdrst_trc_in  = 'restart_trd' !  suffix of pass. tracer trends restart name (input)
    cn_trdrst_trc_out = 'restart_trd' !  suffix of pass. tracer trends restart name (output)
-   ln_trdtrc( 1) = .true.
+   ln_trdtrc( 1) = .false.
    ln_trdtrc( 2) = .true.
    ln_trdtrc( 3) = .true.
    ln_trdtrc( 4) = .true.
@@ -190,7 +200,16 @@
    ln_trdtrc( 51) = .true.
    ln_trdtrc( 52) = .true.
    ln_trdtrc( 53) = .true.
-
+   ln_trdtrc( 54) = .false.
+   ln_trdtrc( 55) = .false.
+   ln_trdtrc( 56) = .false.
+   ln_trdtrc( 57) = .false.
+   ln_trdtrc( 58) = .false.
+   ln_trdtrc( 59) = .false.
+   ln_trdtrc( 60) = .false.
+   ln_trdtrc( 61) = .false.
+   ln_trdtrc( 62) = .false.
+   ln_trdtrc( 63) = .false.
 /
 !-----------------------------------------------------------------------
 &namtrc_dia       !   parameters for passive tracer additional diagnostics
@@ -207,7 +226,7 @@
 !
    cn_dir_sbc        =  './'      !  root directory for the location of SURFACE data files
    cn_dir_cbc        =  './'      !  root directory for the location of COASTAL data files
-   cn_dir_obc        =  'bdyfiles/'      !  root directory for the location of OPEN data files
+   cn_dir_obc        =  'bdy/'      !  root directory for the location of OPEN data files
 !          !  file name  ! frequency (hours) ! variable  ! time interp. !  clim  ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
 !          !             !  (if <0  months)  !   name    !   (logical)  !  (T/F) ! 'monthly' ! filename ! pairing  ! filename      !
    sn_trcobc_dta(2) = 'sanh_bdytrc' ,    -1     , 'phosphate' ,   .true.     , .false. , 'monthly'  , ''       , ''       ,   ''
@@ -246,6 +265,7 @@
    sn_trcobc_dta(43) = 'sanh_bdytrc' ,    -1     , 'microphytoplankton_n' ,   .true.     , .false. , 'monthly'  , ''       , ''       ,   ''
    sn_trcobc_dta(44) = 'sanh_bdytrc' ,    -1     , 'microphytoplankton_p' ,   .true.     , .false. , 'monthly'  , ''       , ''       ,   ''
    sn_trcobc_dta(45) = 'sanh_bdytrc' ,    -1     , 'microphytoplankton_Chl' ,   .true.     , .false. , 'monthly'  , ''       , ''       ,   ''
+   sn_trcobc_dta(53) = 'sanh_bdytrc' ,    -1     , 'calcite' ,   .true.     , .false. , 'monthly'  , ''       , ''       ,   ''
    rn_trofac(2) = 1
    rn_trofac(3) = 1
    rn_trofac(5) = 1
@@ -282,6 +302,7 @@
    rn_trofac(43) = 1
    rn_trofac(44) = 1
    rn_trofac(45) = 1
+   rn_trofac(53) = 1
 /
 !----------------------------------------------------------------------
 !namtrc_bdy       !   Setup of tracer boundary conditions

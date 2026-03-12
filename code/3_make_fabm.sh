@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Build FABM with cray compiler
+
+cd $FABM_CLONE
+cmake $FABM_CLONE -DFABM_HOST=nemo -DFABM_ERSEM_BASE=$ERSEM_CLONE -DFABM_EMBED_VERSION=ON -DCMAKE_INSTALL_PREFIX=$FABM_BUILD -DCMAKE_Fortran_COMPILER=ftn
+make
+make install -j4
+cd $CODE_DIR

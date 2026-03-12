@@ -1,7 +1,7 @@
 meshfile: bdy_depths.nc
 coordsfile: coordinates.bdy.nc
 y0: 1993
-y1: 2015
+y1: 2020
 njobs: 8
 grid: T
 variables:
@@ -117,5 +117,8 @@ variables:
        output_file: bdyfiles/sanh_bdytrc
        fixed_value: .0001
    picophytoplankton_Chl:
+       output_file: bdyfiles/sanh_bdytrc
+       fixed_value: .0001
+   calcite:
        output_file: bdyfiles/sanh_bdytrc
        fixed_value: .0001

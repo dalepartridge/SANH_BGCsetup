@@ -75,7 +75,7 @@ MODULE bdydta
    !!----------------------------------------------------------------------
 CONTAINS
 
-   SUBROUTINE bdy_dta( kt, kit, kt_offset )
+   SUBROUTINE bdy_dta( kt, kt_offset )
       !!----------------------------------------------------------------------
       !!                   ***  SUBROUTINE bdy_dta  ***
       !!                    
@@ -85,7 +85,8 @@ CONTAINS
       !!                
       !!----------------------------------------------------------------------
       INTEGER, INTENT(in)           ::   kt           ! ocean time-step index 
-      INTEGER, INTENT(in), OPTIONAL ::   kit          ! subcycle time-step index (for timesplitting option)
+      !annkat
+      !INTEGER, INTENT(in), OPTIONAL ::   kit          ! subcycle time-step index (for timesplitting option)
       INTEGER, INTENT(in), OPTIONAL ::   kt_offset    ! time offset in units of timesteps. NB. if kit
       !                                               ! is present then units = subcycle timesteps.
       !                                               ! kt_offset = 0 => get data at "now" time level
@@ -95,6 +96,9 @@ CONTAINS
       !
       INTEGER ::  jbdy, jfld, jstart, jend, ib, jl    ! dummy loop indices
       INTEGER ::  ii, ij, ik, igrd, ipl               ! local integers
+      !annkat
+      INTEGER,   DIMENSION(jpbgrd)     ::   ilen1
+      INTEGER,   DIMENSION(:), POINTER ::   nblen, nblenrim  ! short cuts
       TYPE(OBC_DATA)         , POINTER ::   dta_alias        ! short cut
       TYPE(FLD), DIMENSION(:), POINTER ::   bf_alias
       !!---------------------------------------------------------------------------
@@ -103,33 +107,35 @@ CONTAINS
       !
       ! Initialise data arrays once for all from initial conditions where required
       !---------------------------------------------------------------------------
-      IF( kt == nit000 .AND. .NOT.PRESENT(kit) ) THEN
+      IF( kt == nit000 ) THEN
 
          ! Calculate depth-mean currents
          !-----------------------------
 
          DO jbdy = 1, nb_bdy
             !
-            IF( nn_dyn2d_dta(jbdy) == 0 ) THEN 
-               IF( dta_bdy(jbdy)%lneed_ssh ) THEN 
+            nblen    => idx_bdy(jbdy)%nblen
+            nblenrim => idx_bdy(jbdy)%nblenrim
+            !
+            IF( nn_dyn2d_dta(jbdy) == 0 ) THEN
+               ilen1(:) = nblen(:)
+               IF( dta_bdy(jbdy)%lneed_ssh ) THEN
                   igrd = 1
-                  DO ib = 1, idx_bdy(jbdy)%nblenrim(igrd)   ! ssh is allocated and used only on the rim
+                  DO ib = 1, ilen1(igrd)
                      ii = idx_bdy(jbdy)%nbi(ib,igrd)
                      ij = idx_bdy(jbdy)%nbj(ib,igrd)
                      dta_bdy(jbdy)%ssh(ib) = sshn(ii,ij) * tmask(ii,ij,1)         
                   END DO
                ENDIF
-               IF( ASSOCIATED(dta_bdy(jbdy)%u2d) ) THEN   ! no SIZE with a unassociated pointer. v2d and u2d can differ on subdomain
+               IF( dta_bdy(jbdy)%lneed_dyn2d) THEN
                   igrd = 2
-                  DO ib = 1, SIZE(dta_bdy(jbdy)%u2d)      ! u2d is used either over the whole bdy or only on the rim
+                  DO ib = 1, ilen1(igrd)
                      ii = idx_bdy(jbdy)%nbi(ib,igrd)
                      ij = idx_bdy(jbdy)%nbj(ib,igrd)
                      dta_bdy(jbdy)%u2d(ib) = un_b(ii,ij) * umask(ii,ij,1)         
                   END DO
-               ENDIF
-               IF( ASSOCIATED(dta_bdy(jbdy)%v2d) ) THEN   ! no SIZE with a unassociated pointer. v2d and u2d can differ on subdomain
                   igrd = 3
-                  DO ib = 1, SIZE(dta_bdy(jbdy)%v2d)      ! v2d is used either over the whole bdy or only on the rim
+                  DO ib = 1, ilen1(igrd)
                      ii = idx_bdy(jbdy)%nbi(ib,igrd)
                      ij = idx_bdy(jbdy)%nbj(ib,igrd)
                      dta_bdy(jbdy)%v2d(ib) = vn_b(ii,ij) * vmask(ii,ij,1)         
@@ -137,10 +143,11 @@ CONTAINS
                ENDIF
             ENDIF
             !
-            IF( nn_dyn3d_dta(jbdy) == 0 ) THEN 
-               IF( dta_bdy(jbdy)%lneed_dyn3d ) THEN 
+            IF( nn_dyn3d_dta(jbdy) == 0 ) THEN
+               ilen1(:) = nblen(:)
+               IF( dta_bdy(jbdy)%lneed_dyn3d ) THEN
                   igrd = 2 
-                  DO ib = 1, idx_bdy(jbdy)%nblen(igrd)
+                  DO ib = 1, ilen1(igrd)
                      DO ik = 1, jpkm1
                         ii = idx_bdy(jbdy)%nbi(ib,igrd)
                         ij = idx_bdy(jbdy)%nbj(ib,igrd)
@@ -148,7 +155,7 @@ CONTAINS
                      END DO
                   END DO
                   igrd = 3 
-                  DO ib = 1, idx_bdy(jbdy)%nblen(igrd)
+                  DO ib = 1, ilen1(igrd)
                      DO ik = 1, jpkm1
                         ii = idx_bdy(jbdy)%nbi(ib,igrd)
                         ij = idx_bdy(jbdy)%nbj(ib,igrd)
@@ -157,11 +164,11 @@ CONTAINS
                   END DO
                ENDIF
             ENDIF
-
-            IF( nn_tra_dta(jbdy) == 0 ) THEN 
+            IF( nn_tra_dta(jbdy) == 0 ) THEN
+               ilen1(:) = nblen(:)
                IF( dta_bdy(jbdy)%lneed_tra ) THEN
                   igrd = 1 
-                  DO ib = 1, idx_bdy(jbdy)%nblen(igrd)
+                  DO ib = 1, ilen1(igrd)
                      DO ik = 1, jpkm1
                         ii = idx_bdy(jbdy)%nbi(ib,igrd)
                         ij = idx_bdy(jbdy)%nbj(ib,igrd)
@@ -210,47 +217,43 @@ CONTAINS
 
          ! read/update all bdy data
          ! ------------------------
-         CALL fld_read( kt, 1, bf_alias, kit = kit, kt_offset = kt_offset )
+         CALL fld_read( kt, 1, bf_alias, kt_offset = kt_offset )
 
          ! apply some corrections in some specific cases...
          ! --------------------------------------------------
          !
          ! if runoff condition: change river flow we read (in m3/s) into barotropic velocity (m/s)
-         IF( cn_tra(jbdy) == 'runoff' ) THEN   ! runoff
+         IF( cn_tra(jbdy) == 'runoff' .AND. TRIM(bf_alias(jp_bdyu2d)%clrootname) /= 'NOT USED' ) THEN! runoff
             !
-            IF( ASSOCIATED(dta_bdy(jbdy)%u2d) ) THEN   ! no SIZE with a unassociated pointer. v2d and u2d can differ on subdomain
-               igrd = 2                         ! zonal flow (m3/s) to barotropic zonal velocity (m/s)
-               DO ib = 1, SIZE(dta_alias%u2d)   ! u2d is used either over the whole bdy or only on the rim
-                  ii   = idx_bdy(jbdy)%nbi(ib,igrd)
-                  ij   = idx_bdy(jbdy)%nbj(ib,igrd)
-                  dta_alias%u2d(ib) = dta_alias%u2d(ib) / ( e2u(ii,ij) * hu_0(ii,ij) )
-               END DO
-            ENDIF
-            IF( ASSOCIATED(dta_bdy(jbdy)%v2d) ) THEN   ! no SIZE with a unassociated pointer. v2d and u2d can differ on subdomain
-               igrd = 3                         ! meridional flow (m3/s) to barotropic meridional velocity (m/s)
-               DO ib = 1, SIZE(dta_alias%v2d)   ! v2d is used either over the whole bdy or only on the rim
-                  ii   = idx_bdy(jbdy)%nbi(ib,igrd)
-                  ij   = idx_bdy(jbdy)%nbj(ib,igrd)
-                  dta_alias%v2d(ib) = dta_alias%v2d(ib) / ( e1v(ii,ij) * hv_0(ii,ij) )
-               END DO
-            ENDIF
+            igrd = 2                      ! zonal flow (m3/s) to barotropic zonal velocity (m/s)
+            DO ib = 1, idx_bdy(jbdy)%nblen(igrd)
+               ii   = idx_bdy(jbdy)%nbi(ib,igrd)
+               ij   = idx_bdy(jbdy)%nbj(ib,igrd)
+               dta_alias%u2d(ib) = dta_alias%u2d(ib) / ( e2u(ii,ij) * hu_0(ii,ij) )
+            END DO
+            igrd = 3                      ! meridional flow (m3/s) to barotropic meridional velocity (m/s)
+            DO ib = 1, idx_bdy(jbdy)%nblen(igrd)
+               ii   = idx_bdy(jbdy)%nbi(ib,igrd)
+               ij   = idx_bdy(jbdy)%nbj(ib,igrd)
+               dta_alias%v2d(ib) = dta_alias%v2d(ib) / ( e1v(ii,ij) * hv_0(ii,ij) )
+            END DO
          ENDIF
 
          ! tidal harmonic forcing ONLY: initialise arrays
          IF( nn_dyn2d_dta(jbdy) == 2 ) THEN   ! we did not read ssh, u/v2d 
-            IF( ASSOCIATED(dta_alias%ssh) ) dta_alias%ssh(:) = 0._wp
-            IF( ASSOCIATED(dta_alias%u2d) ) dta_alias%u2d(:) = 0._wp
-            IF( ASSOCIATED(dta_alias%v2d) ) dta_alias%v2d(:) = 0._wp
+            IF( dta_alias%lneed_ssh   ) dta_alias%ssh(:) = 0._wp
+            IF( dta_alias%lneed_dyn2d ) dta_alias%u2d(:) = 0._wp
+            IF( dta_alias%lneed_dyn2d ) dta_alias%v2d(:) = 0._wp
          ENDIF
 
          ! If full velocities in boundary data, then split it into barotropic and baroclinic component
          IF( bf_alias(jp_bdyu3d)%ltotvel ) THEN     ! if we read 3D total velocity (can be true only if u3d was read)
             !
             igrd = 2                       ! zonal velocity
+            dta_alias%u2d(:) = 0._wp       ! compute barotrope zonal velocity and put it in u2d
             DO ib = 1, idx_bdy(jbdy)%nblen(igrd)
                ii   = idx_bdy(jbdy)%nbi(ib,igrd)
                ij   = idx_bdy(jbdy)%nbj(ib,igrd)
-               dta_alias%u2d(ib) = 0._wp   ! compute barotrope zonal velocity and put it in u2d
                DO ik = 1, jpkm1
                   dta_alias%u2d(ib) = dta_alias%u2d(ib) + e3u_n(ii,ij,ik) * umask(ii,ij,ik) * dta_alias%u3d(ib,ik)
                END DO
@@ -260,10 +263,10 @@ CONTAINS
                END DO
             END DO
             igrd = 3                       ! meridional velocity
+            dta_alias%v2d(:) = 0._wp       ! compute barotrope meridional velocity and put it in v2d
             DO ib = 1, idx_bdy(jbdy)%nblen(igrd)
                ii   = idx_bdy(jbdy)%nbi(ib,igrd)
                ij   = idx_bdy(jbdy)%nbj(ib,igrd)
-               dta_alias%v2d(ib) = 0._wp   ! compute barotrope meridional velocity and put it in v2d
                DO ik = 1, jpkm1
                   dta_alias%v2d(ib) = dta_alias%v2d(ib) + e3v_n(ii,ij,ik) * vmask(ii,ij,ik) * dta_alias%v3d(ib,ik)
                END DO
@@ -273,12 +276,6 @@ CONTAINS
                END DO
             END DO
          ENDIF   ! ltotvel
-
-         ! update tidal harmonic forcing
-         IF( PRESENT(kit) .AND. nn_dyn2d_dta(jbdy) .GE. 2 ) THEN
-            CALL bdytide_update( kt = kt, idx = idx_bdy(jbdy), dta = dta_alias, td = tides(jbdy),   & 
-               &                 kit = kit, kt_offset = kt_offset )
-         ENDIF
 
          !  atm surface pressure : add inverted barometer effect to ssh if it was read
          IF ( ln_apr_obc .AND. TRIM(bf_alias(jp_bdyssh)%clrootname) /= 'NOT USED' ) THEN
@@ -351,10 +348,13 @@ CONTAINS
          IF (ln_dynspg_ts) THEN      ! Fill temporary arrays with slow-varying bdy data                           
             DO jbdy = 1, nb_bdy      ! Tidal component added in ts loop
                IF ( nn_dyn2d_dta(jbdy) .GE. 2 ) THEN
-                  IF( ASSOCIATED(dta_bdy(jbdy)%ssh) ) dta_bdy_s(jbdy)%ssh(:) = dta_bdy(jbdy)%ssh(:)
-                  IF( ASSOCIATED(dta_bdy(jbdy)%u2d) ) dta_bdy_s(jbdy)%u2d(:) = dta_bdy(jbdy)%u2d(:)
-                  IF( ASSOCIATED(dta_bdy(jbdy)%v2d) ) dta_bdy_s(jbdy)%v2d(:) = dta_bdy(jbdy)%v2d(:)
-               ENDIF
+                  nblen => idx_bdy(jbdy)%nblen
+                  nblenrim => idx_bdy(jbdy)%nblenrim
+                  IF( cn_dyn2d(jbdy) == 'frs' ) THEN ; ilen1(:)=nblen(:) ; ELSE ; ilen1(:)=nblenrim(:) ; ENDIF
+                     IF ( dta_bdy(jbdy)%lneed_ssh   ) dta_bdy_s(jbdy)%ssh(1:ilen1(1)) = dta_bdy(jbdy)%ssh(1:ilen1(1))
+                     IF ( dta_bdy(jbdy)%lneed_dyn2d ) dta_bdy_s(jbdy)%u2d(1:ilen1(2)) = dta_bdy(jbdy)%u2d(1:ilen1(2))
+                     IF ( dta_bdy(jbdy)%lneed_dyn2d ) dta_bdy_s(jbdy)%v2d(1:ilen1(3)) = dta_bdy(jbdy)%v2d(1:ilen1(3))
+                  ENDIF
             END DO
          ELSE ! Add tides if not split-explicit free surface else this is done in ts loop
             !
@@ -363,17 +363,17 @@ CONTAINS
       ENDIF
       
       ! davbyr - add a shift to the boundary + free elevation Enda, JT from NEMO RAN 3.6
-      DO jbdy = 1, nb_bdy
-         IF( dta_bdy(jbdy)%lneed_ssh ) THEN
-            igrd  = 1
-            DO ib = 1, idx_bdy(jbdy)%nblenrim(igrd)   ! ssh is used only on the rim
-                ii = idx_bdy(jbdy)%nbi(ib,igrd)
-                ij = idx_bdy(jbdy)%nbj(ib,igrd)
-                dta_bdy(jbdy)%ssh(ib) = dta_bdy(jbdy)%ssh(ib) + rn_ssh_shift(jbdy) * tmask(ii,ij,1)
-                IF( .NOT. dta_bdy(jbdy)%lforced_ssh ) dta_bdy(jbdy)%ssh(ib) = sshn(ii,ij) * tmask(ii,ij,1)
-             END DO
-         END IF
-      END DO
+      !DO jbdy = 1, nb_bdy
+      !   IF( dta_bdy(jbdy)%lneed_ssh ) THEN
+      !      igrd  = 1
+      !      DO ib = 1, idx_bdy(jbdy)%nblenrim(igrd)   ! ssh is used only on the rim
+      !          ii = idx_bdy(jbdy)%nbi(ib,igrd)
+      !          ij = idx_bdy(jbdy)%nbj(ib,igrd)
+      !          dta_bdy(jbdy)%ssh(ib) = dta_bdy(jbdy)%ssh(ib) + rn_ssh_shift(jbdy) * tmask(ii,ij,1)
+      !          IF( .NOT. dta_bdy(jbdy)%lforced_ssh ) dta_bdy(jbdy)%ssh(ib) = sshn(ii,ij) * tmask(ii,ij,1)
+      !       END DO
+      !   END IF
+      !END DO
       !--- END davbyr
       
       !
@@ -519,8 +519,8 @@ CONTAINS
                llread = .NOT. ln_full_vel .AND. MOD(nn_dyn2d_dta(jbdy),2) == 1   ! don't get u2d from u3d and read NetCDF file
                bf_alias => bf(jp_bdyu2d,jbdy:jbdy)                         ! alias for u2d structure of bdy number jbdy
                bn_alias => bn_u2d                                          ! alias for u2d structure of nambdy_dta
-               llfullbdy = ln_full_vel .OR. cn_dyn2d(jbdy) == 'frs'        ! need u2d over the whole bdy or only over the rim?
-               IF( llfullbdy ) THEN  ;   iszdim = idx_bdy(jbdy)%nblen(igrd)
+               !llfullbdy = ln_full_vel .OR. cn_dyn2d(jbdy) == 'frs'        ! need u2d over the whole bdy or only over the rim?
+               IF( ln_full_vel ) THEN  ;   iszdim = idx_bdy(jbdy)%nblen(igrd)
                ELSE                  ;   iszdim = idx_bdy(jbdy)%nblenrim(igrd)
                ENDIF
             ENDIF
@@ -532,8 +532,8 @@ CONTAINS
                llread = .NOT. ln_full_vel .AND. MOD(nn_dyn2d_dta(jbdy),2) == 1   ! don't get v2d from v3d and read NetCDF file
                bf_alias => bf(jp_bdyv2d,jbdy:jbdy)                         ! alias for v2d structure of bdy number jbdy
                bn_alias => bn_v2d                                          ! alias for v2d structure of nambdy_dta 
-               llfullbdy = ln_full_vel .OR. cn_dyn2d(jbdy) == 'frs'        ! need v2d over the whole bdy or only over the rim?
-               IF( llfullbdy ) THEN  ;   iszdim = idx_bdy(jbdy)%nblen(igrd)
+               !llfullbdy = ln_full_vel .OR. cn_dyn2d(jbdy) == 'frs'        ! need v2d over the whole bdy or only over the rim?
+               IF( ln_full_vel ) THEN  ;   iszdim = idx_bdy(jbdy)%nblen(igrd)
                ELSE                  ;   iszdim = idx_bdy(jbdy)%nblenrim(igrd)
                ENDIF
             ENDIF

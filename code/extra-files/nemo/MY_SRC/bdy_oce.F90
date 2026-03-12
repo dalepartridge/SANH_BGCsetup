@@ -43,8 +43,8 @@ MODULE bdy_oce
       INTEGER          , DIMENSION(2)   ::  nread
       LOGICAL                           ::  lneed_ssh
       !--- davbyr
-      LOGICAL                           ::  lforced_ssh 
-	  !--- END davbyr
+      !LOGICAL                           ::  lforced_ssh 
+      !--- END davbyr
       LOGICAL                           ::  lneed_dyn2d
       LOGICAL                           ::  lneed_dyn3d
       LOGICAL                           ::  lneed_tra
@@ -121,8 +121,8 @@ MODULE bdy_oce
    REAL(wp), DIMENSION(jp_bdy) ::   rice_hlid               !: pond lid thick. of incoming sea ice
    
    !  davbyr 
-   LOGICAL, DIMENSION(jp_bdy) ::   ln_ssh_bdy               !: =T USE SSH BDY - name list switch
-   REAL(wp), DIMENSION(jp_bdy) ::  rn_ssh_shift             !: =F SHIFT SSH AT A BORDER BY rn_ssh_shift m_
+   !LOGICAL, DIMENSION(jp_bdy) ::   ln_ssh_bdy               !: =T USE SSH BDY - name list switch
+   !REAL(wp), DIMENSION(jp_bdy) ::  rn_ssh_shift             !: =F SHIFT SSH AT A BORDER BY rn_ssh_shift m_
    !  END davbyr
    !
    !!----------------------------------------------------------------------

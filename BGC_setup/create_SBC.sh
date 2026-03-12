@@ -1,38 +1,29 @@
-#Load modules
-module unload cray-netcdf-hdf5parallel cray-hdf5-parallel
-module load cray-netcdf cray-hdf5
-module load nco/5.0.5
-module load anaconda/python3
-module load cdo
+#!/bin/bash
+
+source ./set_paths.sh
 
 #####################
 # NITROGEN DEPOSITION
 #####################
 
-# Create conda environment to use python package xarray
-conda create -n ndep_env python=3.6
-source activate ndep_env
-pip install xarray pandas netcdf4 scipy
-
 #Process Nitrogen Deposition
 cd $WDIR/SBC/Ndep/
 ln -s $DOMAINFILE domain_cfg.nc
-ln -s $RAWDATA/SBC/Ndep/oxidized_reduced_Ndeposition.csv .
+ln -s $RAWDATA/SBC/NDEP-CEH/*.nc .
 python process_Ndep.py
 
-# Deactivate and remove environment
-source deactivate
-conda remove -n ndep_env --all
+ln -s $WDIR/SBC/Ndep/Ndep_y*nc $INPUTDIR/SBC/BGC/
 
 #####################
 # LIGHT ABSORPTION
 #####################
-
+'''
 cd $WDIR/SBC/ady/
 ln -s $RAWDATA/SBC/ady/ady_sanh.nc .
 ln -s $DOMAINFILE domain_cfg.nc
 ln -s $TOOLS/interp-files/interp_SBC_initial.sh .
 python interp_ady.py $TOOLS/interp-files/namelist-templates/
+ln -s $WDIR/SBC/ady/SANH-CCI*nc $INPUTDIR/SBC/BGC/
 
 ####################
 # Surface CO2
@@ -47,3 +38,6 @@ for f in pCO2_y*; do
   mv $f ${f::6}${year}.nc
   year=$((year+1))
 done
+
+ln -s $WDIR/SBC/pCO2/pCO2*nc $INPUTDIR/SBC/BGC/
+'''

@@ -69,6 +69,7 @@ instances:
       #iswbioalk: 1
     initialization:
       c: 2130.0                                            # total dissolved inorganic carbon (mmol C/m^3)
+      TA: 2300
   R1:
     long_name: labile dissolved organic matter
     model: ersem/pelagic_base
@@ -235,13 +236,9 @@ instances:
       rR2: 0.0075                                          # fraction of semi-labile DOC available to bacteria (-)
       rR3: 0.0025                                          # fraction of semi-refractory DOC available to bacteria (-)
       frR3: 0.3                                            # fraction of activity respiration converted to semi-refractory DOC (-)
-      Denix: 0                                          # potential denitrification rate (1/d)
-      reox: 0                                           # specific reoxidation rate of reduction equivalents (d-1)
-      omroX: 0                                           # stoichiometric coefficiena for reduction equivalentst [mmol HS mmol O2-1]
-      omonX: 0                                          # stochiometric coefficient for denitrification reaction [mmol O2 mmol N-1]
-      chN3o: 0                                        # Michaelis-Menten constant for cubic oxygen dependence of nitrification ((mmol O_2/m^3)^3)
-      Denix: 0.35                                          # potential denitrification rate (1/d)
-      reox: 0.05                                           # specific reoxidation rate of reduction equivalents (d-1)
+      denit: 1
+      DeniX: 0.35                                          # potential denitrification rate (1/d)
+      reoX: 0.05                                           # specific reoxidation rate of reduction equivalents (d-1)
       omroX: 0.5                                           # stoichiometric coefficiena for reduction equivalentst [mmol HS mmol O2-1]
       omonX: 1.25                                          # stochiometric coefficient for denitrification reaction [mmol O2 mmol N-1]
       chN3o: 2700.0                                        # Michaelis-Menten constant for cubic oxygen dependence of nitrification ((mmol O_2/m^3)^3)
@@ -711,14 +708,17 @@ instances:
       O3c: O3/c                                                                 # total dissolved inorganic carbon (mmol C/m^3)
   bL2:
     long_name: benthic calcite
-    model: ersem/benthic_base
+    model: ersem/benthic_calcite
     parameters:
-      composition: c                                                            # elemental composition
-      remin: 0.05                                                               # remineralisation rate at 10 degrees Celsius (1/d), default = 0.0
+      iswcal: 1                                                                 # calcification/dissolution dependence on calcite saturation (1: power law, 2: hyperbolic)
+      ndiss: 2.22                                                               # power of the dissolution law (Keir 1980) (-)
+      fdissmax: 30.0                                       # maximum specific dissolution rate (1/d), default = 0.0
+      fdissmin: 0.05                                       # minimum specific dissolution rate (1/d), default = 0.03
       c0: 1e-05                                                                 # background carbon concentration (mg C/m^2), default = 0.0
     initialization:
       c: 0.05                                                                   # carbon (mg C/m^2)
     coupling:
+      Om_Cal: O3/Om_cal                                    # calcite saturation (-)
       O3c: O3/c  
   ben_col:
     long_name: benthic column
@@ -800,6 +800,7 @@ instances:
       minD: 0.0001                                         # minimum depth of zero-concentration isocline (m)
     initialization:
       o: 0.0225                                            # oxygen (mmol/m^2)
+      o_deep: 0
     coupling:
       o_pel: O2/o                                          # pelagic oxygen (mmol/m^3)
   G3:
@@ -860,6 +861,8 @@ instances:
       K4n2: K4/per_layer/n2                                # benthic ammonium in 2nd layer (mmol N/m^2)
       G2o2: G2/per_layer/o2                                # oxygen in 2nd layer (mmol O_2/m^2)
       layer2_thickness: ben_col/layer2_thickness           # thickness of 2nd layer (m)
+    initialization:
+      G4n: 0
   H1:
     long_name: benthic aerobic bacteria
     model: ersem/benthic_bacteria
@@ -1863,3 +1866,73 @@ instances:
       term14: P2/fPIRPc  # loss to POC (natural mortality)
       term15: P3/fPIRPc  # loss to POC (natural mortality)
       term16: P4/fPIRPc  # loss to POC (natural mortality)
+  DIN_ind:
+    long_name: DIN India
+    model: ersem/pelagic_base
+    parameters:
+      composition: n                                       # elemental composition
+    initialization:
+      n: 0.0                                               # nitrogen (mmol N/m^3)
+  DON_ind:
+    long_name: DON India
+    model: ersem/pelagic_base
+    parameters:
+      composition: n                                       # elemental composition
+    initialization:
+      n: 0.0                                               # nitrogen (mmol N/m^3)
+  DIN_ban:
+    long_name: DIN Bangladesh
+    model: ersem/pelagic_base
+    parameters:
+      composition: n                                       # elemental composition
+    initialization:
+      n: 0.0                                               # nitrogen (mmol N/m^3)
+  DON_ban:
+    long_name: DON Bangladesh
+    model: ersem/pelagic_base
+    parameters:
+      composition: n                                       # elemental composition
+    initialization:
+      n: 0.0                                               # nitrogen (mmol N/m^3)
+  DIN_sri:
+    long_name: DIN Sri Lanka
+    model: ersem/pelagic_base
+    parameters:
+      composition: n                                       # elemental composition
+    initialization:
+      n: 0.0  
+  DON_sri:
+    long_name: DON Sri Lanka
+    model: ersem/pelagic_base
+    parameters:
+      composition: n                                       # elemental composition
+    initialization:
+      n: 0.0                                               # nitrogen (mmol N/m^3)
+  DIN_pak:
+    long_name: DIN Pakistan
+    model: ersem/pelagic_base
+    parameters:
+      composition: n                                       # elemental composition
+    initialization:
+      n: 0.0                                               # nitrogen (mmol N/m^3)
+  DON_pak:
+    long_name: DON Pakistan
+    model: ersem/pelagic_base
+    parameters:
+      composition: n                                       # elemental composition
+    initialization:
+      n: 0.0                                               # nitrogen (mmol N/m^3)
+  DIN_mya:
+    long_name: DIN Myanmar
+    model: ersem/pelagic_base
+    parameters:
+      composition: n                                       # elemental composition
+    initialization:
+      n: 0.0                                               # nitrogen (mmol N/m^3)
+  DON_mya:
+    long_name: DON Myanmar
+    model: ersem/pelagic_base
+    parameters:
+      composition: n                                       # elemental composition
+    initialization:
+      n: 0.0                                               # nitrogen (mmol N/m^3)

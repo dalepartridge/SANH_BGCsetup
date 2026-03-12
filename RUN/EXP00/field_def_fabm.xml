@@ -8,6 +8,7 @@
   <field id="DMP_light_ADY" long_name="light gelbstoff absorption DMP trend"                  unit="1/m/s" default_value="-.200E+21" />
   <field id="SMS_light_ADY" long_name="light gelbstoff absorption SMS trend"                  unit="1/m/s" default_value="-.200E+21" />
   <field id="ATF_light_ADY" long_name="light gelbstoff absorption ATF trend"                  unit="1/m/s" default_value="-.200E+21" />
+  <field id="TOT_light_ADY" long_name="light gelbstoff absorption TOT trend"                  unit="1/m/s" default_value="-.200E+21" />
   <field id="RDB_light_ADY" long_name="light gelbstoff absorption RDB trend"                  unit="1/m/s" default_value="-.200E+21" />
   <field id="RDN_light_ADY" long_name="light gelbstoff absorption RDN trend"                  unit="1/m/s" default_value="-.200E+21" />
   <field id="VMV_light_ADY" long_name="light gelbstoff absorption VMV trend"                  unit="1/m/s" default_value="-.200E+21" />
@@ -23,6 +24,7 @@
   <field id="DMP_N1_p" long_name="phosphate phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_N1_p" long_name="phosphate phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_N1_p" long_name="phosphate phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_N1_p" long_name="phosphate phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_N1_p" long_name="phosphate phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_N1_p" long_name="phosphate phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_N1_p" long_name="phosphate phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -38,6 +40,7 @@
   <field id="DMP_N3_n" long_name="nitrate nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_N3_n" long_name="nitrate nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_N3_n" long_name="nitrate nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_N3_n" long_name="nitrate nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_N3_n" long_name="nitrate nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_N3_n" long_name="nitrate nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_N3_n" long_name="nitrate nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -53,6 +56,7 @@
   <field id="DMP_N4_n" long_name="ammonium nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_N4_n" long_name="ammonium nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_N4_n" long_name="ammonium nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_N4_n" long_name="ammonium nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_N4_n" long_name="ammonium nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_N4_n" long_name="ammonium nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_N4_n" long_name="ammonium nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -68,6 +72,7 @@
   <field id="DMP_N5_s" long_name="silicate silicate DMP trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="SMS_N5_s" long_name="silicate silicate SMS trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="ATF_N5_s" long_name="silicate silicate ATF trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_N5_s" long_name="silicate silicate TOT trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="RDB_N5_s" long_name="silicate silicate RDB trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="RDN_N5_s" long_name="silicate silicate RDN trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="VMV_N5_s" long_name="silicate silicate VMV trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
@@ -83,6 +88,7 @@
   <field id="DMP_N6_h" long_name="reduction equivalent reduction equivalent DMP trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
   <field id="SMS_N6_h" long_name="reduction equivalent reduction equivalent SMS trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
   <field id="ATF_N6_h" long_name="reduction equivalent reduction equivalent ATF trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_N6_h" long_name="reduction equivalent reduction equivalent TOT trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
   <field id="RDB_N6_h" long_name="reduction equivalent reduction equivalent RDB trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
   <field id="RDN_N6_h" long_name="reduction equivalent reduction equivalent RDN trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
   <field id="VMV_N6_h" long_name="reduction equivalent reduction equivalent VMV trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
@@ -98,6 +104,7 @@
   <field id="DMP_O2_o" long_name="oxygen oxygen DMP trend"                  unit="mmol O_2/m^3/s" default_value="-.200E+21" />
   <field id="SMS_O2_o" long_name="oxygen oxygen SMS trend"                  unit="mmol O_2/m^3/s" default_value="-.200E+21" />
   <field id="ATF_O2_o" long_name="oxygen oxygen ATF trend"                  unit="mmol O_2/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_O2_o" long_name="oxygen oxygen TOT trend"                  unit="mmol O_2/m^3/s" default_value="-.200E+21" />
   <field id="RDB_O2_o" long_name="oxygen oxygen RDB trend"                  unit="mmol O_2/m^3/s" default_value="-.200E+21" />
   <field id="RDN_O2_o" long_name="oxygen oxygen RDN trend"                  unit="mmol O_2/m^3/s" default_value="-.200E+21" />
   <field id="VMV_O2_o" long_name="oxygen oxygen VMV trend"                  unit="mmol O_2/m^3/s" default_value="-.200E+21" />
@@ -113,6 +120,7 @@
   <field id="DMP_O3_c" long_name="carbonate total dissolved inorganic carbon DMP trend"                  unit="mmol C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_O3_c" long_name="carbonate total dissolved inorganic carbon SMS trend"                  unit="mmol C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_O3_c" long_name="carbonate total dissolved inorganic carbon ATF trend"                  unit="mmol C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_O3_c" long_name="carbonate total dissolved inorganic carbon TOT trend"                  unit="mmol C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_O3_c" long_name="carbonate total dissolved inorganic carbon RDB trend"                  unit="mmol C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_O3_c" long_name="carbonate total dissolved inorganic carbon RDN trend"                  unit="mmol C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_O3_c" long_name="carbonate total dissolved inorganic carbon VMV trend"                  unit="mmol C/m^3/s" default_value="-.200E+21" />
@@ -120,21 +128,22 @@
   <field id="YAD_O3_c_e3t" long_name="carbonate total dissolved inorganic carbon cell depth integrated YAD trend"                  unit="mmol C/m^3*m/s" default_value="-.200E+21" />
   <field id="ZAD_O3_c_e3t" long_name="carbonate total dissolved inorganic carbon cell depth integrated ZAD trend"                  unit="mmol C/m^3*m/s" default_value="-.200E+21" />
   <field id="O3_c_e3t" long_name="carbonate total dissolved inorganic carbon cell depth integrated" unit="mmol C/m^3*m" default_value="-.200E+21" />
-  <field id="O3_TA" long_name="carbonate total alkalinity" unit="umol/kg" default_value="-.200E+21" />
-  <field id="LDF_O3_TA" long_name="carbonate total alkalinity LDF trend"                  unit="umol/kg/s" default_value="-.200E+21" />
-  <field id="BBL_O3_TA" long_name="carbonate total alkalinity BBL trend"                  unit="umol/kg/s" default_value="-.200E+21" />
-  <field id="FOR_O3_TA" long_name="carbonate total alkalinity FOR trend"                  unit="umol/kg/s" default_value="-.200E+21" />
-  <field id="ZDF_O3_TA" long_name="carbonate total alkalinity ZDF trend"                  unit="umol/kg/s" default_value="-.200E+21" />
-  <field id="DMP_O3_TA" long_name="carbonate total alkalinity DMP trend"                  unit="umol/kg/s" default_value="-.200E+21" />
-  <field id="SMS_O3_TA" long_name="carbonate total alkalinity SMS trend"                  unit="umol/kg/s" default_value="-.200E+21" />
-  <field id="ATF_O3_TA" long_name="carbonate total alkalinity ATF trend"                  unit="umol/kg/s" default_value="-.200E+21" />
-  <field id="RDB_O3_TA" long_name="carbonate total alkalinity RDB trend"                  unit="umol/kg/s" default_value="-.200E+21" />
-  <field id="RDN_O3_TA" long_name="carbonate total alkalinity RDN trend"                  unit="umol/kg/s" default_value="-.200E+21" />
-  <field id="VMV_O3_TA" long_name="carbonate total alkalinity VMV trend"                  unit="umol/kg/s" default_value="-.200E+21" />
-  <field id="XAD_O3_TA_e3t" long_name="carbonate total alkalinity cell depth integrated XAD trend"                  unit="umol/kg*m/s" default_value="-.200E+21" />
-  <field id="YAD_O3_TA_e3t" long_name="carbonate total alkalinity cell depth integrated YAD trend"                  unit="umol/kg*m/s" default_value="-.200E+21" />
-  <field id="ZAD_O3_TA_e3t" long_name="carbonate total alkalinity cell depth integrated ZAD trend"                  unit="umol/kg*m/s" default_value="-.200E+21" />
-  <field id="O3_TA_e3t" long_name="carbonate total alkalinity cell depth integrated" unit="umol/kg*m" default_value="-.200E+21" />
+  <field id="O3_TA" long_name="carbonate total alkalinity" unit="mmol/m^3" default_value="-.200E+21" />
+  <field id="LDF_O3_TA" long_name="carbonate total alkalinity LDF trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="BBL_O3_TA" long_name="carbonate total alkalinity BBL trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="FOR_O3_TA" long_name="carbonate total alkalinity FOR trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="ZDF_O3_TA" long_name="carbonate total alkalinity ZDF trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="DMP_O3_TA" long_name="carbonate total alkalinity DMP trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="SMS_O3_TA" long_name="carbonate total alkalinity SMS trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="ATF_O3_TA" long_name="carbonate total alkalinity ATF trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_O3_TA" long_name="carbonate total alkalinity TOT trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="RDB_O3_TA" long_name="carbonate total alkalinity RDB trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="RDN_O3_TA" long_name="carbonate total alkalinity RDN trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="VMV_O3_TA" long_name="carbonate total alkalinity VMV trend"                  unit="mmol/m^3/s" default_value="-.200E+21" />
+  <field id="XAD_O3_TA_e3t" long_name="carbonate total alkalinity cell depth integrated XAD trend"                  unit="mmol/m^3*m/s" default_value="-.200E+21" />
+  <field id="YAD_O3_TA_e3t" long_name="carbonate total alkalinity cell depth integrated YAD trend"                  unit="mmol/m^3*m/s" default_value="-.200E+21" />
+  <field id="ZAD_O3_TA_e3t" long_name="carbonate total alkalinity cell depth integrated ZAD trend"                  unit="mmol/m^3*m/s" default_value="-.200E+21" />
+  <field id="O3_TA_e3t" long_name="carbonate total alkalinity cell depth integrated" unit="mmol/m^3*m" default_value="-.200E+21" />
   <field id="R1_c" long_name="labile dissolved organic matter carbon" unit="mg C/m^3" default_value="-.200E+21" />
   <field id="LDF_R1_c" long_name="labile dissolved organic matter carbon LDF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="BBL_R1_c" long_name="labile dissolved organic matter carbon BBL trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -143,6 +152,7 @@
   <field id="DMP_R1_c" long_name="labile dissolved organic matter carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R1_c" long_name="labile dissolved organic matter carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R1_c" long_name="labile dissolved organic matter carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R1_c" long_name="labile dissolved organic matter carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R1_c" long_name="labile dissolved organic matter carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R1_c" long_name="labile dissolved organic matter carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R1_c" long_name="labile dissolved organic matter carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -158,6 +168,7 @@
   <field id="DMP_R1_n" long_name="labile dissolved organic matter nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R1_n" long_name="labile dissolved organic matter nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R1_n" long_name="labile dissolved organic matter nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R1_n" long_name="labile dissolved organic matter nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R1_n" long_name="labile dissolved organic matter nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R1_n" long_name="labile dissolved organic matter nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R1_n" long_name="labile dissolved organic matter nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -173,6 +184,7 @@
   <field id="DMP_R1_p" long_name="labile dissolved organic matter phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R1_p" long_name="labile dissolved organic matter phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R1_p" long_name="labile dissolved organic matter phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R1_p" long_name="labile dissolved organic matter phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R1_p" long_name="labile dissolved organic matter phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R1_p" long_name="labile dissolved organic matter phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R1_p" long_name="labile dissolved organic matter phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -188,6 +200,7 @@
   <field id="DMP_R2_c" long_name="semi-labile dissolved organic matter carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R2_c" long_name="semi-labile dissolved organic matter carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R2_c" long_name="semi-labile dissolved organic matter carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R2_c" long_name="semi-labile dissolved organic matter carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R2_c" long_name="semi-labile dissolved organic matter carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R2_c" long_name="semi-labile dissolved organic matter carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R2_c" long_name="semi-labile dissolved organic matter carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -203,6 +216,7 @@
   <field id="DMP_R3_c" long_name="semi-refractory dissolved organic matter carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R3_c" long_name="semi-refractory dissolved organic matter carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R3_c" long_name="semi-refractory dissolved organic matter carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R3_c" long_name="semi-refractory dissolved organic matter carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R3_c" long_name="semi-refractory dissolved organic matter carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R3_c" long_name="semi-refractory dissolved organic matter carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R3_c" long_name="semi-refractory dissolved organic matter carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -218,6 +232,7 @@
   <field id="DMP_R4_c" long_name="small-size pom carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R4_c" long_name="small-size pom carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R4_c" long_name="small-size pom carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R4_c" long_name="small-size pom carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R4_c" long_name="small-size pom carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R4_c" long_name="small-size pom carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R4_c" long_name="small-size pom carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -233,6 +248,7 @@
   <field id="DMP_R4_n" long_name="small-size pom nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R4_n" long_name="small-size pom nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R4_n" long_name="small-size pom nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R4_n" long_name="small-size pom nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R4_n" long_name="small-size pom nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R4_n" long_name="small-size pom nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R4_n" long_name="small-size pom nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -248,6 +264,7 @@
   <field id="DMP_R4_p" long_name="small-size pom phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R4_p" long_name="small-size pom phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R4_p" long_name="small-size pom phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R4_p" long_name="small-size pom phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R4_p" long_name="small-size pom phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R4_p" long_name="small-size pom phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R4_p" long_name="small-size pom phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -263,6 +280,7 @@
   <field id="DMP_R6_c" long_name="medium-size pom carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R6_c" long_name="medium-size pom carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R6_c" long_name="medium-size pom carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R6_c" long_name="medium-size pom carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R6_c" long_name="medium-size pom carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R6_c" long_name="medium-size pom carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R6_c" long_name="medium-size pom carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -278,6 +296,7 @@
   <field id="DMP_R6_n" long_name="medium-size pom nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R6_n" long_name="medium-size pom nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R6_n" long_name="medium-size pom nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R6_n" long_name="medium-size pom nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R6_n" long_name="medium-size pom nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R6_n" long_name="medium-size pom nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R6_n" long_name="medium-size pom nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -293,6 +312,7 @@
   <field id="DMP_R6_p" long_name="medium-size pom phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R6_p" long_name="medium-size pom phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R6_p" long_name="medium-size pom phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R6_p" long_name="medium-size pom phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R6_p" long_name="medium-size pom phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R6_p" long_name="medium-size pom phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R6_p" long_name="medium-size pom phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -308,6 +328,7 @@
   <field id="DMP_R6_s" long_name="medium-size pom silicate DMP trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R6_s" long_name="medium-size pom silicate SMS trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R6_s" long_name="medium-size pom silicate ATF trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R6_s" long_name="medium-size pom silicate TOT trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R6_s" long_name="medium-size pom silicate RDB trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R6_s" long_name="medium-size pom silicate RDN trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R6_s" long_name="medium-size pom silicate VMV trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
@@ -323,6 +344,7 @@
   <field id="DMP_R8_c" long_name="large-size pom carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R8_c" long_name="large-size pom carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R8_c" long_name="large-size pom carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R8_c" long_name="large-size pom carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R8_c" long_name="large-size pom carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R8_c" long_name="large-size pom carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R8_c" long_name="large-size pom carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -338,6 +360,7 @@
   <field id="DMP_R8_n" long_name="large-size pom nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R8_n" long_name="large-size pom nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R8_n" long_name="large-size pom nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R8_n" long_name="large-size pom nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R8_n" long_name="large-size pom nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R8_n" long_name="large-size pom nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R8_n" long_name="large-size pom nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -353,6 +376,7 @@
   <field id="DMP_R8_p" long_name="large-size pom phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R8_p" long_name="large-size pom phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R8_p" long_name="large-size pom phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R8_p" long_name="large-size pom phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R8_p" long_name="large-size pom phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R8_p" long_name="large-size pom phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R8_p" long_name="large-size pom phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -368,6 +392,7 @@
   <field id="DMP_R8_s" long_name="large-size pom silicate DMP trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="SMS_R8_s" long_name="large-size pom silicate SMS trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="ATF_R8_s" long_name="large-size pom silicate ATF trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_R8_s" long_name="large-size pom silicate TOT trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="RDB_R8_s" long_name="large-size pom silicate RDB trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="RDN_R8_s" long_name="large-size pom silicate RDN trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="VMV_R8_s" long_name="large-size pom silicate VMV trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
@@ -383,6 +408,7 @@
   <field id="DMP_B1_c" long_name="bacteria carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_B1_c" long_name="bacteria carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_B1_c" long_name="bacteria carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_B1_c" long_name="bacteria carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_B1_c" long_name="bacteria carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_B1_c" long_name="bacteria carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_B1_c" long_name="bacteria carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -398,6 +424,7 @@
   <field id="DMP_B1_n" long_name="bacteria nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_B1_n" long_name="bacteria nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_B1_n" long_name="bacteria nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_B1_n" long_name="bacteria nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_B1_n" long_name="bacteria nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_B1_n" long_name="bacteria nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_B1_n" long_name="bacteria nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -413,6 +440,7 @@
   <field id="DMP_B1_p" long_name="bacteria phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_B1_p" long_name="bacteria phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_B1_p" long_name="bacteria phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_B1_p" long_name="bacteria phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_B1_p" long_name="bacteria phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_B1_p" long_name="bacteria phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_B1_p" long_name="bacteria phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -428,6 +456,7 @@
   <field id="DMP_P1_c" long_name="diatoms carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P1_c" long_name="diatoms carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P1_c" long_name="diatoms carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P1_c" long_name="diatoms carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P1_c" long_name="diatoms carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P1_c" long_name="diatoms carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P1_c" long_name="diatoms carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -443,6 +472,7 @@
   <field id="DMP_P1_n" long_name="diatoms nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P1_n" long_name="diatoms nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P1_n" long_name="diatoms nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P1_n" long_name="diatoms nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P1_n" long_name="diatoms nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P1_n" long_name="diatoms nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P1_n" long_name="diatoms nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -458,6 +488,7 @@
   <field id="DMP_P1_p" long_name="diatoms phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P1_p" long_name="diatoms phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P1_p" long_name="diatoms phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P1_p" long_name="diatoms phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P1_p" long_name="diatoms phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P1_p" long_name="diatoms phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P1_p" long_name="diatoms phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -473,6 +504,7 @@
   <field id="DMP_P1_Chl" long_name="diatoms chlorophyll a DMP trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P1_Chl" long_name="diatoms chlorophyll a SMS trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P1_Chl" long_name="diatoms chlorophyll a ATF trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P1_Chl" long_name="diatoms chlorophyll a TOT trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P1_Chl" long_name="diatoms chlorophyll a RDB trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P1_Chl" long_name="diatoms chlorophyll a RDN trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P1_Chl" long_name="diatoms chlorophyll a VMV trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
@@ -488,6 +520,7 @@
   <field id="DMP_P1_s" long_name="diatoms silicate DMP trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P1_s" long_name="diatoms silicate SMS trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P1_s" long_name="diatoms silicate ATF trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P1_s" long_name="diatoms silicate TOT trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P1_s" long_name="diatoms silicate RDB trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P1_s" long_name="diatoms silicate RDN trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P1_s" long_name="diatoms silicate VMV trend"                  unit="mmol Si/m^3/s" default_value="-.200E+21" />
@@ -503,6 +536,7 @@
   <field id="DMP_P2_c" long_name="nanophytoplankton carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P2_c" long_name="nanophytoplankton carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P2_c" long_name="nanophytoplankton carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P2_c" long_name="nanophytoplankton carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P2_c" long_name="nanophytoplankton carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P2_c" long_name="nanophytoplankton carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P2_c" long_name="nanophytoplankton carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -518,6 +552,7 @@
   <field id="DMP_P2_n" long_name="nanophytoplankton nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P2_n" long_name="nanophytoplankton nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P2_n" long_name="nanophytoplankton nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P2_n" long_name="nanophytoplankton nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P2_n" long_name="nanophytoplankton nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P2_n" long_name="nanophytoplankton nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P2_n" long_name="nanophytoplankton nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -533,6 +568,7 @@
   <field id="DMP_P2_p" long_name="nanophytoplankton phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P2_p" long_name="nanophytoplankton phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P2_p" long_name="nanophytoplankton phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P2_p" long_name="nanophytoplankton phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P2_p" long_name="nanophytoplankton phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P2_p" long_name="nanophytoplankton phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P2_p" long_name="nanophytoplankton phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -548,6 +584,7 @@
   <field id="DMP_P2_Chl" long_name="nanophytoplankton chlorophyll a DMP trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P2_Chl" long_name="nanophytoplankton chlorophyll a SMS trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P2_Chl" long_name="nanophytoplankton chlorophyll a ATF trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P2_Chl" long_name="nanophytoplankton chlorophyll a TOT trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P2_Chl" long_name="nanophytoplankton chlorophyll a RDB trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P2_Chl" long_name="nanophytoplankton chlorophyll a RDN trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P2_Chl" long_name="nanophytoplankton chlorophyll a VMV trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
@@ -563,6 +600,7 @@
   <field id="DMP_P3_c" long_name="picophytoplankton carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P3_c" long_name="picophytoplankton carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P3_c" long_name="picophytoplankton carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P3_c" long_name="picophytoplankton carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P3_c" long_name="picophytoplankton carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P3_c" long_name="picophytoplankton carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P3_c" long_name="picophytoplankton carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -578,6 +616,7 @@
   <field id="DMP_P3_n" long_name="picophytoplankton nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P3_n" long_name="picophytoplankton nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P3_n" long_name="picophytoplankton nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P3_n" long_name="picophytoplankton nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P3_n" long_name="picophytoplankton nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P3_n" long_name="picophytoplankton nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P3_n" long_name="picophytoplankton nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -593,6 +632,7 @@
   <field id="DMP_P3_p" long_name="picophytoplankton phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P3_p" long_name="picophytoplankton phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P3_p" long_name="picophytoplankton phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P3_p" long_name="picophytoplankton phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P3_p" long_name="picophytoplankton phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P3_p" long_name="picophytoplankton phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P3_p" long_name="picophytoplankton phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -608,6 +648,7 @@
   <field id="DMP_P3_Chl" long_name="picophytoplankton chlorophyll a DMP trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P3_Chl" long_name="picophytoplankton chlorophyll a SMS trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P3_Chl" long_name="picophytoplankton chlorophyll a ATF trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P3_Chl" long_name="picophytoplankton chlorophyll a TOT trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P3_Chl" long_name="picophytoplankton chlorophyll a RDB trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P3_Chl" long_name="picophytoplankton chlorophyll a RDN trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P3_Chl" long_name="picophytoplankton chlorophyll a VMV trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
@@ -623,6 +664,7 @@
   <field id="DMP_P4_c" long_name="microphytoplankton carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P4_c" long_name="microphytoplankton carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P4_c" long_name="microphytoplankton carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P4_c" long_name="microphytoplankton carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P4_c" long_name="microphytoplankton carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P4_c" long_name="microphytoplankton carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P4_c" long_name="microphytoplankton carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -638,6 +680,7 @@
   <field id="DMP_P4_n" long_name="microphytoplankton nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P4_n" long_name="microphytoplankton nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P4_n" long_name="microphytoplankton nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P4_n" long_name="microphytoplankton nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P4_n" long_name="microphytoplankton nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P4_n" long_name="microphytoplankton nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P4_n" long_name="microphytoplankton nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -653,6 +696,7 @@
   <field id="DMP_P4_p" long_name="microphytoplankton phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P4_p" long_name="microphytoplankton phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P4_p" long_name="microphytoplankton phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P4_p" long_name="microphytoplankton phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P4_p" long_name="microphytoplankton phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P4_p" long_name="microphytoplankton phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P4_p" long_name="microphytoplankton phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -668,6 +712,7 @@
   <field id="DMP_P4_Chl" long_name="microphytoplankton chlorophyll a DMP trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="SMS_P4_Chl" long_name="microphytoplankton chlorophyll a SMS trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="ATF_P4_Chl" long_name="microphytoplankton chlorophyll a ATF trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_P4_Chl" long_name="microphytoplankton chlorophyll a TOT trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="RDB_P4_Chl" long_name="microphytoplankton chlorophyll a RDB trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="RDN_P4_Chl" long_name="microphytoplankton chlorophyll a RDN trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
   <field id="VMV_P4_Chl" long_name="microphytoplankton chlorophyll a VMV trend"                  unit="mg/m^3/s" default_value="-.200E+21" />
@@ -683,6 +728,7 @@
   <field id="DMP_Z4_c" long_name="mesozooplankton carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_Z4_c" long_name="mesozooplankton carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_Z4_c" long_name="mesozooplankton carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_Z4_c" long_name="mesozooplankton carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_Z4_c" long_name="mesozooplankton carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_Z4_c" long_name="mesozooplankton carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_Z4_c" long_name="mesozooplankton carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -698,6 +744,7 @@
   <field id="DMP_Z5_c" long_name="microzooplankton carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_Z5_c" long_name="microzooplankton carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_Z5_c" long_name="microzooplankton carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_Z5_c" long_name="microzooplankton carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_Z5_c" long_name="microzooplankton carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_Z5_c" long_name="microzooplankton carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_Z5_c" long_name="microzooplankton carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -713,6 +760,7 @@
   <field id="DMP_Z5_n" long_name="microzooplankton nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_Z5_n" long_name="microzooplankton nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_Z5_n" long_name="microzooplankton nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_Z5_n" long_name="microzooplankton nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_Z5_n" long_name="microzooplankton nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_Z5_n" long_name="microzooplankton nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_Z5_n" long_name="microzooplankton nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -728,6 +776,7 @@
   <field id="DMP_Z5_p" long_name="microzooplankton phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_Z5_p" long_name="microzooplankton phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_Z5_p" long_name="microzooplankton phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_Z5_p" long_name="microzooplankton phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_Z5_p" long_name="microzooplankton phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_Z5_p" long_name="microzooplankton phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_Z5_p" long_name="microzooplankton phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -743,6 +792,7 @@
   <field id="DMP_Z6_c" long_name="nanoflagellates carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_Z6_c" long_name="nanoflagellates carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_Z6_c" long_name="nanoflagellates carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_Z6_c" long_name="nanoflagellates carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_Z6_c" long_name="nanoflagellates carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_Z6_c" long_name="nanoflagellates carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_Z6_c" long_name="nanoflagellates carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -758,6 +808,7 @@
   <field id="DMP_Z6_n" long_name="nanoflagellates nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="SMS_Z6_n" long_name="nanoflagellates nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="ATF_Z6_n" long_name="nanoflagellates nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_Z6_n" long_name="nanoflagellates nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDB_Z6_n" long_name="nanoflagellates nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="RDN_Z6_n" long_name="nanoflagellates nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
   <field id="VMV_Z6_n" long_name="nanoflagellates nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
@@ -773,6 +824,7 @@
   <field id="DMP_Z6_p" long_name="nanoflagellates phosphorus DMP trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="SMS_Z6_p" long_name="nanoflagellates phosphorus SMS trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="ATF_Z6_p" long_name="nanoflagellates phosphorus ATF trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_Z6_p" long_name="nanoflagellates phosphorus TOT trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDB_Z6_p" long_name="nanoflagellates phosphorus RDB trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="RDN_Z6_p" long_name="nanoflagellates phosphorus RDN trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
   <field id="VMV_Z6_p" long_name="nanoflagellates phosphorus VMV trend"                  unit="mmol P/m^3/s" default_value="-.200E+21" />
@@ -788,6 +840,7 @@
   <field id="DMP_L2_c" long_name="calcite carbon DMP trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="SMS_L2_c" long_name="calcite carbon SMS trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="ATF_L2_c" long_name="calcite carbon ATF trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_L2_c" long_name="calcite carbon TOT trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDB_L2_c" long_name="calcite carbon RDB trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="RDN_L2_c" long_name="calcite carbon RDN trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
   <field id="VMV_L2_c" long_name="calcite carbon VMV trend"                  unit="mg C/m^3/s" default_value="-.200E+21" />
@@ -795,6 +848,166 @@
   <field id="YAD_L2_c_e3t" long_name="calcite carbon cell depth integrated YAD trend"                  unit="mg C/m^3*m/s" default_value="-.200E+21" />
   <field id="ZAD_L2_c_e3t" long_name="calcite carbon cell depth integrated ZAD trend"                  unit="mg C/m^3*m/s" default_value="-.200E+21" />
   <field id="L2_c_e3t" long_name="calcite carbon cell depth integrated" unit="mg C/m^3*m" default_value="-.200E+21" />
+  <field id="DIN_ind_n" long_name="DIN India nitrogen" unit="mmol N/m^3" default_value="-.200E+21" />
+  <field id="LDF_DIN_ind_n" long_name="DIN India nitrogen LDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="BBL_DIN_ind_n" long_name="DIN India nitrogen BBL trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="FOR_DIN_ind_n" long_name="DIN India nitrogen FOR trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ZDF_DIN_ind_n" long_name="DIN India nitrogen ZDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="DMP_DIN_ind_n" long_name="DIN India nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="SMS_DIN_ind_n" long_name="DIN India nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ATF_DIN_ind_n" long_name="DIN India nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_DIN_ind_n" long_name="DIN India nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDB_DIN_ind_n" long_name="DIN India nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDN_DIN_ind_n" long_name="DIN India nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="VMV_DIN_ind_n" long_name="DIN India nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="XAD_DIN_ind_n_e3t" long_name="DIN India nitrogen cell depth integrated XAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="YAD_DIN_ind_n_e3t" long_name="DIN India nitrogen cell depth integrated YAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="ZAD_DIN_ind_n_e3t" long_name="DIN India nitrogen cell depth integrated ZAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="DIN_ind_n_e3t" long_name="DIN India nitrogen cell depth integrated" unit="mmol N/m^3*m" default_value="-.200E+21" />
+  <field id="DON_ind_n" long_name="DON India nitrogen" unit="mmol N/m^3" default_value="-.200E+21" />
+  <field id="LDF_DON_ind_n" long_name="DON India nitrogen LDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="BBL_DON_ind_n" long_name="DON India nitrogen BBL trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="FOR_DON_ind_n" long_name="DON India nitrogen FOR trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ZDF_DON_ind_n" long_name="DON India nitrogen ZDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="DMP_DON_ind_n" long_name="DON India nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="SMS_DON_ind_n" long_name="DON India nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ATF_DON_ind_n" long_name="DON India nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_DON_ind_n" long_name="DON India nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDB_DON_ind_n" long_name="DON India nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDN_DON_ind_n" long_name="DON India nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="VMV_DON_ind_n" long_name="DON India nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="XAD_DON_ind_n_e3t" long_name="DON India nitrogen cell depth integrated XAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="YAD_DON_ind_n_e3t" long_name="DON India nitrogen cell depth integrated YAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="ZAD_DON_ind_n_e3t" long_name="DON India nitrogen cell depth integrated ZAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="DON_ind_n_e3t" long_name="DON India nitrogen cell depth integrated" unit="mmol N/m^3*m" default_value="-.200E+21" />
+  <field id="DIN_ban_n" long_name="DIN Bangladesh nitrogen" unit="mmol N/m^3" default_value="-.200E+21" />
+  <field id="LDF_DIN_ban_n" long_name="DIN Bangladesh nitrogen LDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="BBL_DIN_ban_n" long_name="DIN Bangladesh nitrogen BBL trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="FOR_DIN_ban_n" long_name="DIN Bangladesh nitrogen FOR trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ZDF_DIN_ban_n" long_name="DIN Bangladesh nitrogen ZDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="DMP_DIN_ban_n" long_name="DIN Bangladesh nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="SMS_DIN_ban_n" long_name="DIN Bangladesh nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ATF_DIN_ban_n" long_name="DIN Bangladesh nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_DIN_ban_n" long_name="DIN Bangladesh nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDB_DIN_ban_n" long_name="DIN Bangladesh nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDN_DIN_ban_n" long_name="DIN Bangladesh nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="VMV_DIN_ban_n" long_name="DIN Bangladesh nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="XAD_DIN_ban_n_e3t" long_name="DIN Bangladesh nitrogen cell depth integrated XAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="YAD_DIN_ban_n_e3t" long_name="DIN Bangladesh nitrogen cell depth integrated YAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="ZAD_DIN_ban_n_e3t" long_name="DIN Bangladesh nitrogen cell depth integrated ZAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="DIN_ban_n_e3t" long_name="DIN Bangladesh nitrogen cell depth integrated" unit="mmol N/m^3*m" default_value="-.200E+21" />
+  <field id="DON_ban_n" long_name="DON Bangladesh nitrogen" unit="mmol N/m^3" default_value="-.200E+21" />
+  <field id="LDF_DON_ban_n" long_name="DON Bangladesh nitrogen LDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="BBL_DON_ban_n" long_name="DON Bangladesh nitrogen BBL trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="FOR_DON_ban_n" long_name="DON Bangladesh nitrogen FOR trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ZDF_DON_ban_n" long_name="DON Bangladesh nitrogen ZDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="DMP_DON_ban_n" long_name="DON Bangladesh nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="SMS_DON_ban_n" long_name="DON Bangladesh nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ATF_DON_ban_n" long_name="DON Bangladesh nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_DON_ban_n" long_name="DON Bangladesh nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDB_DON_ban_n" long_name="DON Bangladesh nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDN_DON_ban_n" long_name="DON Bangladesh nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="VMV_DON_ban_n" long_name="DON Bangladesh nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="XAD_DON_ban_n_e3t" long_name="DON Bangladesh nitrogen cell depth integrated XAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="YAD_DON_ban_n_e3t" long_name="DON Bangladesh nitrogen cell depth integrated YAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="ZAD_DON_ban_n_e3t" long_name="DON Bangladesh nitrogen cell depth integrated ZAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="DON_ban_n_e3t" long_name="DON Bangladesh nitrogen cell depth integrated" unit="mmol N/m^3*m" default_value="-.200E+21" />
+  <field id="DIN_sri_n" long_name="DIN Sri Lanka nitrogen" unit="mmol N/m^3" default_value="-.200E+21" />
+  <field id="LDF_DIN_sri_n" long_name="DIN Sri Lanka nitrogen LDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="BBL_DIN_sri_n" long_name="DIN Sri Lanka nitrogen BBL trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="FOR_DIN_sri_n" long_name="DIN Sri Lanka nitrogen FOR trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ZDF_DIN_sri_n" long_name="DIN Sri Lanka nitrogen ZDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="DMP_DIN_sri_n" long_name="DIN Sri Lanka nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="SMS_DIN_sri_n" long_name="DIN Sri Lanka nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ATF_DIN_sri_n" long_name="DIN Sri Lanka nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_DIN_sri_n" long_name="DIN Sri Lanka nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDB_DIN_sri_n" long_name="DIN Sri Lanka nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDN_DIN_sri_n" long_name="DIN Sri Lanka nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="VMV_DIN_sri_n" long_name="DIN Sri Lanka nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="XAD_DIN_sri_n_e3t" long_name="DIN Sri Lanka nitrogen cell depth integrated XAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="YAD_DIN_sri_n_e3t" long_name="DIN Sri Lanka nitrogen cell depth integrated YAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="ZAD_DIN_sri_n_e3t" long_name="DIN Sri Lanka nitrogen cell depth integrated ZAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="DIN_sri_n_e3t" long_name="DIN Sri Lanka nitrogen cell depth integrated" unit="mmol N/m^3*m" default_value="-.200E+21" />
+  <field id="DON_sri_n" long_name="DON Sri Lanka nitrogen" unit="mmol N/m^3" default_value="-.200E+21" />
+  <field id="LDF_DON_sri_n" long_name="DON Sri Lanka nitrogen LDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="BBL_DON_sri_n" long_name="DON Sri Lanka nitrogen BBL trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="FOR_DON_sri_n" long_name="DON Sri Lanka nitrogen FOR trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ZDF_DON_sri_n" long_name="DON Sri Lanka nitrogen ZDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="DMP_DON_sri_n" long_name="DON Sri Lanka nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="SMS_DON_sri_n" long_name="DON Sri Lanka nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ATF_DON_sri_n" long_name="DON Sri Lanka nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_DON_sri_n" long_name="DON Sri Lanka nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDB_DON_sri_n" long_name="DON Sri Lanka nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDN_DON_sri_n" long_name="DON Sri Lanka nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="VMV_DON_sri_n" long_name="DON Sri Lanka nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="XAD_DON_sri_n_e3t" long_name="DON Sri Lanka nitrogen cell depth integrated XAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="YAD_DON_sri_n_e3t" long_name="DON Sri Lanka nitrogen cell depth integrated YAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="ZAD_DON_sri_n_e3t" long_name="DON Sri Lanka nitrogen cell depth integrated ZAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="DON_sri_n_e3t" long_name="DON Sri Lanka nitrogen cell depth integrated" unit="mmol N/m^3*m" default_value="-.200E+21" />
+  <field id="DIN_pak_n" long_name="DIN Pakistan nitrogen" unit="mmol N/m^3" default_value="-.200E+21" />
+  <field id="LDF_DIN_pak_n" long_name="DIN Pakistan nitrogen LDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="BBL_DIN_pak_n" long_name="DIN Pakistan nitrogen BBL trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="FOR_DIN_pak_n" long_name="DIN Pakistan nitrogen FOR trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ZDF_DIN_pak_n" long_name="DIN Pakistan nitrogen ZDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="DMP_DIN_pak_n" long_name="DIN Pakistan nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="SMS_DIN_pak_n" long_name="DIN Pakistan nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ATF_DIN_pak_n" long_name="DIN Pakistan nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_DIN_pak_n" long_name="DIN Pakistan nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDB_DIN_pak_n" long_name="DIN Pakistan nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDN_DIN_pak_n" long_name="DIN Pakistan nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="VMV_DIN_pak_n" long_name="DIN Pakistan nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="XAD_DIN_pak_n_e3t" long_name="DIN Pakistan nitrogen cell depth integrated XAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="YAD_DIN_pak_n_e3t" long_name="DIN Pakistan nitrogen cell depth integrated YAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="ZAD_DIN_pak_n_e3t" long_name="DIN Pakistan nitrogen cell depth integrated ZAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="DIN_pak_n_e3t" long_name="DIN Pakistan nitrogen cell depth integrated" unit="mmol N/m^3*m" default_value="-.200E+21" />
+  <field id="DON_pak_n" long_name="DON Pakistan nitrogen" unit="mmol N/m^3" default_value="-.200E+21" />
+  <field id="LDF_DON_pak_n" long_name="DON Pakistan nitrogen LDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="BBL_DON_pak_n" long_name="DON Pakistan nitrogen BBL trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="FOR_DON_pak_n" long_name="DON Pakistan nitrogen FOR trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ZDF_DON_pak_n" long_name="DON Pakistan nitrogen ZDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="DMP_DON_pak_n" long_name="DON Pakistan nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="SMS_DON_pak_n" long_name="DON Pakistan nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ATF_DON_pak_n" long_name="DON Pakistan nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_DON_pak_n" long_name="DON Pakistan nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDB_DON_pak_n" long_name="DON Pakistan nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDN_DON_pak_n" long_name="DON Pakistan nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="VMV_DON_pak_n" long_name="DON Pakistan nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="XAD_DON_pak_n_e3t" long_name="DON Pakistan nitrogen cell depth integrated XAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="YAD_DON_pak_n_e3t" long_name="DON Pakistan nitrogen cell depth integrated YAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="ZAD_DON_pak_n_e3t" long_name="DON Pakistan nitrogen cell depth integrated ZAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="DON_pak_n_e3t" long_name="DON Pakistan nitrogen cell depth integrated" unit="mmol N/m^3*m" default_value="-.200E+21" />
+  <field id="DIN_mya_n" long_name="DIN Myanmar nitrogen" unit="mmol N/m^3" default_value="-.200E+21" />
+  <field id="LDF_DIN_mya_n" long_name="DIN Myanmar nitrogen LDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="BBL_DIN_mya_n" long_name="DIN Myanmar nitrogen BBL trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="FOR_DIN_mya_n" long_name="DIN Myanmar nitrogen FOR trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ZDF_DIN_mya_n" long_name="DIN Myanmar nitrogen ZDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="DMP_DIN_mya_n" long_name="DIN Myanmar nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="SMS_DIN_mya_n" long_name="DIN Myanmar nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ATF_DIN_mya_n" long_name="DIN Myanmar nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_DIN_mya_n" long_name="DIN Myanmar nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDB_DIN_mya_n" long_name="DIN Myanmar nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDN_DIN_mya_n" long_name="DIN Myanmar nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="VMV_DIN_mya_n" long_name="DIN Myanmar nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="XAD_DIN_mya_n_e3t" long_name="DIN Myanmar nitrogen cell depth integrated XAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="YAD_DIN_mya_n_e3t" long_name="DIN Myanmar nitrogen cell depth integrated YAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="ZAD_DIN_mya_n_e3t" long_name="DIN Myanmar nitrogen cell depth integrated ZAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="DIN_mya_n_e3t" long_name="DIN Myanmar nitrogen cell depth integrated" unit="mmol N/m^3*m" default_value="-.200E+21" />
+  <field id="DON_mya_n" long_name="DON Myanmar nitrogen" unit="mmol N/m^3" default_value="-.200E+21" />
+  <field id="LDF_DON_mya_n" long_name="DON Myanmar nitrogen LDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="BBL_DON_mya_n" long_name="DON Myanmar nitrogen BBL trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="FOR_DON_mya_n" long_name="DON Myanmar nitrogen FOR trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ZDF_DON_mya_n" long_name="DON Myanmar nitrogen ZDF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="DMP_DON_mya_n" long_name="DON Myanmar nitrogen DMP trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="SMS_DON_mya_n" long_name="DON Myanmar nitrogen SMS trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="ATF_DON_mya_n" long_name="DON Myanmar nitrogen ATF trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="TOT_DON_mya_n" long_name="DON Myanmar nitrogen TOT trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDB_DON_mya_n" long_name="DON Myanmar nitrogen RDB trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="RDN_DON_mya_n" long_name="DON Myanmar nitrogen RDN trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="VMV_DON_mya_n" long_name="DON Myanmar nitrogen VMV trend"                  unit="mmol N/m^3/s" default_value="-.200E+21" />
+  <field id="XAD_DON_mya_n_e3t" long_name="DON Myanmar nitrogen cell depth integrated XAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="YAD_DON_mya_n_e3t" long_name="DON Myanmar nitrogen cell depth integrated YAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="ZAD_DON_mya_n_e3t" long_name="DON Myanmar nitrogen cell depth integrated ZAD trend"                  unit="mmol N/m^3*m/s" default_value="-.200E+21" />
+  <field id="DON_mya_n_e3t" long_name="DON Myanmar nitrogen cell depth integrated" unit="mmol N/m^3*m" default_value="-.200E+21" />
  </field_group>
  <field_group id="sf_T" grid_ref="grid_T_2D">
   <field id="Q1_c" long_name="benthic dissolved organic matter carbon" unit="mg C/m^2" default_value="-.200E+21" />
@@ -868,7 +1081,7 @@
   <field id="O2__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="oxygen light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="O3_c_sms" long_name="carbonate total dissolved inorganic carbon sources-sinks" unit="mmol C/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="O3_c_w" long_name="carbonate total dissolved inorganic carbon vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
-  <field id="O3_TA_sms" long_name="carbonate total alkalinity sources-sinks" unit="umol/kg/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="O3_TA_sms" long_name="carbonate total alkalinity sources-sinks" unit="mmol/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="O3_TA_w" long_name="carbonate total alkalinity vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="O3_pH" long_name="carbonate pH on total scale" unit="-" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="O3_pCO2" long_name="carbonate partial pressure of CO2" unit="1e-6" default_value="0.000E+00" grid_ref="grid_T_3D" />
@@ -937,6 +1150,13 @@
   <field id="Q7_surface__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="benthic refractory matter surface light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="Q7__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="benthic refractory matter light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="Q17__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="benthic buried matter light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="B1_N3n_sms" long_name="bacteria nitrate sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="B1_N3n_w" long_name="bacteria nitrate vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="B1_N6_sms" long_name="bacteria reduction equivalent sources-sinks" unit="mmol HS-/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="B1_N6_w" long_name="bacteria reduction equivalent vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="B1_fdenit" long_name="bacteria denitrification" unit="mmol N/m^3/d" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="B1_fanox" long_name="bacteria fanox" unit="-" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="B1_freox" long_name="bacteria freox" unit="-" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="B1_c_sms" long_name="bacteria carbon sources-sinks" unit="mg C/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="B1_c_w" long_name="bacteria carbon vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="B1_n_sms" long_name="bacteria nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
@@ -947,10 +1167,6 @@
   <field id="B1_N1p_w" long_name="bacteria phosphate vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="B1_N4n_sms" long_name="bacteria ammonium sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="B1_N4n_w" long_name="bacteria ammonium vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
-  <field id="B1_N3n_sms" long_name="bacteria nitrate sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
-  <field id="B1_N3n_w" long_name="bacteria nitrate vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
-  <field id="B1_N6_sms" long_name="bacteria reduction equivalent sources-sinks" unit="mmol HS-/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
-  <field id="B1_N6_w" long_name="bacteria reduction equivalent vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="B1_R1c_sms" long_name="bacteria labile dissolved organic carbon sources-sinks" unit="mg C/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="B1_R1c_w" long_name="bacteria labile dissolved organic carbon vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="B1_R1p_sms" long_name="bacteria labile dissolved organic phosphorus sources-sinks" unit="mmol P/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
@@ -988,6 +1204,7 @@
   <field id="B1_fB1O3c" long_name="bacteria respiration" unit="mg C/m^3/d" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="B1_fB1NIn" long_name="bacteria release of DIN" unit="mmol N/m^3/d" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="B1_fB1N1p" long_name="bacteria release of DIP" unit="mmol P/m^3/d" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="B1_bgeff" long_name="bacteria bacterial growth efficiency" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="B1_fB1R1c" long_name="bacteria release of labile DOC" unit="mg C/m^3/d" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="B1_fB1R2c" long_name="bacteria release of semi-labile DOC" unit="mg C/m^3/d" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="B1_fB1R3c" long_name="bacteria release of semi-refractory DOC" unit="mg C/m^3/d" default_value="-.200E+21" grid_ref="grid_T_3D" />
@@ -1003,11 +1220,9 @@
   <field id="B1_fR1B1p" long_name="bacteria uptake of DOP" unit="mmol P/m^3/d" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="B1_minn" long_name="bacteria mineralisation of DON to DIN" unit="mmol N/m^3/d" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="B1_minp" long_name="bacteria mineralisation of DOP to DIP" unit="mmol P/m^3/d" default_value="-.200E+21" grid_ref="grid_T_3D" />
-  <field id="B1_fdenit" long_name="bacteria denitrification" unit="mmol N/m^3/d" default_value="0.000E+00" grid_ref="grid_T_3D" />
-  <field id="B1_fanox" long_name="bacteria fanox" unit="-" default_value="0.000E+00" grid_ref="grid_T_3D" />
-  <field id="B1_freox" long_name="bacteria freox" unit="-" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="B1__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="bacteria light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="pel_nit_rate" long_name="pelagic nitrification rate" unit="mmol/m3/d" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="pel_nit_fN4N3n" long_name="pelagic nitrification nitrification" unit="mmol N/m^3/d" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="pel_nit_N3n_sms" long_name="pelagic nitrification nitrate sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="pel_nit_N3n_w" long_name="pelagic nitrification nitrate vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="pel_nit_N4n_sms" long_name="pelagic nitrification ammonium sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
@@ -1444,6 +1659,8 @@
   <field id="L2__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="calcite light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="bL2_O3c_sms" long_name="benthic calcite dissolved inorganic carbon sources-sinks" unit="mmol/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="bL2_O3c_w" long_name="benthic calcite dissolved inorganic carbon vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="bL2_alkalinity_expressed_as_mole_equivalent_sms" long_name="benthic calcite alkalinity_expressed_as_mole_equivalent sources-sinks" unit="mmol m-3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="bL2_alkalinity_expressed_as_mole_equivalent_w" long_name="benthic calcite alkalinity_expressed_as_mole_equivalent vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="bL2__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="benthic calcite light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="ben_col_bioturbation__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="benthic column bioturbation light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="ben_col__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="benthic column light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
@@ -1582,6 +1799,36 @@
   <field id="Total_Zx_c_in_mol_result" long_name="mole concentration of zooplankton expressed as carbon in sea water result" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="p_grow_sum_result" long_name="p_grow_sum result" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="p_loss_sum_result" long_name="p_loss_sum result" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="DIN_ind_n_sms" long_name="DIN India nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_ind_n_w" long_name="DIN India nitrogen vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_ind__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="DIN India light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_ind_n_sms" long_name="DON India nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_ind_n_w" long_name="DON India nitrogen vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_ind__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="DON India light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_ban_n_sms" long_name="DIN Bangladesh nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_ban_n_w" long_name="DIN Bangladesh nitrogen vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_ban__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="DIN Bangladesh light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_ban_n_sms" long_name="DON Bangladesh nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_ban_n_w" long_name="DON Bangladesh nitrogen vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_ban__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="DON Bangladesh light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_sri_n_sms" long_name="DIN Sri Lanka nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_sri_n_w" long_name="DIN Sri Lanka nitrogen vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_sri__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="DIN Sri Lanka light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_sri_n_sms" long_name="DON Sri Lanka nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_sri_n_w" long_name="DON Sri Lanka nitrogen vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_sri__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="DON Sri Lanka light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_pak_n_sms" long_name="DIN Pakistan nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_pak_n_w" long_name="DIN Pakistan nitrogen vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_pak__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="DIN Pakistan light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_pak_n_sms" long_name="DON Pakistan nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_pak_n_w" long_name="DON Pakistan nitrogen vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_pak__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="DON Pakistan light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_mya_n_sms" long_name="DIN Myanmar nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_mya_n_w" long_name="DIN Myanmar nitrogen vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DIN_mya__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="DIN Myanmar light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_mya_n_sms" long_name="DON Myanmar nitrogen sources-sinks" unit="mmol N/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_mya_n_w" long_name="DON Myanmar nitrogen vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
+  <field id="DON_mya__attenuation_coefficient_of_photosynthetic_radiative_flux" long_name="DON Myanmar light extinction contribution computed by get_light_extinction" unit="m-1" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="zero" long_name="zero" unit="" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="B1_RP1_state1_sms" long_name="bacteria RP1 state variable 1 sources-sinks" unit="mg C/m^3/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
   <field id="B1_RP1_state1_w" long_name="bacteria RP1 state variable 1 vertical velocity" unit="m/s" default_value="0.000E+00" grid_ref="grid_T_3D" />
@@ -1994,8 +2241,8 @@
   <field id="O2__surface_drag_coefficient_in_air" long_name="oxygen surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
   <field id="O3_c_sfl" long_name="carbonate total dissolved inorganic carbon surface flux" unit="mmol C/m^3*m/s" default_value="0.000E+00" />
   <field id="O3_c_bfl" long_name="carbonate total dissolved inorganic carbon bottom flux" unit="mmol C/m^3*m/s" default_value="0.000E+00" />
-  <field id="O3_TA_sfl" long_name="carbonate total alkalinity surface flux" unit="umol/kg*m/s" default_value="0.000E+00" />
-  <field id="O3_TA_bfl" long_name="carbonate total alkalinity bottom flux" unit="umol/kg*m/s" default_value="0.000E+00" />
+  <field id="O3_TA_sfl" long_name="carbonate total alkalinity surface flux" unit="mmol/m^3*m/s" default_value="0.000E+00" />
+  <field id="O3_TA_bfl" long_name="carbonate total alkalinity bottom flux" unit="mmol/m^3*m/s" default_value="0.000E+00" />
   <field id="O3_fair" long_name="carbonate air-sea flux of CO2" unit="mmol C/m^2/d" default_value="-.200E+21" />
   <field id="O3_wind" long_name="carbonate surface wind speed" unit="m/s" default_value="-.200E+21" />
   <field id="O3__surface_albedo" long_name="carbonate albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
@@ -2150,8 +2397,11 @@
   <field id="Q7_pen_depth_n_sms" long_name="benthic refractory matter penetration depth of nitrogen sources-sinks" unit="m/s" default_value="0.000E+00" />
   <field id="Q7_pen_depth_p_sms" long_name="benthic refractory matter penetration depth of phosphorus sources-sinks" unit="m/s" default_value="0.000E+00" />
   <field id="Q7_buried_c_sms" long_name="benthic refractory matter buried carbon sources-sinks" unit="mg C/m^2/s" default_value="0.000E+00" />
+  <field id="Q7_burial_flux_c" long_name="benthic refractory matter burial of carbon" unit="mg C/m^2/d" default_value="-.200E+21" />
   <field id="Q7_buried_p_sms" long_name="benthic refractory matter buried phosphorus sources-sinks" unit="mmol P/m^2/s" default_value="0.000E+00" />
+  <field id="Q7_burial_flux_p" long_name="benthic refractory matter burial of phosphorus" unit="mmol P/m^2/d" default_value="-.200E+21" />
   <field id="Q7_buried_n_sms" long_name="benthic refractory matter buried nitrogen sources-sinks" unit="mmol N/m^2/s" default_value="0.000E+00" />
+  <field id="Q7_burial_flux_n" long_name="benthic refractory matter burial of nitrogen" unit="mmol N/m^2/d" default_value="-.200E+21" />
   <field id="Q7_surface_c" long_name="benthic refractory matter surface carbon" unit="mg C/m^2" default_value="-.200E+21" />
   <field id="Q7_surface_change_in_c_processor__surface_albedo" long_name="benthic refractory matter surface change_in_c_processor albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
   <field id="Q7_surface_change_in_c_processor__surface_drag_coefficient_in_air" long_name="benthic refractory matter surface change_in_c_processor surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
@@ -2176,6 +2426,10 @@
   <field id="Q17_n_sms" long_name="benthic buried matter nitrogen sources-sinks" unit="mmol N/m^2/s" default_value="0.000E+00" />
   <field id="Q17__surface_albedo" long_name="benthic buried matter albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
   <field id="Q17__surface_drag_coefficient_in_air" long_name="benthic buried matter surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
+  <field id="B1_N3n_sfl" long_name="bacteria nitrate surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="B1_N3n_bfl" long_name="bacteria nitrate bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="B1_N6_sfl" long_name="bacteria reduction equivalent surface flux" unit="mmol HS-/m^3*m/s" default_value="0.000E+00" />
+  <field id="B1_N6_bfl" long_name="bacteria reduction equivalent bottom flux" unit="mmol HS-/m^3*m/s" default_value="0.000E+00" />
   <field id="B1_w_bot" long_name="bacteria near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
   <field id="B1_c_sfl" long_name="bacteria carbon surface flux" unit="mg C/m^3*m/s" default_value="0.000E+00" />
   <field id="B1_c_bfl" long_name="bacteria carbon bottom flux" unit="mg C/m^3*m/s" default_value="0.000E+00" />
@@ -2187,10 +2441,6 @@
   <field id="B1_N1p_bfl" long_name="bacteria phosphate bottom flux" unit="mmol P/m^3*m/s" default_value="0.000E+00" />
   <field id="B1_N4n_sfl" long_name="bacteria ammonium surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
   <field id="B1_N4n_bfl" long_name="bacteria ammonium bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
-  <field id="B1_N3n_sfl" long_name="bacteria nitrate surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
-  <field id="B1_N3n_bfl" long_name="bacteria nitrate bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
-  <field id="B1_N6_sfl" long_name="bacteria reduction equivalent surface flux" unit="mmol HS-/m^3*m/s" default_value="0.000E+00" />
-  <field id="B1_N6_bfl" long_name="bacteria reduction equivalent bottom flux" unit="mmol HS-/m^3*m/s" default_value="0.000E+00" />
   <field id="B1_R1c_sfl" long_name="bacteria labile dissolved organic carbon surface flux" unit="mg C/m^3*m/s" default_value="0.000E+00" />
   <field id="B1_R1c_bfl" long_name="bacteria labile dissolved organic carbon bottom flux" unit="mg C/m^3*m/s" default_value="0.000E+00" />
   <field id="B1_R1p_sfl" long_name="bacteria labile dissolved organic phosphorus surface flux" unit="mmol P/m^3*m/s" default_value="0.000E+00" />
@@ -2589,7 +2839,9 @@
   <field id="bL2_c_sms" long_name="benthic calcite carbon sources-sinks" unit="mg C/m^2/s" default_value="0.000E+00" />
   <field id="bL2_O3c_sfl" long_name="benthic calcite dissolved inorganic carbon surface flux" unit="mmol/m^3*m/s" default_value="0.000E+00" />
   <field id="bL2_O3c_bfl" long_name="benthic calcite dissolved inorganic carbon bottom flux" unit="mmol/m^3*m/s" default_value="0.000E+00" />
-  <field id="bL2_bremin" long_name="benthic calcite carbon remineralization" unit="mg C/m^2/d" default_value="-.200E+21" />
+  <field id="bL2_alkalinity_expressed_as_mole_equivalent_sfl" long_name="benthic calcite alkalinity_expressed_as_mole_equivalent surface flux" unit="mmol m-3*m/s" default_value="0.000E+00" />
+  <field id="bL2_alkalinity_expressed_as_mole_equivalent_bfl" long_name="benthic calcite alkalinity_expressed_as_mole_equivalent bottom flux" unit="mmol m-3*m/s" default_value="0.000E+00" />
+  <field id="bL2_dissolution" long_name="benthic calcite dissolution" unit="mg C/m^2/d" default_value="-.200E+21" />
   <field id="bL2__surface_albedo" long_name="benthic calcite albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
   <field id="bL2__surface_drag_coefficient_in_air" long_name="benthic calcite surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
   <field id="ben_col_D1m_sms" long_name="benthic column depth of bottom interface of oxygenated layer sources-sinks" unit="m/s" default_value="0.000E+00" />
@@ -3213,6 +3465,56 @@
   <field id="net_PelBen_PON_result" long_name="flux of particulate organic nitrogen from pelagic to benthos result" unit="" default_value="-.200E+21" />
   <field id="net_PelBen_POP_result" long_name="flux of particulate organic phosphorus from pelagic to benthos result" unit="" default_value="-.200E+21" />
   <field id="net_PelBen_POSi_result" long_name="flux of particulate organic silicate from pelagic to benthos result" unit="" default_value="-.200E+21" />
+  <field id="DIN_ind_w_bot" long_name="DIN India near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
+  <field id="DIN_ind_n_sfl" long_name="DIN India nitrogen surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DIN_ind_n_bfl" long_name="DIN India nitrogen bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DIN_ind__surface_albedo" long_name="DIN India albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
+  <field id="DIN_ind__surface_drag_coefficient_in_air" long_name="DIN India surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
+  <field id="DON_ind_w_bot" long_name="DON India near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
+  <field id="DON_ind_n_sfl" long_name="DON India nitrogen surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DON_ind_n_bfl" long_name="DON India nitrogen bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DON_ind__surface_albedo" long_name="DON India albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
+  <field id="DON_ind__surface_drag_coefficient_in_air" long_name="DON India surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
+  <field id="DIN_ban_w_bot" long_name="DIN Bangladesh near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
+  <field id="DIN_ban_n_sfl" long_name="DIN Bangladesh nitrogen surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DIN_ban_n_bfl" long_name="DIN Bangladesh nitrogen bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DIN_ban__surface_albedo" long_name="DIN Bangladesh albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
+  <field id="DIN_ban__surface_drag_coefficient_in_air" long_name="DIN Bangladesh surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
+  <field id="DON_ban_w_bot" long_name="DON Bangladesh near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
+  <field id="DON_ban_n_sfl" long_name="DON Bangladesh nitrogen surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DON_ban_n_bfl" long_name="DON Bangladesh nitrogen bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DON_ban__surface_albedo" long_name="DON Bangladesh albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
+  <field id="DON_ban__surface_drag_coefficient_in_air" long_name="DON Bangladesh surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
+  <field id="DIN_sri_w_bot" long_name="DIN Sri Lanka near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
+  <field id="DIN_sri_n_sfl" long_name="DIN Sri Lanka nitrogen surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DIN_sri_n_bfl" long_name="DIN Sri Lanka nitrogen bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DIN_sri__surface_albedo" long_name="DIN Sri Lanka albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
+  <field id="DIN_sri__surface_drag_coefficient_in_air" long_name="DIN Sri Lanka surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
+  <field id="DON_sri_w_bot" long_name="DON Sri Lanka near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
+  <field id="DON_sri_n_sfl" long_name="DON Sri Lanka nitrogen surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DON_sri_n_bfl" long_name="DON Sri Lanka nitrogen bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DON_sri__surface_albedo" long_name="DON Sri Lanka albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
+  <field id="DON_sri__surface_drag_coefficient_in_air" long_name="DON Sri Lanka surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
+  <field id="DIN_pak_w_bot" long_name="DIN Pakistan near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
+  <field id="DIN_pak_n_sfl" long_name="DIN Pakistan nitrogen surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DIN_pak_n_bfl" long_name="DIN Pakistan nitrogen bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DIN_pak__surface_albedo" long_name="DIN Pakistan albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
+  <field id="DIN_pak__surface_drag_coefficient_in_air" long_name="DIN Pakistan surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
+  <field id="DON_pak_w_bot" long_name="DON Pakistan near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
+  <field id="DON_pak_n_sfl" long_name="DON Pakistan nitrogen surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DON_pak_n_bfl" long_name="DON Pakistan nitrogen bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DON_pak__surface_albedo" long_name="DON Pakistan albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
+  <field id="DON_pak__surface_drag_coefficient_in_air" long_name="DON Pakistan surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
+  <field id="DIN_mya_w_bot" long_name="DIN Myanmar near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
+  <field id="DIN_mya_n_sfl" long_name="DIN Myanmar nitrogen surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DIN_mya_n_bfl" long_name="DIN Myanmar nitrogen bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DIN_mya__surface_albedo" long_name="DIN Myanmar albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
+  <field id="DIN_mya__surface_drag_coefficient_in_air" long_name="DIN Myanmar surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
+  <field id="DON_mya_w_bot" long_name="DON Myanmar near-bed vertical velocity" unit="m/s" default_value="-.200E+21" />
+  <field id="DON_mya_n_sfl" long_name="DON Myanmar nitrogen surface flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DON_mya_n_bfl" long_name="DON Myanmar nitrogen bottom flux" unit="mmol N/m^3*m/s" default_value="0.000E+00" />
+  <field id="DON_mya__surface_albedo" long_name="DON Myanmar albedo contribution computed by get_albedo" unit="-" default_value="0.000E+00" />
+  <field id="DON_mya__surface_drag_coefficient_in_air" long_name="DON Myanmar surface drag contribution computed by get_drag" unit="-" default_value="0.000E+00" />
   <field id="zero_hz" long_name="zero_hz" unit="" default_value="0.000E+00" />
   <field id="Z4_integral_of_totprey_wrt_depth_calculator_result" long_name="mesozooplankton integral_of_totprey_wrt_depth_calculator result" unit="mg C/m^3*m" default_value="-.200E+21" />
   <field id="B1_RP1_state1_sfl" long_name="bacteria RP1 state variable 1 surface flux" unit="mg C/m^3*m/s" default_value="0.000E+00" />
@@ -3732,7 +4034,7 @@
   <field id="N6_h_VINT" long_name="depth-integrated reduction equivalent reduction equivalent" unit="mmol/m^3*m" default_value="0.0" />
   <field id="O2_o_VINT" long_name="depth-integrated oxygen oxygen" unit="mmol O_2/m^3*m" default_value="0.0" />
   <field id="O3_c_VINT" long_name="depth-integrated carbonate total dissolved inorganic carbon" unit="mmol C/m^3*m" default_value="0.0" />
-  <field id="O3_TA_VINT" long_name="depth-integrated carbonate total alkalinity" unit="umol/kg*m" default_value="0.0" />
+  <field id="O3_TA_VINT" long_name="depth-integrated carbonate total alkalinity" unit="mmol/m^3*m" default_value="0.0" />
   <field id="R1_c_VINT" long_name="depth-integrated labile dissolved organic matter carbon" unit="mg C/m^3*m" default_value="0.0" />
   <field id="R1_n_VINT" long_name="depth-integrated labile dissolved organic matter nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
   <field id="R1_p_VINT" long_name="depth-integrated labile dissolved organic matter phosphorus" unit="mmol P/m^3*m" default_value="0.0" />
@@ -3777,6 +4079,16 @@
   <field id="Z6_n_VINT" long_name="depth-integrated nanoflagellates nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
   <field id="Z6_p_VINT" long_name="depth-integrated nanoflagellates phosphorus" unit="mmol P/m^3*m" default_value="0.0" />
   <field id="L2_c_VINT" long_name="depth-integrated calcite carbon" unit="mg C/m^3*m" default_value="0.0" />
+  <field id="DIN_ind_n_VINT" long_name="depth-integrated DIN India nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
+  <field id="DON_ind_n_VINT" long_name="depth-integrated DON India nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
+  <field id="DIN_ban_n_VINT" long_name="depth-integrated DIN Bangladesh nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
+  <field id="DON_ban_n_VINT" long_name="depth-integrated DON Bangladesh nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
+  <field id="DIN_sri_n_VINT" long_name="depth-integrated DIN Sri Lanka nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
+  <field id="DON_sri_n_VINT" long_name="depth-integrated DON Sri Lanka nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
+  <field id="DIN_pak_n_VINT" long_name="depth-integrated DIN Pakistan nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
+  <field id="DON_pak_n_VINT" long_name="depth-integrated DON Pakistan nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
+  <field id="DIN_mya_n_VINT" long_name="depth-integrated DIN Myanmar nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
+  <field id="DON_mya_n_VINT" long_name="depth-integrated DON Myanmar nitrogen" unit="mmol N/m^3*m" default_value="0.0" />
   <field id="zenithAngle__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     zenithAngle light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
   <field id="light_ADY_sms_VINT" long_name="depth-integrated                     light gelbstoff absorption sources-sinks" unit="1/m/s*m" default_value="0.0" />
   <field id="light_ADY_w_VINT" long_name="depth-integrated                     light gelbstoff absorption vertical velocity" unit="m/s*m" default_value="0.0" />
@@ -3810,7 +4122,7 @@
   <field id="O2__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     oxygen light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
   <field id="O3_c_sms_VINT" long_name="depth-integrated                     carbonate total dissolved inorganic carbon sources-sinks" unit="mmol C/m^3/s*m" default_value="0.0" />
   <field id="O3_c_w_VINT" long_name="depth-integrated                     carbonate total dissolved inorganic carbon vertical velocity" unit="m/s*m" default_value="0.0" />
-  <field id="O3_TA_sms_VINT" long_name="depth-integrated                     carbonate total alkalinity sources-sinks" unit="umol/kg/s*m" default_value="0.0" />
+  <field id="O3_TA_sms_VINT" long_name="depth-integrated                     carbonate total alkalinity sources-sinks" unit="mmol/m^3/s*m" default_value="0.0" />
   <field id="O3_TA_w_VINT" long_name="depth-integrated                     carbonate total alkalinity vertical velocity" unit="m/s*m" default_value="0.0" />
   <field id="O3_pH_VINT" long_name="depth-integrated                     carbonate pH on total scale" unit="-*m" default_value="0.0" />
   <field id="O3_pCO2_VINT" long_name="depth-integrated                     carbonate partial pressure of CO2" unit="1e-6*m" default_value="0.0" />
@@ -3879,6 +4191,13 @@
   <field id="Q7_surface__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     benthic refractory matter surface light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
   <field id="Q7__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     benthic refractory matter light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
   <field id="Q17__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     benthic buried matter light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
+  <field id="B1_N3n_sms_VINT" long_name="depth-integrated                     bacteria nitrate sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="B1_N3n_w_VINT" long_name="depth-integrated                     bacteria nitrate vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="B1_N6_sms_VINT" long_name="depth-integrated                     bacteria reduction equivalent sources-sinks" unit="mmol HS-/m^3/s*m" default_value="0.0" />
+  <field id="B1_N6_w_VINT" long_name="depth-integrated                     bacteria reduction equivalent vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="B1_fdenit_VINT" long_name="depth-integrated                     bacteria denitrification" unit="mmol N/m^3/d*m" default_value="0.0" />
+  <field id="B1_fanox_VINT" long_name="depth-integrated                     bacteria fanox" unit="-*m" default_value="0.0" />
+  <field id="B1_freox_VINT" long_name="depth-integrated                     bacteria freox" unit="-*m" default_value="0.0" />
   <field id="B1_c_sms_VINT" long_name="depth-integrated                     bacteria carbon sources-sinks" unit="mg C/m^3/s*m" default_value="0.0" />
   <field id="B1_c_w_VINT" long_name="depth-integrated                     bacteria carbon vertical velocity" unit="m/s*m" default_value="0.0" />
   <field id="B1_n_sms_VINT" long_name="depth-integrated                     bacteria nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
@@ -3889,10 +4208,6 @@
   <field id="B1_N1p_w_VINT" long_name="depth-integrated                     bacteria phosphate vertical velocity" unit="m/s*m" default_value="0.0" />
   <field id="B1_N4n_sms_VINT" long_name="depth-integrated                     bacteria ammonium sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
   <field id="B1_N4n_w_VINT" long_name="depth-integrated                     bacteria ammonium vertical velocity" unit="m/s*m" default_value="0.0" />
-  <field id="B1_N3n_sms_VINT" long_name="depth-integrated                     bacteria nitrate sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
-  <field id="B1_N3n_w_VINT" long_name="depth-integrated                     bacteria nitrate vertical velocity" unit="m/s*m" default_value="0.0" />
-  <field id="B1_N6_sms_VINT" long_name="depth-integrated                     bacteria reduction equivalent sources-sinks" unit="mmol HS-/m^3/s*m" default_value="0.0" />
-  <field id="B1_N6_w_VINT" long_name="depth-integrated                     bacteria reduction equivalent vertical velocity" unit="m/s*m" default_value="0.0" />
   <field id="B1_R1c_sms_VINT" long_name="depth-integrated                     bacteria labile dissolved organic carbon sources-sinks" unit="mg C/m^3/s*m" default_value="0.0" />
   <field id="B1_R1c_w_VINT" long_name="depth-integrated                     bacteria labile dissolved organic carbon vertical velocity" unit="m/s*m" default_value="0.0" />
   <field id="B1_R1p_sms_VINT" long_name="depth-integrated                     bacteria labile dissolved organic phosphorus sources-sinks" unit="mmol P/m^3/s*m" default_value="0.0" />
@@ -3930,6 +4245,7 @@
   <field id="B1_fB1O3c_VINT" long_name="depth-integrated                     bacteria respiration" unit="mg C/m^3/d*m" default_value="0.0" />
   <field id="B1_fB1NIn_VINT" long_name="depth-integrated                     bacteria release of DIN" unit="mmol N/m^3/d*m" default_value="0.0" />
   <field id="B1_fB1N1p_VINT" long_name="depth-integrated                     bacteria release of DIP" unit="mmol P/m^3/d*m" default_value="0.0" />
+  <field id="B1_bgeff_VINT" long_name="depth-integrated                     bacteria bacterial growth efficiency" unit="*m" default_value="0.0" />
   <field id="B1_fB1R1c_VINT" long_name="depth-integrated                     bacteria release of labile DOC" unit="mg C/m^3/d*m" default_value="0.0" />
   <field id="B1_fB1R2c_VINT" long_name="depth-integrated                     bacteria release of semi-labile DOC" unit="mg C/m^3/d*m" default_value="0.0" />
   <field id="B1_fB1R3c_VINT" long_name="depth-integrated                     bacteria release of semi-refractory DOC" unit="mg C/m^3/d*m" default_value="0.0" />
@@ -3945,11 +4261,9 @@
   <field id="B1_fR1B1p_VINT" long_name="depth-integrated                     bacteria uptake of DOP" unit="mmol P/m^3/d*m" default_value="0.0" />
   <field id="B1_minn_VINT" long_name="depth-integrated                     bacteria mineralisation of DON to DIN" unit="mmol N/m^3/d*m" default_value="0.0" />
   <field id="B1_minp_VINT" long_name="depth-integrated                     bacteria mineralisation of DOP to DIP" unit="mmol P/m^3/d*m" default_value="0.0" />
-  <field id="B1_fdenit_VINT" long_name="depth-integrated                     bacteria denitrification" unit="mmol N/m^3/d*m" default_value="0.0" />
-  <field id="B1_fanox_VINT" long_name="depth-integrated                     bacteria fanox" unit="-*m" default_value="0.0" />
-  <field id="B1_freox_VINT" long_name="depth-integrated                     bacteria freox" unit="-*m" default_value="0.0" />
   <field id="B1__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     bacteria light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
   <field id="pel_nit_rate_VINT" long_name="depth-integrated                     pelagic nitrification rate" unit="mmol/m3/d*m" default_value="0.0" />
+  <field id="pel_nit_fN4N3n_VINT" long_name="depth-integrated                     pelagic nitrification nitrification" unit="mmol N/m^3/d*m" default_value="0.0" />
   <field id="pel_nit_N3n_sms_VINT" long_name="depth-integrated                     pelagic nitrification nitrate sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
   <field id="pel_nit_N3n_w_VINT" long_name="depth-integrated                     pelagic nitrification nitrate vertical velocity" unit="m/s*m" default_value="0.0" />
   <field id="pel_nit_N4n_sms_VINT" long_name="depth-integrated                     pelagic nitrification ammonium sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
@@ -4386,6 +4700,8 @@
   <field id="L2__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     calcite light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
   <field id="bL2_O3c_sms_VINT" long_name="depth-integrated                     benthic calcite dissolved inorganic carbon sources-sinks" unit="mmol/m^3/s*m" default_value="0.0" />
   <field id="bL2_O3c_w_VINT" long_name="depth-integrated                     benthic calcite dissolved inorganic carbon vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="bL2_alkalinity_expressed_as_mole_equivalent_sms_VINT" long_name="depth-integrated                     benthic calcite alkalinity_expressed_as_mole_equivalent sources-sinks" unit="mmol m-3/s*m" default_value="0.0" />
+  <field id="bL2_alkalinity_expressed_as_mole_equivalent_w_VINT" long_name="depth-integrated                     benthic calcite alkalinity_expressed_as_mole_equivalent vertical velocity" unit="m/s*m" default_value="0.0" />
   <field id="bL2__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     benthic calcite light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
   <field id="ben_col_bioturbation__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     benthic column bioturbation light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
   <field id="ben_col__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     benthic column light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
@@ -4524,6 +4840,36 @@
   <field id="Total_Zx_c_in_mol_result_VINT" long_name="depth-integrated                     mole concentration of zooplankton expressed as carbon in sea water result" unit="*m" default_value="0.0" />
   <field id="p_grow_sum_result_VINT" long_name="depth-integrated                     p_grow_sum result" unit="*m" default_value="0.0" />
   <field id="p_loss_sum_result_VINT" long_name="depth-integrated                     p_loss_sum result" unit="*m" default_value="0.0" />
+  <field id="DIN_ind_n_sms_VINT" long_name="depth-integrated                     DIN India nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="DIN_ind_n_w_VINT" long_name="depth-integrated                     DIN India nitrogen vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="DIN_ind__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     DIN India light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
+  <field id="DON_ind_n_sms_VINT" long_name="depth-integrated                     DON India nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="DON_ind_n_w_VINT" long_name="depth-integrated                     DON India nitrogen vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="DON_ind__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     DON India light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
+  <field id="DIN_ban_n_sms_VINT" long_name="depth-integrated                     DIN Bangladesh nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="DIN_ban_n_w_VINT" long_name="depth-integrated                     DIN Bangladesh nitrogen vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="DIN_ban__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     DIN Bangladesh light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
+  <field id="DON_ban_n_sms_VINT" long_name="depth-integrated                     DON Bangladesh nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="DON_ban_n_w_VINT" long_name="depth-integrated                     DON Bangladesh nitrogen vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="DON_ban__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     DON Bangladesh light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
+  <field id="DIN_sri_n_sms_VINT" long_name="depth-integrated                     DIN Sri Lanka nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="DIN_sri_n_w_VINT" long_name="depth-integrated                     DIN Sri Lanka nitrogen vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="DIN_sri__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     DIN Sri Lanka light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
+  <field id="DON_sri_n_sms_VINT" long_name="depth-integrated                     DON Sri Lanka nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="DON_sri_n_w_VINT" long_name="depth-integrated                     DON Sri Lanka nitrogen vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="DON_sri__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     DON Sri Lanka light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
+  <field id="DIN_pak_n_sms_VINT" long_name="depth-integrated                     DIN Pakistan nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="DIN_pak_n_w_VINT" long_name="depth-integrated                     DIN Pakistan nitrogen vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="DIN_pak__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     DIN Pakistan light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
+  <field id="DON_pak_n_sms_VINT" long_name="depth-integrated                     DON Pakistan nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="DON_pak_n_w_VINT" long_name="depth-integrated                     DON Pakistan nitrogen vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="DON_pak__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     DON Pakistan light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
+  <field id="DIN_mya_n_sms_VINT" long_name="depth-integrated                     DIN Myanmar nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="DIN_mya_n_w_VINT" long_name="depth-integrated                     DIN Myanmar nitrogen vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="DIN_mya__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     DIN Myanmar light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
+  <field id="DON_mya_n_sms_VINT" long_name="depth-integrated                     DON Myanmar nitrogen sources-sinks" unit="mmol N/m^3/s*m" default_value="0.0" />
+  <field id="DON_mya_n_w_VINT" long_name="depth-integrated                     DON Myanmar nitrogen vertical velocity" unit="m/s*m" default_value="0.0" />
+  <field id="DON_mya__attenuation_coefficient_of_photosynthetic_radiative_flux_VINT" long_name="depth-integrated                     DON Myanmar light extinction contribution computed by get_light_extinction" unit="m-1*m" default_value="0.0" />
   <field id="zero_VINT" long_name="depth-integrated                     zero" unit="*m" default_value="0.0" />
   <field id="B1_RP1_state1_sms_VINT" long_name="depth-integrated                     bacteria RP1 state variable 1 sources-sinks" unit="mg C/m^3/s*m" default_value="0.0" />
   <field id="B1_RP1_state1_w_VINT" long_name="depth-integrated                     bacteria RP1 state variable 1 vertical velocity" unit="m/s*m" default_value="0.0" />
@@ -4909,10 +5255,16 @@
   <field id="INP_N3_flux" long_name="N3_flux input" unit="" default_value="-.200E+21" />
   <field id="INP_ady" long_name="ady input" unit="" default_value="-.200E+21" />
   <field id="INP_pCO2a" long_name="pCO2a input" unit="" default_value="-.200E+21" />
-  <field id="INP_POCrunoff" long_name="POCrunoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
-  <field id="INP_PPrunoff" long_name="PPrunoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
-  <field id="INP_PNrunoff" long_name="PNrunoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
-  <field id="INP_DOCrunoff" long_name="DOCrunoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_DON_mya" long_name="DON_mya input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_DIN_mya" long_name="DIN_mya input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_DON_pak" long_name="DON_pak input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_DIN_pak" long_name="DIN_pak input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_DON_sri" long_name="DON_sri input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_DIN_sri" long_name="DIN_sri input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_DON_ban" long_name="DON_ban input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_DIN_ban" long_name="DIN_ban input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_DON_ind" long_name="DON_ind input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_DIN_ind" long_name="DIN_ind input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="INP_DOPrunoff" long_name="DOPrunoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="INP_DONrunoff" long_name="DONrunoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="INP_TArunoff" long_name="TArunoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
@@ -4920,6 +5272,7 @@
   <field id="INP_DIOrunoff" long_name="DIOrunoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="INP_DSirunoff" long_name="DSirunoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
   <field id="INP_DIPrunoff" long_name="DIPrunoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
-  <field id="INP_DINrunoff" long_name="DINrunoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_NH4runoff" long_name="NH4runoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
+  <field id="INP_NO3runoff" long_name="NO3runoff input" unit="" default_value="-.200E+21" grid_ref="grid_T_3D" />
  </field_group>
 </field_definition>

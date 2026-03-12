@@ -37,7 +37,7 @@
    cn_exp      =  "SANH"
    nn_it000    =  1 !241 !2016001 ! 16993 !  8641 ! 1   !  first time step
    nn_itend    =  7680 !1year=87600! 1day =240 !  last  time step 
-   nn_date0    =  20040101   !  date at nit_0000 (format yyyymmdd) used if ln_rstart=F or (ln_rstart=T and nn_rstctl=0 or 1)
+   nn_date0    =  19930101   !  date at nit_0000 (format yyyymmdd) used if ln_rstart=F or (ln_rstart=T and nn_rstctl=0 or 1)
    nn_time0    =       0   !  initial time of day in hhmm
    nn_leapy    =       1   !  Leap year calendar (1) or not (0)
    ln_rstart   = .false.   !  start from rest (F) or from a restart file (T)

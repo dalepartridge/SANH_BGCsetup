@@ -24,8 +24,8 @@ grid_ds = xr.open_dataset(gridfile).rename(var_map).isel(t=0,z=0)
 grid_ds['mask'] = xr.where(grid_ds.mask >0,1,0)
 
 # Define Time Period
-ystart=1998
-yend=2020
+ystart=2020
+yend=2022
 time_res='8DAY' # monthly, 8DAY, 5DAY, DAILY 
 
 ## CCI file parameters

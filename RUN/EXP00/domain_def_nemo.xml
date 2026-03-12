@@ -2,8 +2,31 @@
    <domain_definition>
 
      <!--   T grid   -->
-     <domain id="grid_T" long_name="grid T"/>
-     
+      <domain_group id="grid_T">
+         <domain id="grid_T" long_name="grid T"/>
+         <domain id="thoddoo_T" domain_ref="grid T">
+         <zoom_domain ibegin="110"  jbegin="15" ni="55" nj="50" />
+         </domain>
+      </domain_group>
+      <domain_group id="grid_U">
+         <domain id="grid_U" long_name="grid U"/>
+         <domain id="thoddoo_U" domain_ref="grid U">
+         <zoom_domain ibegin="110"  jbegin="15" ni="55" nj="50" />
+         </domain>
+      </domain_group>
+      <domain_group id="grid_V">
+     <domain id="grid_V" long_name="grid V"/>
+         <domain id="thoddoo_V" domain_ref="grid V">
+         <zoom_domain ibegin="110"  jbegin="15" ni="55" nj="50" />
+         </domain>
+      </domain_group>
+      <domain_group id="grid_W">
+         <domain id="grid_W" long_name="grid W"/>
+         <domain id="thoddoo_W" domain_ref="grid W">
+         <zoom_domain ibegin="110"  jbegin="15" ni="55" nj="50" />
+         </domain>
+      </domain_group>
+
      <!--   My zoom: example of hand defined zoom   -->
      <domain id="myzoomT" domain_ref="grid_T" >
        <zoom_domain ibegin="1" jbegin="1" ni="2" nj="3"/>
@@ -165,18 +188,15 @@
 
      
      <!--   U grid   -->
-     <domain id="grid_U" long_name="grid U"/>
      <!--   Eq section   -->
      <domain id="EqU" domain_ref="grid_U" > <zoom_domain id="EqU"/> </domain>
 
       
      <!--   V grid   -->
-     <domain id="grid_V" long_name="grid V"/>
      <!--   Eq section : no V point on the Equator...   -->
 
      
      <!--   W grid   -->
-     <domain id="grid_W" long_name="grid W"/>
      <!--   Eq section   -->
      <domain id="EqW" domain_ref="grid_W" > <zoom_domain id="EqW"/> </domain>
 
